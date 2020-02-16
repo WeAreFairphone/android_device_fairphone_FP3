@@ -1,0 +1,17 @@
+allow rmt_storage {
+    modem_efs_partition_device
+    ssd_device
+}:blk_file rw_file_perms;
+
+r_dir_file(rmt_storage fsg_firmware_file)
+r_dir_file(rmt_storage, persist_file)
+
+allow rmt_storage debugfs_rmts:dir r_dir_perms;
+allow rmt_storage debugfs_rmts:file rw_file_perms;
+
+allow rmt_storage persist_rfs_file:dir search;
+allow rmt_storage persist_rfs_file:file rw_file_perms;
+allow rmt_storage vendor_radio_prop:file { getattr open read };
+allow rmt_storage mnt_vendor_file:dir search;
+
+get_prop(rmt_storage, moto_boot_prop)

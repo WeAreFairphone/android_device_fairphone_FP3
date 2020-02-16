@@ -1,0 +1,12 @@
+type capsense_reset, domain;
+type capsense_reset_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(capsense_reset)
+
+# Write to /dev/kmsg
+allow capsense_reset kmsg_device:chr_file rw_file_perms;
+
+allow capsense_reset input_device:dir r_dir_perms;
+allow capsense_reset input_device:chr_file r_file_perms;
+
+allow capsense_reset sysfs_sensor:dir r_dir_perms;
+allow capsense_reset sysfs_sensor:file rw_file_perms;

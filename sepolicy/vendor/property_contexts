@@ -1,0 +1,28 @@
+sys.post_boot.           u:object_r:post_boot_prop:s0
+persist.vendor.camera.debug.logfile    u:object_r:camera_prop:s0
+ro.gpu.available_frequencies u:object_r:gpu_prop:s0
+vendor.ril.radio.             u:object_r:vendor_radio_prop:s0
+
+ro.boot.adb_early          u:object_r:moto_boot_prop:s0
+ro.boot.secure_hardware    u:object_r:moto_boot_prop:s0
+ro.boot.radio              u:object_r:moto_boot_prop:s0
+ro.boot.device             u:object_r:moto_boot_prop:s0
+ro.boot.dualsim            u:object_r:moto_boot_prop:s0
+ro.boot.hardware.sku       u:object_r:moto_boot_prop:s0
+ro.boot.carrier            u:object_r:moto_boot_prop:s0
+ro.boot.fsg-id             u:object_r:moto_boot_prop:s0
+ro.boot.hwrev              u:object_r:moto_boot_prop:s0
+ro.vendor.hw.dualsim       u:object_r:moto_boot_prop:s0
+ro.vendor.hw.device        u:object_r:moto_boot_prop:s0
+ro.vendor.hw.radio         u:object_r:moto_boot_prop:s0
+ro.vendor.hw.hwrev         u:object_r:moto_boot_prop:s0
+ro.vendor.boot.radio       u:object_r:moto_boot_prop:s0
+ro.vendor.boot.hwrev       u:object_r:moto_boot_prop:s0
+ro.vendor.carrier          u:object_r:moto_boot_prop:s0
+ro.vendor.fsg-id           u:object_r:moto_boot_prop:s0
+ro.vendor.zygote           u:object_r:moto_boot_prop:s0
+
+# property related to aov
+vendor.hw.aov.                    u:object_r:vendor_aov_prop:s0
+
+ro.vendor.fm.                     u:object_r:vendor_fm_prop:s0

@@ -1,0 +1,6 @@
+type post_boot_prop, property_type;
+type power_prop, property_type;
+type gpu_prop, property_type;
+type moto_boot_prop, property_type;
+type vendor_aov_prop, property_type;
+type vendor_fm_prop, property_type;

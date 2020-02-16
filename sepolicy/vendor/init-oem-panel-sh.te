@@ -1,0 +1,22 @@
+type init-oem-panel-sh, domain;
+type init-oem-panel-sh_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(init-oem-panel-sh)
+
+allow init-oem-panel-sh vendor_shell_exec:file rx_file_perms;
+allow init-oem-panel-sh vendor_toolbox_exec:file rx_file_perms;
+
+# execute grep
+allow init-oem-panel-sh vendor_file:file rx_file_perms;
+
+# Allow insmod
+allow init-oem-panel-sh self:capability sys_module;
+allow init-oem-panel-sh vendor_file:system module_load;
+
+# Write to /dev/kmsg
+allow init-oem-panel-sh kmsg_device:chr_file rw_file_perms;
+
+set_prop(init-oem-panel-sh, ctl_default_prop)
+
+r_dir_file(init-oem-panel-sh, sysfs_graphics)
+allow init-oem-panel-sh sysfs_graphics:file r_file_perms;

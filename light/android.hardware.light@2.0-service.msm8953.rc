@@ -1,0 +1,16 @@
+service vendor.light-hal-2-0 /vendor/bin/hw/android.hardware.light@2.0-service.msm8953
+    class hal
+    user system
+    group system
+
+on boot
+    # Change ownership and permission for leds backlight
+    chmod 0664 /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/charging/brightness
+    chmod 0664 /sys/class/leds/charging/brightness
+    chown system system /sys/class/leds/charging/breath
+    chmod 660 /sys/class/leds/charging/breath
+    chown system system /sys/class/leds/charging/delay_off
+    chmod 660 /sys/class/leds/charging/delay_off
+    chown system system /sys/class/leds/charging/delay_on
+    chmod 660 /sys/class/leds/charging/delay_on

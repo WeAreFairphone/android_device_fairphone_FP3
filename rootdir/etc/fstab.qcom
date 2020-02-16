@@ -1,0 +1,20 @@
+# Android fstab file.
+# The filesystem that contains the filesystem checker binary (typically /system) cannot
+# specify MF_CHECK, and must come before any filesystems that do specify MF_CHECK
+
+#TODO: Add 'check' as fs_mgr_flags with data partition.
+# Currently we dont have e2fsck compiled. So fs check would failed.
+
+#<src>					<mnt_point>		<type>	<mnt_flags and options>								<fs_mgr_flags>
+/dev/block/bootdevice/by-name/system		/		ext4	ro,barrier=1,discard								wait,slotselect,verify
+/dev/block/bootdevice/by-name/userdata       /data        f2fs    rw,discard,nosuid,nodev,noatime,nodiratime,nobarrier,inline_xattr,inline_data,reserve_root=32768,resgid=1065   wait,check,formattable,latemount,fileencryption=ice,quota,reservedsize=128M
+/devices/platform/soc/7864900.sdhci/mmc_host*		auto		auto	nosuid,nodev					wait,voldmanaged=sdcard1:auto,encryptable=userdata
+/dev/block/zram0				none		swap	defaults									zramsize=1073741824
+/devices/*/xhci-hcd.*.auto/usb*			auto		auto	defaults									voldmanaged=usb:auto
+/dev/block/bootdevice/by-name/misc		/misc		emmc	defaults									defaults
+/dev/block/bootdevice/by-name/modem		/vendor/firmware_mnt	ext4	ro,nosuid,nodev,context=u:object_r:firmware_file:s0			wait,slotselect
+/dev/block/bootdevice/by-name/dsp		/vendor/dsp		ext4	ro,nosuid,nodev,barrier=1,defcontext=u:object_r:adsprpcd_file:s0	wait,slotselect
+/dev/block/bootdevice/by-name/fsg		/vendor/fsg		ext4	ro,nosuid,nodev,context=u:object_r:fsg_firmware_file:s0				wait,slotselect
+/dev/block/bootdevice/by-name/persist    	/mnt/vendor/persist	ext4	noatime,nosuid,nodev,barrier=1						wait
+/dev/block/bootdevice/by-name/persist2    	/mnt/product/persist	ext4	noatime,nosuid,nodev,barrier=1						wait,formattable,nofail
+#/dev/block/bootdevice/by-name/oem		/oem			ext4	ro,nosuid,nodev,context=u:object_r:oemfs:s0				wait,slotselect,verify

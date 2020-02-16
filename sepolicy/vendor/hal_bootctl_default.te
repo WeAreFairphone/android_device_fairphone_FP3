@@ -1,0 +1,2 @@
+allow hal_bootctl_default modem_efs_partition_device:blk_file getattr;
+allow hal_bootctl_default userdata_block_device:blk_file getattr;

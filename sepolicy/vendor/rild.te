@@ -1,0 +1,10 @@
+allow rild vendor_file:file rx_file_perms;
+allow rild fwk_sensor_hwservice:hwservice_manager find;
+allow rild system_server:binder { call transfer };
+allow rild mnt_vendor_file:dir search;
+allow rild mnt_vendor_file:file rw_file_perms;
+allow rild proc:file r_file_perms;
+allow rild system_file:file execute_no_trans;
+allow rild input_device:dir { open read };
+allow rild vendor_radio_data_file:dir r_dir_perms;
+allow rild vendor_radio_data_file:file rw_file_perms;

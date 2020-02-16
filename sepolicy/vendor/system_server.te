@@ -1,0 +1,9 @@
+
+binder_call(system_server,rild);
+
+# Input devices
+r_dir_file(system_server, idc_file);
+r_dir_file(system_server, keylayout_file);
+
+allow system_server sysfs_vibrator:file read;
+allow system_server fpc_extension_service:hwservice_manager find;

@@ -1,0 +1,22 @@
+#Blaine add seosors-hal input group for AP senosr,it will override android.hardware.sensors@1.0-service.rc
+
+service sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service
+    class hal
+    user system
+    group input system wakelock
+    capabilities BLOCK_SUSPEND SYS_NICE
+
+on boot
+    # change permission for capsensor
+    chown system system /sys/class/sensors/Moto\ CapSense\ Ch0/enable
+    chown system system /sys/class/sensors/Moto\ CapSense\ Ch0/poll_delay
+    chown system system /sys/class/sensors/Moto\ CapSense\ Ch1/enable
+    chown system system /sys/class/sensors/Moto\ CapSense\ Ch1/poll_delay
+    chown system system /sys/class/sensors/Moto\ CapSense\ Ch2/enable
+    chown system system /sys/class/sensors/Moto\ CapSense\ Ch2/poll_delay
+    chmod 0660 /sys/class/sensors/Moto\ CapSense\ Ch0/enable
+    chmod 0660 /sys/class/sensors/Moto\ CapSense\ Ch0/poll_delay
+    chmod 0660 /sys/class/sensors/Moto\ CapSense\ Ch1/enable
+    chmod 0660 /sys/class/sensors/Moto\ CapSense\ Ch1/poll_delay
+    chmod 0660 /sys/class/sensors/Moto\ CapSense\ Ch2/enable
+    chmod 0660 /sys/class/sensors/Moto\ CapSense\ Ch2/poll_delay

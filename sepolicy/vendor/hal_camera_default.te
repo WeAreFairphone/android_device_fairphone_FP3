@@ -1,0 +1,7 @@
+r_dir_file(hal_camera_default, persist_camera_file)
+allow hal_camera_default sysfs_battery_supply:dir search;
+allow hal_camera_default sysfs_battery_supply:file { getattr open read };
+allow hal_camera_default mnt_vendor_file:file rw_file_perms;
+allow hal_camera_default camera_prop:property_service set;
+allow hal_camera_default hal_configstore_ISurfaceFlingerConfigs:hwservice_manager find;
+allow hal_camera_default sysfs_healthd:dir search;

@@ -1,0 +1,4 @@
+allow installd bt_firmware_file:filesystem quotaget;
+allow installd firmware_file:filesystem quotaget;
+allow installd fsg_firmware_file:filesystem quotaget;
+

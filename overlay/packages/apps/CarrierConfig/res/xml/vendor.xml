@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<carrier_config_list>
+    <carrier_config>
+        <boolean name="allow_video_call_in_low_battery" value="true" />
+        <boolean name="default_carrierconfig_loaded" value="true" />
+        <boolean name="show_ims_registration_status_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="001" customerid="verizon">
+        <boolean name="carrier_volte_provisioning_required_bool" value="true" />
+        <boolean name="carrier_allow_turnoff_ims_bool" value="false" />
+        <boolean name="carrier_volte_tty_supported_bool" value="true" />
+        <boolean name="rtt_supported_bool" value="true" />
+        <boolean name="support_pause_ims_video_calls_bool" value="true" />
+        <boolean name="editable_wfc_mode_bool" value="false" />
+        <int name="carrier_default_wfc_ims_mode_int" value="1" />
+        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
+        <int name="carrier_default_wfc_ims_roaming_mode_int" value="1" />
+        <boolean name="allow_video_call_in_low_battery" value="true" />
+        <boolean name="carrier_allow_vce_bool" value="true" />
+        <boolean name="carrier_wfc_mdn_required_bool" value="true" />
+        <boolean name="downgrade_video_call_when_mobile_data_off" value="false" />
+        <boolean name="use_rcs_presence_bool" value="true" />
+        <boolean name="show_iccid_in_sim_status_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="001" customerid="sprint">
+        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
+    <carrier_config mcc="001" carrierid="att">
+        <boolean name="editable_wfc_mode_bool" value="false" />
+        <int name="carrier_default_wfc_ims_mode_int" value="1" />
+    </carrier_config>
+    <carrier_config mcc="001">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_vt_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="carrier_volte_tty_supported_bool" value="false" />
+        <boolean name="ignore_data_enabled_changed_for_video_calls" value="true" />
+        <boolean name="vilte_data_is_metered_bool" value="false" />
+    </carrier_config>
+    <carrier_config mcc="202">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <int name="maxSubjectLength" value="80" />
+    </carrier_config>
+    <carrier_config mcc="202" mnc="01">
+        <int name="smsToMmsTextThreshold" value="-1" />
+    </carrier_config>
+    <carrier_config mcc="206">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="208">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+    </carrier_config>
+    <carrier_config mcc="212">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="213">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="214">
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="216">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+    </carrier_config>
+    <carrier_config mcc="218">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="219">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="219" mnc="01">
+        <int name="smsToMmsTextThreshold" value="-1" />
+    </carrier_config>
+    <carrier_config mcc="220">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="220" mnc="04">
+        <int name="smsToMmsTextThreshold" value="2" />
+    </carrier_config>
+    <carrier_config mcc="222">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="222" mnc="88">
+        <int name="smsToMmsTextThreshold" value="-1" />
+        <int name="maxMessageSize" value="307200" />
+    </carrier_config>
+    <carrier_config mcc="222" mnc="99">
+        <int name="smsToMmsTextThreshold" value="-1" />
+        <int name="recipientLimit" value="200" />
+        <int name="maxMessageSize" value="307200" />
+    </carrier_config>
+    <carrier_config mcc="226">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="226" mnc="03">
+        <int name="smsToMmsTextThreshold" value="-1" />
+    </carrier_config>
+    <carrier_config mcc="226" mnc="06">
+        <int name="smsToMmsTextThreshold" value="-1" />
+    </carrier_config>
+    <carrier_config mcc="228">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="230">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="230" mnc="01">
+        <int name="smsToMmsTextThreshold" value="3" />
+    </carrier_config>
+    <carrier_config mcc="231">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="231" mnc="02">
+        <int name="smsToMmsTextThreshold" value="-1" />
+    </carrier_config>
+    <carrier_config mcc="232">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="232" mnc="03">
+        <int name="smsToMmsTextThreshold" value="5" />
+    </carrier_config>
+    <carrier_config mcc="232" mnc="07">
+        <int name="smsToMmsTextThreshold" value="5" />
+    </carrier_config>
+    <carrier_config mcc="234">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+    </carrier_config>
+    <carrier_config mcc="238">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="240">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="242">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="244">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="246">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="247">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="248">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="250">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <string-array name="carrier_additional_cbs_channels_strings" num="11">
+            <item value="50:emergency=true" />
+            <item value="1000:emergency=true" />
+            <item value="1001:emergency=true" />
+            <item value="1002:emergency=true" />
+            <item value="1003:emergency=true" />
+            <item value="1004:emergency=true" />
+            <item value="1005:emergency=true" />
+            <item value="1006:emergency=true" />
+            <item value="1007:emergency=true" />
+            <item value="1008:emergency=true" />
+            <item value="1009:emergency=true" />
+        </string-array>
+    </carrier_config>
+    <carrier_config mcc="255">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="259">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="260">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="260" mnc="02">
+        <int name="smsToMmsTextThreshold" value="-1" />
+    </carrier_config>
+    <carrier_config mcc="262">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="262" mnc="01">
+        <int name="smsToMmsTextThreshold" value="-1" />
+    </carrier_config>
+    <carrier_config mcc="262" mnc="03">
+        <int name="smsToMmsTextThreshold" value="-1" />
+    </carrier_config>
+    <carrier_config mcc="262" mnc="07">
+        <int name="smsToMmsTextThreshold" value="-1" />
+    </carrier_config>
+    <carrier_config mcc="268">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="270">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="272">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+    </carrier_config>
+    <carrier_config mcc="274">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="276">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+    </carrier_config>
+    <carrier_config mcc="278">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="280">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="282">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="283">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="284">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+    </carrier_config>
+    <carrier_config mcc="286">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="288">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="289">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="290">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="292">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="293">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="294">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="294" mnc="01">
+        <int name="smsToMmsTextThreshold" value="2" />
+    </carrier_config>
+    <carrier_config mcc="295">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="297">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="297" mnc="02">
+        <int name="smsToMmsTextThreshold" value="2" />
+    </carrier_config>
+    <carrier_config mcc="302">
+        <boolean name="hide_ims_apn_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="334">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="338">
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxImageHeight" value="1944" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="340">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="342">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="344">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="352">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="356">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="358">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="360">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="364">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="366">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="370">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="372">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="374">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="400">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="401">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="402">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="404">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="405">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="410">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="412">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="413">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="414">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="415">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="416">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="417">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="418">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="419">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="420">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="421">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="422">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="424">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="425">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="426">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="427">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="428">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="429">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="430">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="431">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="432">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="434">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="436">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="437">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="438">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="440">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="441">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="450">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="452">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="454">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="455">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="456">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="457">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="460">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="support_pause_ims_video_calls_bool" value="false" />
+        <boolean name="ascii_7_bit_support_for_long_message" value="true" />
+        <string-array name="carrier_metered_apn_types_strings" num="3">
+            <item value="default" />
+            <item value="dun" />
+            <item value="supl" />
+        </string-array>
+        <string-array name="carrier_metered_roaming_apn_types_strings" num="3">
+            <item value="default" />
+            <item value="dun" />
+            <item value="supl" />
+        </string-array>
+        <boolean name="allow_emergency_numbers_in_call_log_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="466">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <string-array name="carrier_additional_cbs_channels_strings" num="2">
+            <item value="911:emergency=true,type=other" />
+            <item value="919:emergency=true,type=other" />
+        </string-array>
+    </carrier_config>
+    <carrier_config mcc="467">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="470">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="472">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="502">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="505">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="prefer_2g_bool" value="false" />
+    </carrier_config>
+    <carrier_config mcc="510">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="514">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="515">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="520">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="525">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="528">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="530">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="536">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="537">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="539">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="540">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="541">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="542">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="544">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="545">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="546">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="547">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="548">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="549">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="550">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="551">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="552">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="553">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="555">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="602">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="603">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="604">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="605">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="606">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="607">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="608">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="609">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="610">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="611">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="612">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="613">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="614">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="615">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="616">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="617">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="618">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="619">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="620">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="621">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="622">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="623">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="624">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="625">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="626">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="627">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="628">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="629">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="630">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="631">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="632">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="633">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="634">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="635">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="636">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="637">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="638">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="639">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="640">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="641">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="642">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="643">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="645">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="646">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="647">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="648">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="649">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="650">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="651">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="652">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="653">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="654">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="655">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="657">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="659">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="702">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="704">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="706">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="708">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="710">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="712">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="714">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="716">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+    </carrier_config>
+    <carrier_config mcc="722">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="724">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="730">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="732">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+        <boolean name="allow_emergency_numbers_in_call_log_bool" value="true" />
+        <boolean name="hide_ims_apn_bool" value="true" />
+    </carrier_config>
+    <carrier_config mcc="734">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="736">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="738">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="740">
+        <int name="recipientLimit" value="20" />
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="744">
+        <int name="recipientLimit" value="20" />
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config mcc="746">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="smsToMmsTextThreshold" value="6" />
+    </carrier_config>
+    <carrier_config mcc="748">
+        <int name="maxImageHeight" value="1944" />
+        <int name="maxImageWidth" value="2592" />
+        <int name="recipientLimit" value="20" />
+        <int name="maxSubjectLength" value="80" />
+        <int name="smsToMmsTextThreshold" value="6" />
+        <boolean name="smsUsesSimpleCharactersOnly" value="true" />
+    </carrier_config>
+    <carrier_config device="deen">
+        <boolean name="sim_lock_is_valid_sim_bool" value="true" />
+    </carrier_config>
+</carrier_config_list>
+

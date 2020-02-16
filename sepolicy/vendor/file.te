@@ -1,0 +1,23 @@
+type debugfs_rmts, debugfs_type, fs_type;
+type debugfs_wlan, debugfs_type, fs_type;
+type fsg_firmware_file, file_type, contextmount_type, vendor_file_type;
+type perfd_socket, file_type;
+type persist_camera_file, file_type;
+type sysfs_fingerprint, sysfs_type, fs_type;
+type fingerprint_data_file, data_file_type, file_type, core_data_file_type;
+type fingerprint_socket, data_file_type, file_type, core_data_file_type;
+type sysfs_sensor, sysfs_type, fs_type;
+type sysfs_wifi, sysfs_type, fs_type;
+
+# charge_only_mode
+type chargeonly_data_file, file_type, data_file_type;
+
+# Input devices
+type idc_file, file_type, vendor_file_type;
+type keylayout_file, file_type, vendor_file_type;
+
+# Healthd
+type sysfs_healthd, fs_type, sysfs_type, mlstrustedobject;
+
+# Adsp
+type sysfs_adspd, sysfs_type, fs_type;

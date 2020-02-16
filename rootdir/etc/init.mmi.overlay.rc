@@ -1,0 +1,47 @@
+import /vendor/etc/init/hw/init.hidl.sensor.rc
+
+# Egis fps
+import /vendor/etc/init/init.ets.rc
+
+service capsense_reset /system/vendor/bin/capsense_reset
+   class core
+   user system
+   group system input
+   disabled
+
+on property:sys.boot_completed=1
+    start capsense_reset
+
+on init
+
+   # Change ownership for for HBM feature
+   chown system system /sys/class/graphics/fb0/hbm
+   # Change ownership for for cabc feature
+   chown system system /sys/class/graphics/fb0/cabc
+   setprop sys.usb.ffs.aio_compat 1
+
+on boot
+   # change permission for capsensor
+   chown system system /sys/class/capsense/reset
+
+
+    # Change permission for fingerprint sensor
+    chown system oem_5004 /sys/devices/platform/soc/soc:fpc_fpc1020/nav
+    chown system oem_5004 /sys/devices/platform/soc/soc:fpc_fpc1020/dev_enable
+    chown system oem_5004 /sys/devices/platform/soc/soc:fpc_fpc1020/irq
+    chown system oem_5004 /sys/devices/platform/soc/soc:fpc_fpc1020/irq_cnt
+    chmod 0440 /sys/devices/platform/soc/soc:fpc_fpc1020/irq_cnt
+
+   # Change the ownership of display TE files for tcmds
+   chown root oem_5004 /sys/class/graphics/fb0/te_test
+   chown root oem_5004 /sys/class/graphics/fb0/te_enable
+   chown root oem_5004 /sys/class/graphics/fb0/frame_counter
+
+   # Change group for himax TP factory testing
+   chown root oem_5004 /proc/android_touch/self_test
+
+   # Change ownership and permission for vibrator awinic with extra functions
+   chown system system /sys/class/leds/vibrator/seq
+   chmod 0660 /sys/class/leds/vibrator/seq
+   chown system system /sys/class/leds/vibrator/extra
+   chmod 0660 /sys/class/leds/vibrator/extra

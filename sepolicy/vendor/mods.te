@@ -1,0 +1,10 @@
+type mods, domain;
+type mods_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(mods)
+
+allow mods video_device:{ chr_file file } rw_file_perms;
+allow mods self:netlink_kobject_uevent_socket { bind create read setopt };
+allow mods sysfs_graphics:file rw_file_perms;
+allow mods ion_device:chr_file { open read };
+allow mods sysfs_graphics:dir search;

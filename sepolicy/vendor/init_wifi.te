@@ -1,0 +1,6 @@
+type init_wifi, domain;
+type init_wifi_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(init_wifi)
+
+allow init_wifi sysfs:file { open write };
+allow init_wifi vendor_toolbox_exec:file execute_no_trans;

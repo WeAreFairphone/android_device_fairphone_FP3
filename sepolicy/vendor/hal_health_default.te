@@ -1,0 +1,7 @@
+allow hal_health_default persist_file:dir search;
+
+allow hal_health_default mnt_vendor_file:file { getattr open read };
+allow hal_health_default mnt_vendor_file:dir search;
+allow hal_health_default sysfs:file { getattr open read };
+allow hal_health_default sysfs_healthd:dir r_dir_perms;
+allow hal_health_default sysfs_healthd:file rw_file_perms;

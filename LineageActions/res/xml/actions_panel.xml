@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2015-2016 The CyanogenMod Project
+     Copyright (C) 2017 The LineageOS Project
+
+     Licensed under the Apache License, Version 2.0 (the "License"
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <PreferenceCategory
+        android:key="actions_key"
+        android:title="@string/actions_title">
+
+        <SwitchPreference
+            android:key="gesture_camera_action"
+            android:defaultValue="true"
+            android:title="@string/camera_gesture_title"
+            android:summary="@string/camera_gesture_summary" />
+
+        <SwitchPreference
+            android:key="gesture_chop_chop"
+            android:defaultValue="true"
+            android:title="@string/chop_chop_gesture_title"
+            android:summary="@string/chop_chop_gesture_summary" />
+
+        <SwitchPreference
+            android:key="gesture_ir_silencer"
+            android:defaultValue="false"
+            android:title="@string/hand_wave_silencer_title"
+            android:summary="@string/hand_wave_silencer_summary" />
+
+        <SwitchPreference
+            android:key="gesture_flip_to_mute"
+            android:defaultValue="false"
+            android:title="@string/flip_to_mute_title"
+            android:summary="@string/flip_to_mute_summary" />
+
+        <SwitchPreference
+            android:key="gesture_lift_to_silence"
+            android:defaultValue="false"
+            android:title="@string/lift_to_silence_title"
+            android:summary="@string/lift_to_silence_summary" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

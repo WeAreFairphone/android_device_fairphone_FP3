@@ -1,0 +1,2 @@
+r_dir_file(hal_vibrator_default, sysfs_leds)
+allow hal_vibrator_default sysfs_leds:file rw_file_perms;

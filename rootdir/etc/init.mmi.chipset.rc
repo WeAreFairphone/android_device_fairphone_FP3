@@ -1,0 +1,42 @@
+# Chipset-specific init settings
+on boot
+    # Change permission for type C params
+    chown root oem_5004 /sys/devices/soc/78b6000.i2c/i2c-2/2-0022/CC_state
+    chown root oem_5004 /sys/devices/soc/78b6000.i2c/i2c-2/2-0022/enable_vconn
+    # Change ownership and permission for AMPS factory testing
+    chown root oem_5004 /sys/class/i2c-adapter/i2c-2/2-002d/enable
+    chmod 0660 /sys/class/i2c-adapter/i2c-2/2-002d/enable
+    chown root oem_5004 /sys/class/i2c-adapter/i2c-2/2-002d/hsic_vdd
+    chmod 0660 /sys/class/i2c-adapter/i2c-2/2-002d/hsic_vdd
+
+    # Change permission for fingerprint sensor
+    chown system oem_5004 /sys/bus/spi/devices/spi8.0/nav
+    chown system oem_5004 /sys/bus/spi/devices/spi8.0/clk_enable
+    chown system oem_5004 /sys/bus/spi/devices/spi8.0/dev_enable
+    chown system oem_5004 /sys/bus/spi/devices/spi8.0/irq
+    chown system oem_5004 /sys/bus/spi/devices/spi8.0/irq_cnt
+    chmod 0440 /sys/bus/spi/devices/spi8.0/irq_cnt
+
+on post-fs-data
+    #setup folder for WLAN WAPI
+    chmod 0770 /data/wapi_certificate
+
+    # This dir only for preinstall app so libs
+    mkdir /data/app-lib2 0771 system system
+
+on moto-charger
+    setprop ro.board.platform msm8953
+    load_system_props
+    trigger firmware_mounts_complete
+    setprop sys.usb.configfs 1
+    setprop sys.usb.config charging
+    start qcom-post-boot
+    start vendor.hvdcp_opti
+    start gbmodinstall
+    start vendor.charge_only_mode
+    start vendor.batt_health
+    start vendor.thermal-com
+
+# Set hub drive strength to +5%
+on property:ro.bootmode=normal
+   write /sys/module/usb3813_hub/parameters/boost_val 3

@@ -1,0 +1,9 @@
+com.fingerprints.extension::IFingerprintAuthenticator                             u:object_r:fpc_extension_service:s0
+com.fingerprints.extension::IFingerprintCalibration                               u:object_r:fpc_extension_service:s0
+com.fingerprints.extension::IFingerprintEngineering                               u:object_r:fpc_extension_service:s0
+com.fingerprints.extension::IFingerprintNavigation                                u:object_r:fpc_extension_service:s0
+com.fingerprints.extension::IFingerprintSensorTest                                u:object_r:fpc_extension_service:s0
+
+vendor.egistec.hardware.fingerprint::IBiometricsFingerprintEts                    u:object_r:fpc_extension_service:s0
+
+motorola.hardware.audio.adspd::IADSP                                              u:object_r:hal_audio_hwservice:s0

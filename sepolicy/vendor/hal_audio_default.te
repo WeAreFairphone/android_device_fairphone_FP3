@@ -1,0 +1,11 @@
+unix_socket_connect(hal_audio_default, perfd, perfd)
+
+r_dir_file(hal_audio_default, sysfs_adspd)
+allow hal_audio_default sysfs_adspd:file rw_file_perms;
+
+get_prop(vendor_init, vendor_aov_prop)
+set_prop(vendor_init, vendor_aov_prop)
+
+unix_socket_connect(hal_audio_default, property, init)
+allow hal_audio_default self:binder { call transfer };
+allow hal_audio_default self:fd use;

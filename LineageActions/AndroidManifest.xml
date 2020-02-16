@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.lineageos.settings.device"
+    android:sharedUserId="android.uid.system"
+    >
+
+    <original-package android:name="com.cyanogenmod.settings.device" />
+
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <protected-broadcast android:name="com.android.systemui.doze.pulse" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/device_settings_app_name"
+        android:persistent="true">
+
+        <receiver android:name="org.lineageos.settings.device.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="ServiceWrapper" android:permission="ServiceWrapper">
+            <intent-filter>
+                <action android:name="ServiceWrapper"/>
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".DozePreferenceActivity"
+            android:label="@string/ambient_display_gestures_title"
+            android:theme="@style/LineageActions">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/ambient_display_gestures_summary" />
+        </activity>
+
+        <activity
+            android:name=".ActionsPreferenceActivity"
+            android:label="@string/moto_gestures_panel_title"
+            android:theme="@style/LineageActions">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.system" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_settings_gestures" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/screen_gestures_panel_summary" />
+        </activity>
+
+    </application>
+
+</manifest>

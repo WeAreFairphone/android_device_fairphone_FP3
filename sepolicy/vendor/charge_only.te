@@ -1,0 +1,42 @@
+type charge_only, domain;
+type charge_only_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(charge_only)
+
+allow charge_only chargeonly_data_file:dir rw_dir_perms;
+allow charge_only chargeonly_data_file:file rw_file_perms;
+
+# Write to /dev/kmsg
+allow charge_only kmsg_device:chr_file rw_file_perms;
+
+# Read access to pseudo filesystems.
+r_dir_file(charge_only, sysfs_type)
+r_dir_file(charge_only, rootfs)
+r_dir_file(charge_only, cgroup)
+
+allow charge_only self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+
+wakelock_use(charge_only)
+
+# Write to /sys/power/state
+# TODO:  Split into a separate type?
+allow charge_only sysfs:dir { read open };
+allow charge_only sysfs:file { read open write };
+
+allow charge_only sysfs_wake_lock:file rw_file_perms;
+
+allow charge_only sysfs_batteryinfo:file r_file_perms;
+
+allow charge_only sysfs_leds:file { read open write };
+
+# Read /sys/fs/pstore/console-ramoops
+# Don't worry about overly broad permissions for now, as there's
+# only one file in /sys/fs/pstore
+allow charge_only pstorefs:dir r_dir_perms;
+allow charge_only pstorefs:file r_file_perms;
+
+allow charge_only graphics_device:dir r_dir_perms;
+allow charge_only graphics_device:chr_file rw_file_perms;
+allow charge_only input_device:dir r_dir_perms;
+allow charge_only input_device:chr_file r_file_perms;
+allow charge_only tty_device:chr_file rw_file_perms;
+allow charge_only proc_sysrq:file rw_file_perms;

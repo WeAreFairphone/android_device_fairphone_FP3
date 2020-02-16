@@ -1,0 +1,40 @@
+type hal_fingerprint_fpc, domain;
+typeattribute hal_fingerprint_fpc data_between_core_and_vendor_violators;
+
+hal_server_domain(hal_fingerprint_fpc, hal_fingerprint)
+
+type hal_fingerprint_fpc_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_fingerprint_fpc)
+
+hwbinder_use(hal_fingerprint_fpc)
+vndbinder_use(hal_fingerprint_fpc)
+
+# Check if hwservicemanager is ready
+get_prop(hal_fingerprint_fpc, hwservicemanager_prop)
+
+# Add com.fingerprints.extension::IFingerprint* service to hwservicemanager
+add_hwservice(hal_fingerprint_fpc, fpc_extension_service)
+
+r_dir_file(hal_fingerprint_fpc, firmware_file)
+r_dir_file(hal_fingerprint_fpc, sysfs_devfreq)
+
+allow hal_fingerprint_fpc tee_device:chr_file { open read write ioctl };
+allow hal_fingerprint_fpc uhid_device:chr_file rw_file_perms;
+allow hal_fingerprint_fpc sysfs_fingerprint:dir r_dir_perms;
+allow hal_fingerprint_fpc sysfs_fingerprint:file rw_file_perms;
+
+# Allow hal_fingerprint_fpc to add and find fpc_extension_service
+allow hal_fingerprint_fpc fpc_extension_service:hwservice_manager { add find };
+
+allow hal_fingerprint_fpc fingerprint_data_file:dir rw_dir_perms;
+allow hal_fingerprint_fpc fingerprint_data_file:file create_file_perms;
+
+allow hal_fingerprint_fpc self:netlink_socket create_socket_perms_no_ioctl;
+
+allow hal_fingerprint_fpc system_data_file:dir { add_name write getattr};
+allow hal_fingerprint_fpc system_data_file:file { open };
+
+allow hal_fingerprint_fpc fingerprintd_data_file:dir rw_dir_perms;
+allow hal_fingerprint_fpc fingerprintd_data_file:file create_file_perms;
+
+allow hal_fingerprint_fpc tee_device:chr_file getattr;

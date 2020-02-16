@@ -1,0 +1,62 @@
+/dev/block/platform/soc/7824900\.sdhci/mmcblk0p1[78]      u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7824900\.sdhci/mmcblk0p3[01]      u:object_r:modem_efs_partition_device:s0
+/dev/block/platform/soc/7824900\.sdhci/mmcblk0p3[67]      u:object_r:custom_ab_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/mmcblk0p5[89]      u:object_r:system_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/mmcblk0p33         u:object_r:persist_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/mmcblk0p34         u:object_r:frp_block_device:s0
+/dev/block/platform/soc/7824900\.sdhci/mmcblk0p50         u:object_r:mba_debug_dev:s0
+
+/dev/mmi_sys_temp            u:object_r:thermal_device:s0
+/dev/socket/perfd            u:object_r:perfd_socket:s0
+
+/(vendor|system/vendor)/fsg  u:object_r:fsg_firmware_file:s0
+
+/dev/v4l2-hal-ctrl           u:object_r:video_device:s0
+/sys/devices/soc/8c0000\.qcom,msm-cam/video4linux/video0(/.*)? u:object_r:sysfs_graphics:s0
+/sys/devices/soc/caa0000\.qcom,jpeg/video4linux/video1(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/soc/caa4000\.qcom,fd/video4linux/video2(/.*)?     u:object_r:sysfs_graphics:s0
+/sys/devices/soc/ca0c000\.qcom,cci/ca0c000.qcom,cci:qcom,camera@0/video4linux/video4(/.*)?     u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/1b0c000\.qcom,cci/1b0c000\.qcom,cci:qcom,camera@0/video4linux/video1(/.*)?     u:object_r:sysfs_graphics:s0
+/persist/camera(/.*)?                                         u:object_r:persist_camera_file:s0
+/sys/devices/virtual/laser(/.*)?                              u:object_r:sysfs_sensor:s0
+/sys/devices/virtual/input/input4(/.*)?                       u:object_r:sysfs_sensor:s0
+
+/(vendor|system/vendor)/bin/init\.gbmods\.sh                    u:object_r:init-gbmods-sh_exec:s0
+/(vendor|system/vendor)/bin/mods_camd                         u:object_r:mods_exec:s0
+
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-fpcservice    u:object_r:hal_fingerprint_fpc_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service-ets   u:object_r:hal_fingerprint_fpc_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.msm8953    u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/motorola\.hardware\.audio\.adspd@1\.0-service    u:object_r:hal_audio_default_exec:s0
+/(vendor|system/vendor)/bin/init\.mmi\.(laser|usb)\.sh                          u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.power\.sh                               u:object_r:qti_init_shell_exec:s0
+/(vendor|system/vendor)/bin/perfd                                               u:object_r:perfd_exec:s0
+/system/bin/move_time_data\.sh                                                u:object_r:move-time-data-sh_exec:s0
+
+/sys/devices/soc/c900000\.qcom,mdss_mdp/c900000\.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight(/.*)?                  u:object_r:sysfs_leds:s0
+/sys/devices/soc/800f000\.qcom,spmi/spmi-0/spmi0-03/800f000\.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/charging(/.*)?        u:object_r:sysfs_leds:s0
+
+/sys/kernel/debug/rmt_storage(/.*)?                           u:object_r:debugfs_rmts:s0
+/sys/kernel/boot_wlan(/.*)?                                   u:object_r:sysfs_wifi:s0
+
+/sys/devices/soc/soc:fpc_fpc1020(/.*)?                        u:object_r:sysfs_fingerprint:s0
+/data/fpc(/.*)?                                               u:object_r:fingerprint_data_file:s0
+/data/fpc/socket                                              u:object_r:fingerprint_socket:s0
+/sys/devices/soc/0.et320(/.*)?                                u:object_r:sysfs_fingerprint:s0
+/persist/egis(/.*)?                                           u:object_r:fingerprint_data_file:s0
+/data/.fps(/.*)?                                              u:object_r:fingerprint_data_file:s0
+/dev/esfp0                                                    u:object_r:tee_device:s0
+
+# Input devices
+/(vendor|system/vendor)/usr/idc(/.*)?                         u:object_r:idc_file:s0
+/(vendor|system/vendor)/usr/keylayout(/.*)?                   u:object_r:keylayout_file:s0
+
+/(vendor|system/vendor)/bin/wlan_carrier_bin\.sh            u:object_r:init_wifi_exec:s0
+
+/(vendor|system/vendor)/bin/charge_only_mode             u:object_r:charge_only_exec:s0
+
+/(vendor|system/vendor)/bin/capsense_reset              u:object_r:capsense_reset_exec:s0
+
+/(vendor|system/vendor)/bin/init\.oem\.panel\.sh        u:object_r:init-oem-panel-sh_exec:s0
+
+/data/vendor/misc/cutback(/.*)?                         u:object_r:vendor_radio_data_file:s0
