@@ -32,12 +32,13 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
 
 
 ### Current Status
-It starts building the sources, but couldn't complete building yet.
+It starts building the sources, but couldn't complete it yet.
+
+Currently it fails at building hardware/qcom/audio-caf/msm8996/mm-audio.
+First try to simply disable it was not successful.
 
 ### Known Issues
 It doesn't even build yet. :innocent:
-
-At the moment it stops at a build error in kernel sources.
 
 ### Kernel Source
 <https://github.com/chaosmaster/android_kernel_fairphone_sdm632>
@@ -48,6 +49,15 @@ At the moment it stops at a build error in kernel sources.
 device/fairphone/fp3 and the kernel sources to kernel/fairphone/sdm632.
   * I guess this can be done more clean with .repo/local_manifests/roomservice.xml.
   Need to try first. Maybe someone can show me how to do this.
+* Extract proprietary files.
+  * I used stock [firmware dump](https://www.androidfilehost.com/?fid=4349826312261719146) from k4y0z.
+  * Mount system and vendor image and run the script on the folder:
+```sh
+sudo mount -o loop system.img tmp
+sudo mount -o loop vendor.img tmp/vendor
+cd .../lineageos/device/fairphone/fp3
+./extract-files.sh .../tmp
+```
 * Then do
 ```sh
 . build/envsetup.sh
