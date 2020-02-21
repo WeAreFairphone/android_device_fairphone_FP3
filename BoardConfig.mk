@@ -23,7 +23,8 @@ DEVICE_PATH := device/fairphone/fp3
 TARGET_OTA_ASSERT_DEVICE := fp3
 
 # Kernel
-TARGET_KERNEL_CONFIG := fp3_twrp_defconfig
+#TARGET_KERNEL_CONFIG := fp3_twrp_defconfig
+TARGET_KERNEL_CONFIG := fp3_stock_defconfig
 
 # NFC
 BOARD_NFC_CHIPSET := pn553

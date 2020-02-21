@@ -32,16 +32,25 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
 
 
 ### Current Status
-It starts building the sources, but couldn't complete it yet.
+It builds successful. But init scripts etc. definitely needs to be checked.
 
-Currently it fails at building hardware/qcom/audio-caf/msm8996/mm-audio.
-First try to simply disable it was not successful.
+However I'll try to run it as soon as I've created a safe backup :wink:
 
 ### Known Issues
-It doesn't even build yet. :innocent:
+It finally builds but didn't try it on the device yet.
 
 ### Kernel Source
+Based on repository from k4y0z:
 <https://github.com/chaosmaster/android_kernel_fairphone_sdm632>
+
+However I needed to add some qcom specific audio stuff in techpack/audio. Seems
+little bit like this is missing in the sources from FP. Or it's not required.
+Not sure about that yet.
+
+Also I read the kernel config from the stock firmware.
+
+Find my fork here: 
+<https://github.com/mstaz/android_kernel_fairphone_sdm632>
 
 ### How to compile
 * Setup LineageOS build system as described e.g. [here](https://wiki.lineageos.org/devices/river/build).
