@@ -8,11 +8,19 @@ LOCAL_SRC_FILES    := bin/init.class_main.sh
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
 include $(BUILD_PREBUILT)
 
+#include $(CLEAR_VARS)
+#LOCAL_MODULE       := init.mmi.usb.sh
+#LOCAL_MODULE_TAGS  := optional eng
+#LOCAL_MODULE_CLASS := ETC
+#LOCAL_SRC_FILES    := bin/init.mmi.usb.sh
+#LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
+#include $(BUILD_PREBUILT)
+
 include $(CLEAR_VARS)
-LOCAL_MODULE       := init.mmi.usb.sh
+LOCAL_MODULE       := init.fp.camera_detect.sh
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := bin/init.mmi.usb.sh
+LOCAL_SRC_FILES    := bin/init.fp.camera_detect.sh
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
 include $(BUILD_PREBUILT)
 
@@ -57,6 +65,14 @@ LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := init.qcom.usb.sh
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := bin/init.qcom.usb.sh
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.qti.qseecomd.sh
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
@@ -64,45 +80,45 @@ LOCAL_SRC_FILES    := bin/init.qti.qseecomd.sh
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
 include $(BUILD_PREBUILT)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE       := init.hidl.sensor.rc
-LOCAL_MODULE_TAGS  := optional eng
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/init.hidl.sensor.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE       := init.mmi.chipset.rc
-LOCAL_MODULE_TAGS  := optional eng
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/init.mmi.chipset.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE       := init.mmi.overlay.rc
-LOCAL_MODULE_TAGS  := optional eng
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/init.mmi.overlay.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE       := init.mmi.usb.rc
-LOCAL_MODULE_TAGS  := optional eng
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/init.mmi.usb.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE       := init.mmi.rc
-LOCAL_MODULE_TAGS  := optional eng
-LOCAL_MODULE_CLASS := ETC
-LOCAL_SRC_FILES    := etc/init.mmi.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
-include $(BUILD_PREBUILT)
+#include $(CLEAR_VARS)
+#LOCAL_MODULE       := init.hidl.sensor.rc
+#LOCAL_MODULE_TAGS  := optional eng
+#LOCAL_MODULE_CLASS := ETC
+#LOCAL_SRC_FILES    := etc/init.hidl.sensor.rc
+#LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
+#include $(BUILD_PREBUILT)
+#
+#include $(CLEAR_VARS)
+#LOCAL_MODULE       := init.mmi.chipset.rc
+#LOCAL_MODULE_TAGS  := optional eng
+#LOCAL_MODULE_CLASS := ETC
+#LOCAL_SRC_FILES    := etc/init.mmi.chipset.rc
+#LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
+#include $(BUILD_PREBUILT)
+#
+#include $(CLEAR_VARS)
+#LOCAL_MODULE       := init.mmi.overlay.rc
+#LOCAL_MODULE_TAGS  := optional eng
+#LOCAL_MODULE_CLASS := ETC
+#LOCAL_SRC_FILES    := etc/init.mmi.overlay.rc
+#LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
+#include $(BUILD_PREBUILT)
+#
+#include $(CLEAR_VARS)
+#LOCAL_MODULE       := init.mmi.usb.rc
+#LOCAL_MODULE_TAGS  := optional eng
+#LOCAL_MODULE_CLASS := ETC
+#LOCAL_SRC_FILES    := etc/init.mmi.usb.rc
+#LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
+#include $(BUILD_PREBUILT)
+#
+#include $(CLEAR_VARS)
+#LOCAL_MODULE       := init.mmi.rc
+#LOCAL_MODULE_TAGS  := optional eng
+#LOCAL_MODULE_CLASS := ETC
+#LOCAL_SRC_FILES    := etc/init.mmi.rc
+#LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init/hw
+#include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.qcom.rc

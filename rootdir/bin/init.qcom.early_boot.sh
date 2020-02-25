@@ -488,3 +488,32 @@ if [ -f /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies ]; then
     gpu_freq=`cat /sys/class/kgsl/kgsl-3d0/gpu_available_frequencies` 2> /dev/null
     setprop vendor.gpu.available_frequencies "$gpu_freq"
 fi
+#//<2019/12/31-JessicaTseng, 2nd battery info
+# [Fairphone][Charging][JasonHsing][ARFP3-83] Expose battery revision 20190128 BEGIN --
+batinfo=`cat /sys/class/power_supply/bms/resistance_id`
+
+if [[ "$batinfo" -ge 9000 && "$batinfo" -le 11000 ]]; then
+  setprop ro.hardware.battery_info "F3AC - 3060mAh"
+else
+    if [[ "$batinfo" -ge 42500 && "$batinfo" -le 57500 ]]; then
+      setprop ro.hardware.battery_info "F3AC1 - 3000mAh"
+    else
+      setprop ro.hardware.battery_info "Unknown battery"
+    fi 
+fi
+# [Fairphone][Charging][JasonHsing][ARFP3-83] Expose battery revision 20190128 END --
+#//>2019/12/31-JessicaTseng
+
+# [Fairphone][Storage][JasonHsing] Check memory configuration  20190305 BEGIN -
+
+emmc_32g='474436424d42'
+emmchw=`cat /sys/class/mmc_host/mmc0/mmc0:0001/cid`
+emmchw=$(echo $emmchw | cut -c7-18)
+
+if [ $emmchw = $emmc_32g ] ; then
+  setprop ro.boot.memory_config "32GB,3GB"
+else
+  setprop ro.boot.memory_config "64GB,4GB"
+fi
+
+# [Fairphone][Storage][JasonHsing] Check memory configuration  20190305 END -

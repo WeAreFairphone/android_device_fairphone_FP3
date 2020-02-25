@@ -28,10 +28,11 @@
 #
 
 #import init.carrier.rc
-import /vendor/etc/init/hw/init.mmi.rc
-import /vendor/etc/init/hw/init.${ro.boot.device}.rc
+# for arima simtrigger
+import init.arima.simtrigger.rc
 
 on early-init
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_adsp_loader audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_swr audio_platform audio_swr_ctrl audio_hdmi audio_wcd9xxx audio_wcd_core audio_wsa881x_analog audio_wsa881x audio_mbhc audio_stub audio_digital_cdc audio_analog_cdc audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm450 audio_machine_ext_sdm450
     write /proc/sys/kernel/sched_boost 1
     mkdir /firmware 0771 system system
     symlink /data/tombstones /tombstones
@@ -109,7 +110,9 @@ on post-fs-data
     mkdir /mnt/vendor/persist/data/sfs 0700 system system
     mkdir /mnt/vendor/persist/data/tz 0700 system system
     mkdir /data/misc/dts 0770 media audio
+# [Arima_8901][allen_yu] remove improve touch hbtp 20181109 begin
 #    mkdir /data/vendor/hbtp 0750 system system
+# [Arima_8901][allen_yu] 20181109 end
     mkdir /data/vendor/tloc 0700 system drmrpc
 
 
@@ -142,13 +145,6 @@ on property:persist.usb.chgdisabled=1
 
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
-
-# FM
-on property:vendor.hw.fm.init=0
-    write /sys/module/radio_iris_transport/parameters/fmsmd_set 0
-
-on property:vendor.hw.fm.init=1
-    write /sys/module/radio_iris_transport/parameters/fmsmd_set 1
 
 service qrngd /system/bin/qrngd -f
    class main
@@ -218,7 +214,9 @@ on boot
     chown system drmrpc /sys/devices/soc.0/78b7000.i2c/i2c-3/3-0020/input/input0/secure_touch
     chown system drmrpc /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch_enable
     chown system drmrpc /sys/devices/soc.0/78b8000.i2c/i2c-4/4-0020/input/input0/secure_touch
+# [Arima_8901][allen_yu] remove improve touch hbtp 20181109 begin
 #    chown system system /sys/kernel/hbtp/display_pwr
+# [Arima_8901][allen_yu] 20181109 end
 
 # Add a cpuset for the camera daemon
 # We want all cores for camera
@@ -296,11 +294,20 @@ service vendor.imsrcsservice /system/vendor/bin/imsrcsd
 on property:vendor.ims.DATA_DAEMON_STATUS=1
     restart vendor.ims_rtp_daemon
 
+# [Arima_8901][allen_yu] remove improve touch hbtp 20181109 begin
 #service hbtp /system/vendor/bin/hbtp_daemon
 #    class main
 #    user system
 #    group system
 #    disabled
+# [Arima_8901][allen_yu] 20181109 end
+
+service ppd /system/vendor/bin/mm-pp-dpps
+    class late_start
+    disabled
+    user system
+    socket pps stream 0660 system system
+    group system graphics
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
@@ -320,15 +327,23 @@ on property:init.svc.zygote=running
 on property:init.svc.zygote=restarting
     stop ppd
 
+# [Fairphone][Charging][JasonHsing][ARFP3-63] Enable the adb on off-charging mode 20190222 BEGIN --
 on charger
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
     load_all_props
-    setprop sys.usb.configfs 0
-    setprop persist.sys.usb.config mass_storage
+    setprop persist.sys.usb.config mass_storage,adb
     start qcom-post-boot
-    setprop persist.sys.usb.config mass_storage
+    setprop persist.sys.usb.config mass_storage,adb
     start vendor.hvdcp_opti
+    start vendor.power_off_alarm
+# [Fairphone][Charging][JasonHsing][ARFP3-63] Enable the adb on off-charging mode 20190222 END --
+
+on charger && property:ro.boot.usbconfigfs=true
+    setprop sys.usb.configfs 1
+
+on charger && property:ro.boot.usbconfigfs=false
+    setprop sys.usb.configfs 0
 
 service dts_configurator /system/vendor/bin/dts_configurator
     class late_start
@@ -371,6 +386,7 @@ on property:init.svc.vendor.per_mgr=running
 
 on property:sys.shutdown.requested=*
     stop vendor.per_proxy
+    stop vendor.ims_rtp_daemon
 
 service energy-awareness /system/vendor/bin/energy-awareness
     class main

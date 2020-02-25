@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2015, 2017-2018, The Linux Foundation. All rights reserved.
+# Copyright (c) 2012-2015, 2017-2019, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -32,9 +32,6 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # the DIAG device node is not world writable/readable.
 /dev/diag                 0660   system     oem_2901
-/dev/ttydiag0             0660   system     oem_2901
-/dev/ttydiag1             0660   system     oem_2901
-/dev/ttydiag2             0660   system     oem_2901
 
 /dev/genlock              0666   system     system
 /dev/wlan                 0660   wifi       wifi
@@ -58,6 +55,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/dpl_ctrl             0660   usb        usb
 /dev/ipa_odl_ctl          0660   radio      radio
 /dev/ipa_adpl             0660   system     oem_2905
+/dev/hab                  0666   system     system
+/dev/synx_device          0660   root       camera
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -140,6 +139,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/sec_nvm_*            0660   system     system
 /dev/cryptoapp            0660   system     system
 /dev/spdaemon_ssr         0660   system     system
+/dev/cam-hyp-intf*        0660   system     camera
 /dev/gemini0              0660   system     camera
 /dev/jpeg0                0660   system     camera
 /dev/jpeg1                0660   system     camera
@@ -149,6 +149,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/adsprpc-smd-secure   0644   system     system
 /dev/system_health_monitor 0644  radio      system
 /dev/mdss_rotator         0664   system     system
+/dev/cpu_dma_latency      0660   root       system
 
 #QDSS
 /dev/byte-cntr            0660   system    oem_2902
@@ -161,6 +162,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/devices/soc/a000000.qcom,wcnss-wlan/net/wlan0/queues/rx-* rps_cpus           0660   system     system
 /sys/devices/soc/a000000.qcom,wcnss-wlan/net/p2p0/queues/rx-* rps_cpus            0660   system     system
 /dev/spidev0.0            0660   system     audio
+/dev/i2c-7                0660   system     audio
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
 /dev/mercury0             0660   system     camera
@@ -169,6 +171,7 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/msm_vidc_dec_sec     0660   system     audio
 /dev/msm_vidc_enc         0660   system     audio
 /dev/msm_rotator          0660   system     system
+/dev/hw_random            0600   root       root
 /dev/sdsprpc-smd          0660   system     system
 
 #permissions for audio
@@ -322,9 +325,6 @@ firmware_directories /vendor/firmware_mnt/image/
 # Fingerprint device
 /dev/qbt1000              0660   system     system
 
-# I2C
-/dev/i2c-*                0660   system     system
-
 #ImproveTouch device
 /dev/hbtp_input           0660   system     system
 /dev/hbtp_vm              0660   system     system
@@ -337,11 +337,11 @@ firmware_directories /vendor/firmware_mnt/image/
 /dev/block/platform/soc/c0c4000.sdhci/by-name/frp       0600   system     system
 /dev/block/platform/soc/1d84000.ufshc/by-name/frp       0600   system     system
 /dev/block/platform/soc/7c4000.sdhci/by-name/frp        0600   system     system
+/dev/block/platform/soc/4744000.sdhci/by-name/frp       0600   system     system
+/dev/block/platform/soc/4804000.ufshc/by-name/frp       0600   system     system
 
 # This is temporary while using SD card for initial bring-up
 /dev/block/platform/soc/8804000.sdhci/by-name/frp       0600   system     system
-
-/dev/block/platform/soc/*/by-name/frp   0600   system     system
 
 # Kmsg device
 /dev/kmsg                                               0620   root       system
@@ -359,6 +359,11 @@ firmware_directories /vendor/firmware_mnt/image/
 
 # NPU device
 /dev/msm_npu             0644   system     system
+
+# USB role switch
+/sys/class/dual_role_usb/*	data_role	0660	system	system
+/sys/class/dual_role_usb/*	power_role	0660	system	system
+/sys/class/dual_role_usb/*	mode		0660	system	system
 
 #Memory Offline
 /sys/devices/system/memory/memory* state    0660 system system
@@ -396,19 +401,6 @@ firmware_directories /vendor/firmware_mnt/image/
 
 /sys/devices/virtual/hdcp/msm_hdcp  min_level_change 0664    system  graphics
 
-#Egistec fingerprint
-/dev/esfp0                0660   system     system
-
-#DTV
-/dev/isdbt                 0660 oem_5019  oem_5019
-
-# LED class vibrator
-/sys/class/leds/vibrator state        0660    system    system
-/sys/class/leds/vibrator duration     0660    system    system
-/sys/class/leds/vibrator activate     0660    system    system
-/sys/class/leds/vibrator extra        0660    system    system
-/sys/class/leds/vibrator seq          0660    system    system
-
-# Trustonic TEE device
-/dev/mobicore             0600   system     system
-/dev/mobicore-user        0666   system     system
+#QG device
+/dev/qg               0660   system     system
+/dev/qg_battery       0660   system     system
