@@ -34,10 +34,11 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
 ### Current Status
 It builds successful. But init scripts etc. definitely needs to be checked.
 
-However I'll try to run it as soon as I've created a safe backup :wink:
+Device boots and adb can be accessed. However after some time it automatically
+reboots.
 
 ### Known Issues
-It finally builds but didn't try it on the device yet.
+It finally builds and runs to access adb. Nothing else is working.
 
 ### Kernel Source
 Based on repository from k4y0z:
@@ -51,6 +52,7 @@ Also I read the kernel config from the stock firmware.
 
 Find my fork here: 
 <https://github.com/mstaz/android_kernel_fairphone_sdm632>
+
 
 ### How to compile
 * Setup LineageOS build system as described e.g. [here](https://wiki.lineageos.org/devices/river/build).
@@ -72,3 +74,38 @@ cd .../lineageos/device/fairphone/fp3
 . build/envsetup.sh
 brunch fp3 eng
 ```
+
+### How to flash
+First both slots need to have success state. See [HOW TO](https://forum.fairphone.com/t/how-to-flash-a-custom-rom-on-fp3-with-gsi/57074)
+for flashing GSI images for that.
+
+Flashing the package with TWRP seems to cause some problems yet.
+
+So far I flash the images with fastboot. system.img is not copied to output root
+folder so I take it from the packaging subfolder.
+```sh
+fastboot flash system out/target/product/fp3/obj/PACKAGING/target_files_intermediates/lineage_fp3-target_files-eng.ms/IMAGES/system.img
+fastboot flash vendor out/target/product/fp3/vendor.img
+fastboot flash boot out/target/product/fp3/boot.img
+```
+
+Boot into TWRP and disable verity:
+```sh
+adb disable-verity
+```
+
+Unfortunately sometimes for some reason [AVB](https://android.googlesource.com/platform/external/avb/)
+immediately switches back to the other slot and prevents it from booting. Booting any image (even TWRP)
+failes with following message:
+```sh
+Downloading 'boot.img'
+OKAY [  1.006s]
+booting
+FAILED (status read failed (No such device))
+Finished. Total time: 7.387s
+```
+Slot is switched to the other one then. Maybe it's connected to rollback protection.
+However I'm not sure yet how this can be solved. Sometimes re-flashing vbmeta
+images worked. Sometimes I needed to completely flash stock back to both slots
+and get them successfully booted first. Sometimes even that doesn't work
+immediately.
