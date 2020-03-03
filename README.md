@@ -13,7 +13,7 @@ Internal Storage | 64GB
 microSD | Up to 400GB (dedicated slot)
 Battery | 3000 mAh
 Dimensions | 158 x 71.8 x 9.89 mm
-Display | 2270 x 1080 pixels, 5.65-inch IPS LCD
+Display | 2160 x 1080 pixels, 5.65-inch IPS LCD
 Rear Camera  | 12 MP (f/1.8, 1/2.55", PDAF)
 Front Camera | 8 MP (f/2.0, 1/4", HDR)
 

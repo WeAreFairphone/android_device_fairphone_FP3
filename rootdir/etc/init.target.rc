@@ -72,8 +72,8 @@ on fs
 
     #write /sys/kernel/boot_adsp/boot 1
 
-    #wait /dev/block/bootdevice/by-name/oem
-    #mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
+    wait /dev/block/bootdevice/by-name/oem
+    mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
 
 on late-fs
     # Start services for bootanim
