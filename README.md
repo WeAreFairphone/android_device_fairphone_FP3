@@ -55,13 +55,26 @@ Find my fork here:
 
 
 ### How to compile
-* Setup LineageOS build system as described e.g. [here](https://wiki.lineageos.org/devices/river/build).
-* Instead of "Prepare the device-specific code" clone this repo to
-device/fairphone/fp3 and the kernel sources to kernel/fairphone/sdm632.
-  * I guess this can be done more clean with .repo/local_manifests/roomservice.xml.
-  Need to try first. Maybe someone can show me how to do this.
+* Follow the first steps for setting up the LineageOS build system as described e.g. [here](https://wiki.lineageos.org/devices/river/build).
+* Before downloading the source code using repo sync, create a local manifest file in the
+top of the source tree using
+```sh
+mkdir -p .../lineageos/.repo/local_manifests
+cat <<EOF > .../lineageos/.repo/local_manifests/roomservice.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="mstaz/android_device_fairphone_fp3" revision="refs/heads/master" path="device/fairphone/fp3" />
+  <project name="mstaz/android_kernel_fairphone_sdm632" path="kernel/fairphone/sdm632" remote="github" />
+  <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
+  <project name="LineageOS/android_external_bson" path="external/bson" remote="github" />
+  <project name="LineageOS/android_system_qcom" path="system/qcom" remote="github" />
+</manifest>
+EOF
+```
+This is a temporary hack while we are working outside of the LineageOS repositories.
+* Do `repo sync -c` to download all needed project repositories.
 * Extract proprietary files.
-  * I used stock [firmware dump](https://www.androidfilehost.com/?fid=4349826312261719146) from k4y0z.
+  * I used stock 110 release [firmware dump](https://androidfilehost.com/?fid=4349826312261714249) from k4y0z.
   * Mount system and vendor image and run the script on the folder:
 ```sh
 sudo mount -o loop system.img tmp
