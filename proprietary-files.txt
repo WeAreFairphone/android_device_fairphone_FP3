@@ -9,11 +9,9 @@ vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 
-# AptX
-#lib64/libaptX_encoder.so
-#lib64/libaptXHD_encoder.so
-
 # Audio
+vendor/lib/libtinycompress_vendor.so
+vendor/lib64/libtinycompress_vendor.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -28,6 +26,16 @@ vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
+vendor/lib/hw/audio.r_submix.default.so
+vendor/lib/hw/audio.primary.default.so
+vendor/lib/hw/audio.primary.msm8953.so
+vendor/lib/hw/audio.usb.default.so
+vendor/lib64/hw/audio.r_submix.default.so
+vendor/lib64/hw/audio.primary.default.so
+vendor/lib64/hw/audio.primary.msm8953.so
+vendor/lib64/hw/audio.usb.default.so
+vendor/lib/libaudio_log_utils.so
+vendor/lib64/libaudio_log_utils.so
 
 # Audio ACDB
 vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
@@ -114,6 +122,14 @@ vendor/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib/com.qualcomm.qti.ant@1.0.so
 
 # Camera
+vendor/lib/hw/android.hardware.camera.provider@2.4-impl.so
+vendor/etc/init/android.hardware.camera.provider@2.4-service.rc
+vendor/etc/permissions/android.hardware.camera.raw.xml
+vendor/etc/permissions/android.hardware.camera.front.xml
+vendor/etc/permissions/android.hardware.camera.full.xml
+vendor/etc/permissions/android.hardware.camera.flash-autofocus.xml
+vendor/bin/hw/android.hardware.camera.provider@2.4-service
+vendor/lib64/hw/android.hardware.camera.provider@2.4-impl.so
 vendor/lib/hw/camera.msm8953.so
 vendor/lib/libhal_dbg.so
 vendor/lib/libmpbase.so
@@ -124,7 +140,6 @@ vendor/lib/libarcsoft_hdr_detection.so
 vendor/lib/libarcsoft_singlecam_bokeh.so
 vendor/lib/libarcsoft_object_tracking.so
 vendor/lib/libarcsoft_high_dynamic_range.so
-
 vendor/lib/libactuator_ad5816g.so
 vendor/lib/libactuator_ad5823.so
 vendor/lib/libactuator_ak7345.so
@@ -1726,10 +1741,8 @@ vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 vendor/lib/mediadrm/libwvdrmengine.so
-#vendor/lib/liboemcrypto.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/mediadrm/libwvdrmengine.so
-#vendor/lib64/liboemcrypto.so
 vendor/lib64/libhdcpsrm.so
 vendor/lib64/libcpion.so
 
@@ -1873,8 +1886,30 @@ vendor/lib64/vendor.qti.gnss@2.0.so
 vendor/lib64/vendor.qti.gnss@2.1.so
 
 # Graphics
+vendor/lib/hw/android.hardware.graphics.composer@2.1-impl.so
+vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc
+vendor/bin/hw/android.hardware.graphics.composer@2.1-service
+vendor/lib64/hw/android.hardware.graphics.composer@2.1-impl.so
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/lib/vendor.display.config@1.0.so
+vendor/lib/vendor.display.config@1.1.so
+vendor/lib64/vendor.display.config@1.2.so
+vendor/lib64/vendor.display.config@1.3.so
+vendor/lib64/vendor.display.config@1.4.so
+vendor/lib64/vendor.display.config@1.5.so
+vendor/lib64/vendor.display.config@1.6.so
+vendor/lib64/vendor.display.config@1.7.so
+vendor/lib/vendor.display.color@1.0.so
+vendor/lib64/vendor.display.color@1.0.so
+vendor/lib/vendor.display.color@1.1.so
+vendor/lib64/vendor.display.color@1.1.so
+vendor/lib/vendor.display.color@1.2.so
+vendor/lib64/vendor.display.color@1.2.so
+vendor/lib/vendor.display.color@1.3.so
+vendor/lib64/vendor.display.color@1.3.so
+vendor/lib/vendor.display.postproc@1.0.so
+vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -1895,9 +1930,6 @@ vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsdedrm.so
-vendor/lib/vendor.display.color@1.0.so
-vendor/lib/vendor.display.color@1.1.so
-vendor/lib/vendor.display.postproc@1.0.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
@@ -2073,9 +2105,14 @@ vendor/firmware/leia_pm4_470.fw
 #etc/permissions/com.motorola.moto-uirefresh.xml:vendor/etc/permissions/com.motorola.moto-uirefresh.xml
 #etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
 #etc/permissions/com.motorola.camera2.denali.xml:vendor/etc/permissions/com.motorola.camera2.denali.xml
+vendor/lib/libstagefrighthw.so
+vendor/lib/vndk/libstagefright_omx.so
+vendor/lib/vndk/libstagefright_foundation.so
+vendor/lib/libstagefright_soft_qtiflacdec.so
+vendor/lib64/libstagefrighthw.so
+vendor/lib64/libstagefright_soft_qtiflacdec.so
 
 # Offmode charging
-#vendor/bin/charge_only_mode
 vendor/bin/hvdcp_opti
 
 # Perf
@@ -2166,7 +2203,6 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libquipc_os_api.so
 
 # Radio
-#-vendor/app/datastatusnotification/datastatusnotification.apk|f73d163acf4a9748e27a666fabb382d341150e8e
 -app/QtiTelephonyService/QtiTelephonyService.apk:vendor/app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
@@ -2260,9 +2296,6 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim@1.1.so
 vendor/radio/qcril_database/qcril.db
-#vendor/radio/qcril_database/upgrade/3_version_qcrildb.sql
-#vendor/radio/qcril_database/upgrade/4_version_qcrildb.sql
-#vendor/radio/qcril_database/upgrade/5_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/0_initial.sql
 vendor/radio/qcril_database/upgrade/1_version_intro.sql
 vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
@@ -2274,9 +2307,6 @@ vendor/lib/libqrtr.so
 vendor/lib64/libqrtr.so
 vendor/lib/qcrild_librilutils.so
 vendor/lib64/qcrild_librilutils.so
-#vendor/lib64/libadropbox.so
-#vendor/lib/libicuuc_vendor.so
-#vendor/lib64/libicuuc_vendor.so
 
 # Radio - IMS
 -priv-app/ims/ims.apk|b664bb413e88dbe88f49f400260f288306fc9e23
@@ -2356,32 +2386,25 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 
 # MOTO RIL
-#vendor/bin/qmi_motext_hook
-#vendor/lib64/libmotext_inf.so
-#vendor/lib/libmotext_inf.so
-#vendor/lib/libmdmcutback.so
-#vendor/lib64/libmdmcutback.so
-#vendor/lib/libqmimotext.so
-#vendor/lib64/libqmimotext.so
 vendor/lib64/libsensorndkbridge.so
 vendor/lib/libsensorndkbridge.so
 
 # Sensors
-#vendor/bin/capsense_reset
+vendor/etc/sensors/hals.conf
+vendor/etc/sensors/sensor_def_qcomdev.conf
+vendor/lib/hw/sensors.msm8953_64.so
+vendor/lib64/hw/sensors.msm8953_64.so
+vendor/bin/init.qcom.sensors.sh
 vendor/bin/sensors.qti
 vendor/lib/hw/activity_recognition.msm8953.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor1.so
 vendor/lib/sensor_calibrate.so
-#vendor/lib/sensors.hal.tof.so
-#vendor/lib/sensors.rp.so
 vendor/lib/sensors.ssc.so
 vendor/lib64/hw/activity_recognition.msm8953.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so
 vendor/lib64/sensor_calibrate.so
-#vendor/lib64/sensors.hal.tof.so
-#vendor/lib64/sensors.rp.so
 vendor/lib64/sensors.ssc.so
 
 vendor/lib/hw/android.hardware.sensors@1.0-impl.so
@@ -2407,6 +2430,13 @@ vendor/etc/sound_trigger_mixer_paths.xml
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
+vendor/lib/hw/android.hardware.thermal@1.0-impl.so
+vendor/lib64/hw/android.hardware.thermal@1.0-impl.so
+vendor/lib/hw/thermal.msm8953.so
+vendor/lib64/hw/thermal.msm8953.so
+vendor/etc/thermal-engine.conf
+vendor/etc/init/android.hardware.thermal@1.0-service.rc
+vendor/bin/hw/android.hardware.thermal@1.0-service
 
 # Time services
 -vendor/app/TimeService/TimeService.apk
@@ -2455,7 +2485,6 @@ lib/libwfdnative.so|66774d0946ab2694e5bc09a089869608cd9c43d1
 lib/libwfdrtsp.so|35d56a25e9fe0ec7756c8b10183491c00cfb5879
 lib/libwfdservice.so|55459dbfe15058871070f9c47a95f1c69c25c468
 lib/libwfdsm.so|23382672f5b9be1e816dc0213a39bf9da7a111b4
-#lib/libwfdtalsa.so|2d574765e2f7756838168e3bf4ef650835da5624
 lib/libwfduibcinterface.so|85faeea87b41e321de9a6fc0c4106978abf2ca92
 lib/libwfduibcsinkinterface.so|cb623b0cc9e84adc6315a45d7c3315be62b617e7
 lib/libwfduibcsink.so|2573a8b30d8c774d415ddfa788d4a5b8b12f4c1b
