@@ -32,23 +32,22 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
 
 
 ### Current Status
-It builds successful. But init scripts etc. definitely needs to be checked.
-
-Device boots and adb can be accessed. However after some time it automatically
-reboots.
+* It builds successfully. :heavy_check_mark:
+* Device boots and adb can be accessed. :heavy_check_mark:
+* Bootanimation is shown. :heavy_check_mark:
+* Unfortunately it automatically reboots at "2nd Boot check". :x:
 
 ### Known Issues
-It finally builds and runs to access adb. Nothing else is working.
+Device doesn't boot completely yet. This may be caused by sound config and
+service which doesn't init correctly.
 
 ### Kernel Source
 Based on repository from k4y0z:
 <https://github.com/chaosmaster/android_kernel_fairphone_sdm632>
 
-However I needed to add some qcom specific audio stuff in techpack/audio. Seems
-little bit like this is missing in the sources from FP. Or it's not required.
-Not sure about that yet.
+Added the qcom specific audio-kernel stuff in techpack/audio.
 
-Also I read the kernel config from the stock firmware.
+Also I read the kernel config from the stock firmware as base.
 
 Find my fork here: 
 <https://github.com/mstaz/android_kernel_fairphone_sdm632>
@@ -75,6 +74,15 @@ This is a temporary hack while we are working outside of the LineageOS repositor
 * Do `repo sync -c` to download all needed project repositories.
 * Extract proprietary files.
   * I used stock 110 release [firmware dump](https://androidfilehost.com/?fid=4349826312261714249) from k4y0z.
+  * The files are compressed with brotli.
+    * Install it if necessary, e.g. with `sudo apt-get install brotli`
+    * Extract *.br files with: `brotli -d *.br`
+    * The *.dat files then need to be converted to *.img files with sdat2img tool which comes with LOS.
+```sh
+vendor/lineage/build/tools/sdat2img.py system.transfer.list system.new.dat system.img
+vendor/lineage/build/tools/sdat2img.py vendor.transfer.list vendor.new.dat vendor.img
+vendor/lineage/build/tools/sdat2img.py product.transfer.list product.new.dat product.img
+```
   * Mount system and vendor image and run the script on the folder:
 ```sh
 sudo mount -o loop system.img tmp
@@ -100,6 +108,7 @@ folder so I take it from the packaging subfolder.
 fastboot flash system out/target/product/fp3/obj/PACKAGING/target_files_intermediates/lineage_fp3-target_files-eng.ms/IMAGES/system.img
 fastboot flash vendor out/target/product/fp3/vendor.img
 fastboot flash boot out/target/product/fp3/boot.img
+fastboot flash dtbo out/target/product/fp3/dtbo.img
 ```
 
 Boot into TWRP and disable verity:
