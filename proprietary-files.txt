@@ -29,6 +29,36 @@ vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
 
+# Audio ACDB
+vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
+vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Headset_cal.acdb
+vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_General_cal.acdb
+vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
+vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Global_cal.acdb
+vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Speaker_cal.acdb
+vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Hdmi_cal.acdb
+vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Handset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Bluetooth_cal.acdb
+vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Speaker_cal.acdb
+vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Hdmi_cal.acdb
+vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Handset_cal.acdb
+vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Global_cal.acdb
+vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Headset_cal.acdb
+vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_General_cal.acdb
+vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
+
 # Audio Firmware
 vendor/firmware/aw8898_cfg.bin
 
@@ -88,6 +118,12 @@ vendor/lib/hw/camera.msm8953.so
 vendor/lib/libhal_dbg.so
 vendor/lib/libmpbase.so
 vendor/lib/libarcsoft_low_light_hdr.so
+vendor/lib/libarcsoft_low_light_shot.so
+vendor/lib/libarcsoft_videostabs.so
+vendor/lib/libarcsoft_hdr_detection.so
+vendor/lib/libarcsoft_singlecam_bokeh.so
+vendor/lib/libarcsoft_object_tracking.so
+vendor/lib/libarcsoft_high_dynamic_range.so
 
 vendor/lib/libactuator_ad5816g.so
 vendor/lib/libactuator_ad5823.so
@@ -1713,6 +1749,14 @@ vendor/lib64/libSecureUILib.so
 vendor/lib64/libssd.so
 vendor/lib/libsecureui.so
 vendor/lib64/libsecureui.so
+vendor/lib/libStDrvInt.so
+vendor/lib64/libStDrvInt.so
+vendor/lib/libsecureui_svcsock.so
+vendor/lib64/libsecureui_svcsock.so
+#vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
+#vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
+#vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
+#vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # DSP
 vendor/lib/libsdsprpc.so
@@ -1877,6 +1921,35 @@ vendor/lib64/libsdedrm.so
 vendor/lib64/vendor.display.color@1.0.so
 vendor/lib64/vendor.display.color@1.1.so
 vendor/lib64/vendor.display.postproc@1.0.so
+#vendor/lib/vendor.display.config@1.0.so
+#vendor/lib/vendor.display.color@1.2.so
+#vendor/lib/vendor.display.color@1.3.so
+#vendor/lib/vendor.display.config@1.1.so
+#vendor/lib64/vendor.display.config@1.5.so
+#vendor/lib64/vendor.display.config@1.0.so
+#vendor/lib64/vendor.display.config@1.2.so
+#vendor/lib64/vendor.display.color@1.2.so
+#vendor/lib64/vendor.display.config@1.4.so
+#vendor/lib64/vendor.display.config@1.6.so
+#vendor/lib64/vendor.display.config@1.7.so
+#vendor/lib64/vendor.display.color@1.3.so
+#vendor/lib64/vendor.display.config@1.1.so
+#vendor/lib64/vendor.display.postproc@1.0.so
+#vendor/lib64/vendor.display.config@1.3.so
+
+#vendor/lib/hw/android.hardware.graphics.composer@2.1-impl.so
+#vendor/lib/hw/hwcomposer.msm8953.so
+#vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc
+#vendor/bin/hw/android.hardware.graphics.composer@2.1-service
+#vendor/lib64/hw/android.hardware.graphics.composer@2.1-impl.so
+#vendor/lib64/hw/hwcomposer.msm8953.so
+
+#vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+#vendor/lib/libqdutils.so
+#vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
+#vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
+#vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+#vendor/lib64/libqdutils.so
 
 # Graphics - HDR
 vendor/lib/libhdr_tm.so
@@ -1895,6 +1968,8 @@ vendor/lib64/libsdm-diag.so|7ab5d2a980029ac9bd20fe68656823b21e483e11
 -vendor/lib64/libsdm-disp-vndapis.so|6ae24866bbd413ed112778650c8fd7a2631cb1a9
 vendor/lib64/libsdmextension.so|e91aaf852df780e42bb083c3089f5b42c87c49f7
 vendor/lib64/libtinyxml2_1.so|b743b93bbb47bb2d80322fcfb985b7b8c696fa1b
+
+#vendor/bin/mm-pp-dpps
 
 # Graphics - Firmwares
 vendor/firmware/a225_pfp.fw
@@ -1990,6 +2065,10 @@ vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libvpplibrary.so
 
+# Misc Firmware
+vendor/firmware/leia_pfp_470.fw
+vendor/firmware/leia_pm4_470.fw
+
 # Moto Permissions
 #etc/permissions/com.motorola.moto-uirefresh.xml:vendor/etc/permissions/com.motorola.moto-uirefresh.xml
 #etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
@@ -2046,6 +2125,7 @@ vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
 # Postprocessing
+vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
 
 # QMI
@@ -2308,9 +2388,20 @@ vendor/lib/hw/android.hardware.sensors@1.0-impl.so
 vendor/etc/init/android.hardware.sensors@1.0-service.rc
 vendor/bin/hw/android.hardware.sensors@1.0-service
 vendor/lib64/hw/android.hardware.sensors@1.0-impl.so
+#vendor/lib/hw/sensors.msm8953_64.so
+#vendor/lib64/hw/sensors.msm8953_64.so
 
 # Sound Trigger
 vendor/lib/hw/sound_trigger.primary.msm8953.so
+vendor/lib64/hw/sound_trigger.primary.msm8953.so
+vendor/lib/libsmwrapper.so
+#vendor/lib/hw/android.hardware.soundtrigger@2.1-impl.so
+
+vendor/etc/sound_trigger_mixer_paths_wcd9335.xml
+vendor/etc/sound_trigger_mixer_paths_wcd9306.xml
+vendor/etc/sound_trigger_mixer_paths_wcd9330.xml
+vendor/etc/sound_trigger_platform_info.xml
+vendor/etc/sound_trigger_mixer_paths.xml
 
 # Thermal
 vendor/bin/thermal-engine
