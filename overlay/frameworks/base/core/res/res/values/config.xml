@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2014, The Linux Foundation. All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are
+    met:
+        * Redistributions of source code must retain the above copyright
+          notice, this list of conditions and the following disclaimer.
+        * Redistributions in binary form must reproduce the above
+          copyright notice, this list of conditions and the following
+          disclaimer in the documentation and/or other materials provided
+          with the distribution.
+        * Neither the name of The Linux Foundation nor the names of its
+          contributors may be used to endorse or promote products derived
+          from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+    ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+    BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+    BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+    WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+    OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE
+-->
+
+<resources>
+   <!-- Indicate whether to allow the device to suspend when the screen is off
+   due to the proximity sensor.  This resource should only be set to true
+   if the sensor HAL correctly handles the proximity sensor as a wake-up source.
+   Otherwise, the device may fail to wake out of suspend reliably.
+   The default is false. -->
+   <!-- TODO -->
+   <bool name="config_suspendWhenScreenOffDueToProximity">false</bool>
+
+   <!-- Should the device show AM/PM in unlock screen -->
+  <!-- <bool name="config_show_ampm_in_unlock_screen">true</bool> -->
+
+   <!-- List of regexpressions describing the interface (if any) that represent tetherable
+          Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
+          should be empty.  An example would be "softap.*" -->
+   <string-array translatable="false" name="config_tether_wifi_regexs">
+       <item>"wigig0"</item>
+       <item>"wlan0"</item>
+   </string-array>
+
+   <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
+        autodetected from the Configuration. -->
+   <bool name="config_showNavigationBar">true</bool>
+
+   <!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
+   <bool translatable="false" name="config_wifi_softap_acs_supported">false</bool>
+
+   <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
+   <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">false</bool>
+
+
+</resources>
