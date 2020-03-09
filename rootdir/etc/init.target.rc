@@ -32,7 +32,7 @@
 import init.arima.simtrigger.rc
 
 on early-init
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_adsp_loader audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_swr audio_platform audio_swr_ctrl audio_hdmi audio_wcd9xxx audio_wcd_core audio_wsa881x_analog audio_wsa881x audio_mbhc audio_stub audio_digital_cdc audio_analog_cdc audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm450 audio_machine_ext_sdm450
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules apr_dlkm adsp_loader_dlkm q6_notifier_dlkm q6_dlkm usf_dlkm native_dlkm pinctrl_wcd_dlkm swr_dlkm platform_dlkm swr_ctrl_dlkm hdmi_dlkm wcd9xxx_dlkm wcd_core_dlkm wsa881x_analog_dlkm wsa881x_dlkm mbhc_dlkm stub_dlkm digital_cdc_dlkm analog_cdc_dlkm wcd_cpe_dlkm cpe_lsm_dlkm wcd9335_dlkm machine_sdm450_dlkm machine_ext_sdm450_dlkm
     write /proc/sys/kernel/sched_boost 1
     mkdir /firmware 0771 system system
     symlink /data/tombstones /tombstones

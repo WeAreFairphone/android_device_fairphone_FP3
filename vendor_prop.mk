@@ -6,43 +6,39 @@
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
     audio.deep_buffer.media=true \
-    audio.offload.disable=false \
-    audio.offload.video=false \
-    persist.audio.dualmic.config=endfire \
-    persist.vendor.audio.fluence.audiorec=false \
-    persist.vendor.audio.fluence.speaker=false \
-    persist.vendor.audio.fluence.voicecall=false \
-    persist.vendor.audio.fluence.voicecomm=false \
+    audio.offload.min.duration.secs=30 \
+    audio.offload.video=true \
+    persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
+    persist.vendor.audio.fluence.speaker=true \
     persist.vendor.audio.hw.binder.size_kbyte=1024 \
-    persist.vendor.audio.ras.enabled=false \
+    persist.vendor.audio.speaker.prot.enable=false \
+    ro.af.client_heap_size_kbyte=7168 \
+    ro.vendor.audio.sdk.fluencetype=fluence \
     ro.vendor.audio.sdk.ssr=false \
-    ro.vendor.audio.sdk.fluencetype=none \
-    ro.qc.sdk.audio.fluencetype=none \
-    ro.qc.sdk.audio.ssr=false \
-    vendor.audio_hal.period_size=240 \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.flac.sw.decoder.24bit=true \
     vendor.audio.hw.aac.encoder=true \
-    vendor.audio.noisy.broadcast.delay=600 \
     vendor.audio.offload.buffer.size.kb=64 \
-    vendor.audio.offload.gapless.enabled=false \
+    vendor.audio.offload.track.enable=true \
     vendor.audio.offload.multiaac.enable=true \
     vendor.audio.offload.multiple.enabled=false \
     vendor.audio.offload.passthrough=false \
-    vendor.audio.offload.pcm.16bit.enable=false \
-    vendor.audio.offload.pcm.24bit.enable=false \
-    vendor.audio.offload.pstimeout.secs=3 \
-    vendor.audio.offload.track.enable=true \
+    vendor.audio.offload.gapless.enabled=true \
     vendor.audio.parser.ip.buffer.size=262144 \
+    vendor.audio.playback.mch.downsample=true \
+    vendor.audio.pp.asphere.enabled=false \
     vendor.audio.safx.pbe.enabled=true \
     vendor.audio.tunnel.encode=false \
     vendor.audio.use.sw.alac.decoder=true \
     vendor.audio.use.sw.ape.decoder=true \
-    vendor.fm.a2dp.conc.disabled=true \
+    vendor.audio_hal.period_size=192 \
+    vendor.voice.conc.fallbackpath=deep-buffer \
     vendor.voice.path.for.pcm.voip=true \
-    vendor.audio.offload.min.duration.secs=60
+    vendor.voice.playback.conc.disabled=true \
+    vendor.voice.record.conc.disabled=false \
+    vendor.voice.voip.conc.disabled=true
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -55,20 +51,60 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.preview.ubwc=0 \
     vendor.video.disable.ubwc=1
 
-# Color Mode
+# Display
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.vulkan=adreno \
+    ro.hardware.egl=adreno \
+    ro.opengles.version=196610
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.enable_hwc_vds=1 \
+    debug.sf.hw=0 \
+    debug.sf.latch_unsignaled=1 \
+    debug.egl.hw=0 \
+    persist.hwc.mdpcomp.enable=true \
+    debug.mdpcomp.logs=0 \
+    dalvik.vm.heapsize=36m \
+    dev.pm.dyn_samplingrate=1 \
+    persist.demo.hdmirotationlock=false \
+    debug.enable.sglscale=1 \
+    debug.gralloc.enable_fb_ubwc=1 \
+    debug.sf.recomputecrop=0 \
+    drm.service.enabled=true
+
+#Disable Skip Validate
+PRODUCT_PROPERTY_OVERRIDES += \
+    sdm.debug.disable_skip_validate=1
+
+#Property to enable display default color mode
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.enable_default_color_mode=1
 
-# Display
+# Display Properties as per treble compliance
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.hwc_set_default_colormode=true \
-    debug.sf.enable_hwc_vds=1 \
-    debug.sf.hw=1 \
-    debug.sf.latch_unsignaled=1 \
     vendor.gralloc.enable_fb_ubwc=1 \
-    dev.pm.dyn_samplingrate=1 \
-    ro.opengles.version=196610 \
-    ro.qualcomm.cabl=0
+    vendor.display.disable_skip_validate=1
+
+#ro.hdmi.enable=true
+#
+# system props for the cne module
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.cne.feature=1
+
+# System property for cabl
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qualcomm.cabl=2 \
+    ro.vendor.display.cabl=2
+
+#property to enable user to access Google WFD settings
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.debug.wfd.enable=1
+
+#property to enable VDS WFD solution
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.hwc.enable_vds=1
 
 # Factory reset partition
 PRODUCT_PROPERTY_OVERRIDES += \

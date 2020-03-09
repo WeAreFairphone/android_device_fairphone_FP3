@@ -50,7 +50,7 @@ if [ -f /sys/class/drm/card0-DSI-1/modes ]; then
     echo "detect" > /sys/class/drm/card0-DSI-1/status
     mode_file=/sys/class/drm/card0-DSI-1/modes
     while read line; do
-        fb_width=${line%x*};
+        fb_width=${line%%x*};
         break;
     done < $mode_file
 elif [ -f /sys/class/graphics/fb0/virtual_size ]; then
@@ -129,11 +129,15 @@ case "$target" in
             365|366)
                 sku_ver=`cat /sys/devices/platform/soc/aa00000.qcom,vidc1/sku_version` 2> /dev/null
                 if [ $sku_ver -eq 1 ]; then
-                    setprop vendor.media.sm7150.version 1
+                    setprop vendor.media.sdmmagpie.version 1
                 fi
                 ;;
             355)
                 setprop vendor.media.sm6150.version 1
+                setprop vendor.chre.enabled 0
+                ;;
+            369|377|384)
+                setprop vendor.chre.enabled 0
                 ;;
             *)
         esac
@@ -438,6 +442,21 @@ case "$product" in
          echo 1612800000 > /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/max_freq
          echo 864000000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/min_freq
          echo 1612800000 > /sys/class/devfreq/soc:qcom,cpu4-cpu-l3-lat/max_freq
+         ;;
+        *)
+        ;;
+esac
+case "$product" in
+        "sm6150_au")
+         setprop vendor.display.lcd_density 160
+         ;;
+        *)
+        ;;
+esac
+
+case "$product" in
+        "sdmshrike_au")
+         setprop vendor.display.lcd_density 160
          ;;
         *)
         ;;
