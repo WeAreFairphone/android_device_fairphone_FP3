@@ -1049,3 +1049,11 @@ vendor/bin/time_daemon
 # vendor/lib/libwfdmodulehdcpsession.so|ee1609c30970faca5cc081f3a7282f7334963db3
 # vendor/lib64/libmmosal_proprietary.so|4d8519a7f796dcc3e299596255f69e1d9681f4b5
 # vendor/lib64/libwfdhdcpcp.so|3cdb7bdfa137c1dd1e871e116145dd4ffafbaedc
+
+
+# Add Arima ftm daemon and adb enable command start 
+vendor/bin/ArimaFtmDaemon
+
+# This is in charge of setting the subsystem restart values at:
+# /sys/bus/msm_subsys/devices/subsys*/restart_level
+vendor/bin/ssr_setup

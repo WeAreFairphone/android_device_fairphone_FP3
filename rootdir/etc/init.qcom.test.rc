@@ -1,0 +1,127 @@
+# Copyright (c) 2016, 2018-2019, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of The Linux Foundation nor
+#       the names of its contributors may be used to endorse or promote
+#       products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+# this will make sure you have /data ready and then you try to create the dir.
+on post-fs-data
+    # Create directory for Graphics applications
+    mkdir /data/vendor/gpu 0777 system system
+    # Create directory for SCVE applications
+    mkdir /data/vendor/scve 0777 system system
+
+# Coresight early boot service
+service cs-early-boot /vendor/bin/sh /mnt/vendor/persist/coresight/qdss.agent.sh early-boot /vendor/bin/init.qcom.debug.sh
+    class core
+    user root
+    oneshot
+    seclabel u:r:qti-testscripts:s0
+
+# Coresight post boot servive
+service cs-post-boot /vendor/bin/sh /mnt/vendor/persist/coresight/qdss.agent.sh post-boot /vendor/bin/init.qcom.debug.sh
+    user root
+    disabled
+    oneshot
+    seclabel u:r:qti-testscripts:s0
+
+on property:sys.boot_completed=1
+    start cs-post-boot
+
+on property:sys.vendor.dbg.coresight.enable=1
+    write /mnt/vendor/persist/coresight/enable 1
+
+on property:sys.vendor.dbg.coresight.enable=0
+    write /mnt/vendor/persist/coresight/enable 0
+
+service DiagDaemon /system/vendor/bin/diag_socket_log -f /sdcard/ipaddress.txt
+    class late_start
+    oneshot
+    disabled
+    user root
+    group root system log diag net_raw
+
+on property:vendor.notify_after_powerup.subsys=modem
+    start vendor.modem_qdss_script
+
+service vendor.modem_qdss_script /vendor/bin/sh /mnt/vendor/persist/coresight/modem_qdss_reconfigure.sh
+    user root
+    oneshot
+    disabled
+    seclabel u:r:qti-testscripts:s0
+
+on property:vendor.notify_after_powerup.subsys=adsp
+    start vendor.adsp_qdss_script
+
+service vendor.adsp_qdss_script /vendor/bin/sh /mnt/vendor/persist/coresight/adsp_qdss_reconfigure.sh
+    user root
+    oneshot
+    disabled
+    seclabel u:r:qti-testscripts:s0
+
+on property:vendor.notify_after_powerup.subsys=cdsp
+    start vendor.cdsp_qdss_script
+
+service vendor.cdsp_qdss_script /vendor/bin/sh /mnt/vendor/persist/coresight/cdsp_qdss_reconfigure.sh
+    user root
+    oneshot
+    disabled
+    seclabel u:r:qti-testscripts:s0
+
+on property:vendor.notify_after_powerup.subsys=npu
+    start vendor.npu_qdss_script
+
+service vendor.npu_qdss_script /vendor/bin/sh /mnt/vendor/persist/coresight/npu_qdss_reconfigure.sh
+    user root
+    oneshot
+    disabled
+    seclabel u:r:qti-testscripts:s0
+
+on property:vendor.notify_after_powerup.subsys=wcnss
+    start vendor.wcnss_qdss_script
+
+service vendor.wcnss_qdss_script /vendor/bin/sh /mnt/vendor/persist/coresight/wcn_qdss_reconfigure.sh
+    user root
+    oneshot
+    disabled
+    seclabel u:r:qti-testscripts:s0
+
+on property:vendor.notify_after_powerup.subsys=slpi
+    start vendor.sensor_qdss_script
+
+service vendor.sensor_qdss_script /vendor/bin/sh /mnt/vendor/persist/coresight/sensor_qdss_reconfigure.sh
+    user root
+    oneshot
+    disabled
+    seclabel u:r:qti-testscripts:s0
+
+on property:vendor.notify_after_powerup.subsys=venus
+    start vendor.venus_qdss_script
+
+service vendor.venus_qdss_script /vendor/bin/sh /mnt/vendor/persist/coresight/venus_qdss_reconfigure.sh
+    user root
+    oneshot
+    disabled
+    seclabel u:r:qti-testscripts:s0
+
