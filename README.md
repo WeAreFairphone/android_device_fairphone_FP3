@@ -107,6 +107,7 @@ folder so I take it from the packaging subfolder.
 ```sh
 fastboot flash system out/target/product/fp3/obj/PACKAGING/target_files_intermediates/lineage_fp3-target_files-eng.ms/IMAGES/system.img
 fastboot flash vendor out/target/product/fp3/vendor.img
+fastboot flash product out/target/product/fp3/product.img
 fastboot flash boot out/target/product/fp3/boot.img
 fastboot flash dtbo out/target/product/fp3/dtbo.img
 ```
