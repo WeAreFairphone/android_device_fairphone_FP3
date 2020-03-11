@@ -29,4 +29,11 @@ ifeq ($(TARGET_DEVICE),FP3)
 
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
+EGL_SYMLINK := $(TARGET_OUT_VENDOR)/lib/libGLESv2_adreno.so
+$(EGL_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf egl/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(EGL_SYMLINK)
+
 endif
