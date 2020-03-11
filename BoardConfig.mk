@@ -130,6 +130,11 @@ PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 BOARD_VNDK_VERSION := current
 
 BOARD_AVB_ENABLE := true
+# Enable chain partition for system, to facilitate system-only OTA in Treble.
+BOARD_AVB_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
+BOARD_AVB_SYSTEM_ALGORITHM := SHA256_RSA2048
+BOARD_AVB_SYSTEM_ROLLBACK_INDEX := 0
+BOARD_AVB_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 
 # When AVB 2.0 is enabled, dm-verity is enabled differently,
 # below definitions are only required for AVB 1.0
