@@ -261,14 +261,11 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 TARGET_COPY_OUT_VENDOR := vendor
+USE_LOGICAL_PARTITIONS := false
 
-# DK: have not been able to get this to work yet!
-# DK: had to resort to manually removing product .apks manually
-# DK: to avoid PackageManager permission whitelist errors.
-#TARGET_COPY_OUT_PRODUCT := product
-#BOARD_USES_PRODUCTIMAGE := true
-#BOARD_PRODUCTIMAGE_PARTITION_SIZE := 134217728
-#BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_PRODUCT := product
+BOARD_PRODUCTIMAGE_PARTITION_SIZE := 134217728
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 
 # Create metadata partition (copied from treble config)
 BOARD_USES_METADATA_PARTITION := true
