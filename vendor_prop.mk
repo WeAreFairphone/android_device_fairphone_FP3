@@ -40,6 +40,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.voice.record.conc.disabled=false \
     vendor.voice.voip.conc.disabled=true
 
+#system props for the MM modules
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.msm8956hw=0 \
+    mm.enable.smoothstreaming=true \
+    mmp.enable.3g2=true \
+    media.aac_51_output_enabled=true \
+    av.debug.disable.pers.cache=1 \
+    media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+
+
+#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.mm.enable.qcom_parser=1048575
+
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.hfp.client=1 \
