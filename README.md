@@ -62,7 +62,7 @@ mkdir -p .../lineageos/.repo/local_manifests
 cat <<EOF > .../lineageos/.repo/local_manifests/roomservice.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="mstaz/android_device_fairphone_fp3" revision="refs/heads/master" path="device/fairphone/fp3" />
+  <project name="mstaz/android_device_fairphone_fp3" path="device/fairphone/fp3" />
   <project name="mstaz/android_kernel_fairphone_sdm632" path="kernel/fairphone/sdm632" remote="github" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
   <project name="LineageOS/android_external_bson" path="external/bson" remote="github" />
