@@ -1774,13 +1774,15 @@ vendor/lib64/libsecureui_svcsock.so
 # DSP
 vendor/lib/libsdsprpc.so
 vendor/lib64/libsdsprpc.so
-vendor/lib/rfsa/adsp/libadsp_fd_skel.so
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libadsp_fd_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
 # DSP - SCVE
@@ -2203,6 +2205,7 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libquipc_os_api.so
 
 # Radio
+vendor/bin/hw/rild
 -app/QtiTelephonyService/QtiTelephonyService.apk:vendor/app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
@@ -2389,6 +2392,19 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/libsensorndkbridge.so
 vendor/lib/libsensorndkbridge.so
 
+# SELinux
+vendor/etc/selinux/vndservice_contexts
+vendor/etc/selinux/plat_pub_versioned.cil
+vendor/etc/selinux/vendor_seapp_contexts
+vendor/etc/selinux/precompiled_sepolicy.plat_and_mapping.sha256
+vendor/etc/selinux/vendor_file_contexts
+vendor/etc/selinux/vendor_property_contexts
+vendor/etc/selinux/plat_sepolicy_vers.txt
+vendor/etc/selinux/precompiled_sepolicy
+vendor/etc/selinux/vendor_hwservice_contexts
+vendor/etc/selinux/vendor_sepolicy.cil
+vendor/etc/selinux/vendor_mac_permissions.xml
+
 # Sensors
 vendor/etc/sensors/hals.conf
 vendor/etc/sensors/sensor_def_qcomdev.conf
@@ -2415,6 +2431,12 @@ vendor/lib64/hw/android.hardware.sensors@1.0-impl.so
 #vendor/lib64/hw/sensors.msm8953_64.so
 
 # Sound Trigger
+vendor/etc/sound_trigger_mixer_paths_wcd9306.xml
+vendor/etc/sound_trigger_mixer_paths.xml
+vendor/etc/sound_trigger_mixer_paths_wcd9330.xml
+vendor/etc/sound_trigger_platform_info.xml
+vendor/etc/sound_trigger_mixer_paths_wcd9335.xml
+
 vendor/lib/hw/sound_trigger.primary.msm8953.so
 vendor/lib64/hw/sound_trigger.primary.msm8953.so
 vendor/lib/libsmwrapper.so
@@ -2446,6 +2468,7 @@ vendor/bin/time_daemon
 
 # Wi-Fi
 vendor/bin/cnss-daemon
+#system/vendor/bin/cnss_diag
 #vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin
 #vendor/etc/wifi/WCNSS_qcom_wlan_nv_Argentina.bin
 #vendor/etc/wifi/WCNSS_qcom_wlan_nv_Brazil.bin
