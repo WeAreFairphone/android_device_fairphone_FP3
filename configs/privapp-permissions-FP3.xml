@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!---/***********************************************************
+  Copyright (c) 2019 ArimaComm, Inc.
+  All Rights Reserved.
+  Confidential and Proprietary - ArimaComm, Inc.
+**************************************************************-->
+
+<!--
+This XML file declares which signature|privileged permissions should be granted to the privileged
+application ServiceMenu.
+-->
+<!--//<2019/04/29-kanewang, [8901][FEATURE][COMMON][CTS][][]Add listed apks to whitelist for CTS fail cases.-->
+<permissions>
+    <privapp-permissions package="com.arima.servicemenu">
+        <permission name="android.permission.MASTER_CLEAR"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="org.codeaurora.gallery">
+        <permission name="android.permission.WRITE_MEDIA_STORAGE"/>
+    </privapp-permissions>
+
+    <!--//<2019/06/04-kanewang, [8901][FEATURE][COMMON][VENDORAPP][][]Add whitelist for Orange app.-->
+    <!-- Information to grant permissions to Apps Orange service -->
+    <privapp-permissions package="com.orange.update">
+        <permission name="android.permission.INSTALL_PACKAGES" />
+    </privapp-permissions>
+    <!--//>2019/06/04-kanewang-->
+    <!--//<2019/07/12-kanewang, [8901][FEATURE][COMMON][VENDORAPP][][]Add whitelist for Orange app.-->
+    <!-- Information to grant permissions to Apps Orange service -->
+    <privapp-permissions package="com.orange.aura.oobe">
+        <permission name="android.permission.INSTALL_PACKAGES" />
+        <permission name="android.permission.PACKAGE_USAGE_STATS" />
+    </privapp-permissions>
+
+    <!-- Information to grant permissions to Froid privileged -->
+    <privapp-permissions package="org.fdroid.fdroid.privileged">
+        <permission name="android.permission.INSTALL_PACKAGES" />
+        <permission name="android.permission.DELETE_PACKAGES" />
+    </privapp-permissions>
+    <!--//>2019/07/12-kanewang-->
+
+    <!--//<2019/08/13-kanewang, [8901][FEATURE][COMMON][VENDORAPP][][]Add MyFairphone apk per requirement.-->
+    <privapp-permissions package="com.fairphone.myfairphone">
+        <permission name="android.permission.ACCESS_NETWORK_STATE"/>
+        <permission name="android.permission.ACCESS_WIFI_STATE" />
+        <permission name="android.permission.BACKUP"/>
+        <permission name="android.permission.BATTERY_STATS"/>
+        <permission name="android.permission.CAMERA"/>
+        <permission name="android.permission.CHANGE_NETWORK_STATE"/>
+        <permission name="android.permission.CHANGE_WIFI_STATE"/>
+        <permission name="android.permission.GET_ACCOUNTS"/>
+        <permission name="android.permission.FLASHLIGHT"/>
+        <permission name="android.permission.INTERNET"/>
+        <permission name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.REBOOT"/>
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+        <permission name="android.permission.RECORD_AUDIO"/>
+        <permission name="android.permission.CHANGE_WIFI_STATE"/>
+        <permission name="android.permission.USE_CREDENTIALS"/>
+    </privapp-permissions>
+    <!--//>2019/08/13-kanewang-->
+    <!--//<2019/12/30-kanewang, [8901][FEATURE][COMMON][VENDORAPP][][]Change package name setting of DeviceActivationLogger.-->
+    <!--//<2019/12/19-kanewang, [8901][FEATURE][COMMON][VENDORAPP][][]Grant permissions for DeviceActivationLogger per requirement.-->
+    <privapp-permissions package="com.fairphone.activator">
+        <permission name="android.permission.ACCESS_COARSE_LOCATION"/>
+        <permission name="android.permission.ACCESS_FINE_LOCATION"/>
+        <permission name="android.permission.ACCESS_NETWORK_STATE"/>
+        <permission name="android.permission.ACCESS_WIFI_STATE"/>
+        <permission name="android.permission.INTERNET"/>
+        <permission name="android.permission.READ_PHONE_STATE"/>
+        <permission name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+        <permission name="android.permission.WAKE_LOCK"/>
+    </privapp-permissions>
+    <!--//>2019/12/19-kanewang-->
+    <!--//>2019/12/30-kanewang-->
+</permissions>
+<!--//>2019/04/29-kanewang-->
