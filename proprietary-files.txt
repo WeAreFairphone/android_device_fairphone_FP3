@@ -29,6 +29,28 @@ vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
 
+#vendor/lib/hw/audio.primary.msm8953.so
+#vendor/lib64/hw/audio.primary.msm8953.so
+#vendor/lib/libaudioparsers.so
+#vendor/lib64/libaudioparsers.so
+#vendor/lib/libaudio_log_utils.so
+#vendor/lib64/libaudio_log_utils.so
+#vendor/lib/libtinycompress_vendor.so
+#vendor/lib64/libtinycompress_vendor.so
+
+
+vendor/lib/soundfx/libqcomvisualizer.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcompostprocbundle.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
+vendor/lib/soundfx/libqcomvoiceprocessing.so
+vendor/lib64/soundfx/libqcomvisualizer.so
+vendor/lib64/soundfx/libqcbassboost.so
+vendor/lib64/soundfx/libqcompostprocbundle.so
+vendor/lib64/soundfx/libqcvirt.so
+vendor/lib64/soundfx/libqcomvoiceprocessing.so
+
 # Audio ACDB
 vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
@@ -104,9 +126,13 @@ vendor/bin/wcnss_filter
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbtnv.so
+vendor/lib64/libbt-vendor.so
+vendor/lib64/libbthost_if.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
 vendor/lib/libbtnv.so
 vendor/lib/libbt-hidlclient.so
+vendor/lib/libbt-vendor.so
+vendor/lib/libbthost_if.so
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 
 # Bluetooth (shared dependencies)
@@ -171,6 +197,61 @@ vendor/lib/libqomx_jpegenc.so
 vendor/lib/libremosaic_daemon.so
 vendor/lib/libcdsprpc.so
 vendor/lib/libdepthmapwrapper.so
+
+# Camera Config
+vendor/etc/camera/camera_config.xml
+vendor/etc/camera/csidtg_camera.xml
+vendor/etc/camera/csidtg_chromatix.xml
+vendor/etc/camera/imx214_chromatix.xml
+vendor/etc/camera/imx230_chromatix.xml
+vendor/etc/camera/imx230_qc2002_chromatix.xml
+vendor/etc/camera/imx230_qc2002_with_gyro_chromatix.xml
+vendor/etc/camera/imx258_bear_chromatix.xml
+vendor/etc/camera/imx258_chromatix.xml
+vendor/etc/camera/imx258_lc898217xc_chromatix.xml
+vendor/etc/camera/imx258_mono_bear_chromatix.xml
+vendor/etc/camera/imx258_mono_chromatix.xml
+vendor/etc/camera/imx298_chromatix.xml
+vendor/etc/camera/imx298_gt24c64_chromatix.xml
+vendor/etc/camera/imx318_chromatix.xml
+vendor/etc/camera/imx362_chromatix.xml
+vendor/etc/camera/imx362_chromatix_bear.xml
+vendor/etc/camera/imx362_gt24c64a_chromatix.xml
+vendor/etc/camera/imx363_2nd_chromatix.xml
+vendor/etc/camera/imx363_chromatix.xml
+vendor/etc/camera/imx376_chromatix.xml
+vendor/etc/camera/imx378_chromatix.xml
+vendor/etc/camera/imx486_chromatix.xml
+vendor/etc/camera/ov12a10_bear_chromatix.xml
+vendor/etc/camera/ov12a10_chromatix.xml
+vendor/etc/camera/ov13850_chromatix.xml
+vendor/etc/camera/ov13850_q13v06k_chromatix.xml
+vendor/etc/camera/ov13855_chromatix.xml
+vendor/etc/camera/ov13880_chromatix.xml
+vendor/etc/camera/ov2281_chromatix.xml
+vendor/etc/camera/ov2680_chromatix.xml
+vendor/etc/camera/ov4688_chromatix.xml
+vendor/etc/camera/ov5670_chromatix.xml
+vendor/etc/camera/ov5670_f5670bq_chromatix.xml
+vendor/etc/camera/ov5695_chromatix.xml
+vendor/etc/camera/ov7251_chromatix.xml
+vendor/etc/camera/ov8856_bear_chromatix.xml
+vendor/etc/camera/ov8856_chromatix.xml
+vendor/etc/camera/ov8858_chromatix.xml
+vendor/etc/camera/ov8865_chromatix.xml
+vendor/etc/camera/s5k2l7_8953_chromatix.xml
+vendor/etc/camera/s5k2l7_chromatix.xml
+vendor/etc/camera/s5k2l7sx_chromatix.xml
+vendor/etc/camera/s5k3l8_chromatix.xml
+vendor/etc/camera/s5k3l8_f3l8yam_chromatix.xml
+vendor/etc/camera/s5k3l8_mono_chromatix.xml
+vendor/etc/camera/s5k3m2xm_chromatix.xml
+vendor/etc/camera/s5k3m2xm_chromatix_bear.xml
+vendor/etc/camera/s5k3m2xx_chromatix.xml
+vendor/etc/camera/s5k3m3sm_chromatix.xml
+vendor/etc/camera/s5k3p3sm_chromatix.xml
+vendor/etc/camera/s5k3p8sp_chromatix.xml
+vendor/etc/camera/s5k4h7yx_chromatix.xml
 
 # Camera - Chromatix
 vendor/lib/libchromatix_csidtg_common.so
@@ -2366,6 +2447,26 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/libsensorndkbridge.so
 vendor/lib/libsensorndkbridge.so
 
+# Power
+#vendor/lib/vendor.qti.power.pasrmanager@1.0.so
+#vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
+#vendor/lib/hw/power.qcom.so
+#vendor/lib/hw/android.hardware.power@1.0-impl.so
+#vendor/lib/hw/power.default.so
+#vendor/lib/vendor.qti.esepowermanager@1.0.so
+#vendor/etc/init/android.hardware.power@1.0-service.rc
+#vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
+#vendor/bin/power_off_alarm
+#vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
+#vendor/bin/hw/android.hardware.power@1.0-service
+#vendor/lib64/vendor.qti.power.pasrmanager@1.0.so
+#vendor/lib64/vendor.qti.esepowermanager@1.0.so
+#vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
+#vendor/lib64/hw/power.qcom.so
+#vendor/lib64/hw/android.hardware.power@1.0-impl.so
+#vendor/lib64/hw/power.default.so
+
+
 # Sensors
 #vendor/bin/capsense_reset
 vendor/bin/sensors.qti
@@ -2384,17 +2485,21 @@ vendor/lib64/sensor_calibrate.so
 #vendor/lib64/sensors.rp.so
 vendor/lib64/sensors.ssc.so
 
-vendor/lib/hw/android.hardware.sensors@1.0-impl.so
-vendor/etc/init/android.hardware.sensors@1.0-service.rc
-vendor/bin/hw/android.hardware.sensors@1.0-service
-vendor/lib64/hw/android.hardware.sensors@1.0-impl.so
+#vendor/lib/hw/android.hardware.sensors@1.0-impl.so
+#vendor/etc/init/android.hardware.sensors@1.0-service.rc
+#vendor/bin/hw/android.hardware.sensors@1.0-service
+#vendor/lib64/hw/android.hardware.sensors@1.0-impl.so
 #vendor/lib/hw/sensors.msm8953_64.so
 #vendor/lib64/hw/sensors.msm8953_64.so
 
 # Sound Trigger
-vendor/lib/hw/sound_trigger.primary.msm8953.so
-vendor/lib64/hw/sound_trigger.primary.msm8953.so
+#vendor/lib/hw/sound_trigger.primary.msm8953.so
+#vendor/lib64/hw/sound_trigger.primary.msm8953.so
 vendor/lib/libsmwrapper.so
+vendor/lib/libcapiv2vop.so
+vendor/lib/libcapiv2svacnn.so
+vendor/lib64/libcapiv2vop.so
+vendor/lib64/libcapiv2svacnn.so
 #vendor/lib/hw/android.hardware.soundtrigger@2.1-impl.so
 
 vendor/etc/sound_trigger_mixer_paths_wcd9335.xml
@@ -2422,6 +2527,16 @@ vendor/bin/cnss-daemon
 #vendor/etc/wifi/WCNSS_qcom_wlan_nv_epa.bin
 #vendor/etc/wifi/WCNSS_qcom_wlan_nv_India.bin
 #vendor/etc/wifi/WCNSS_wlan_dictionary.dat
+
+vendor/etc/wifi/WCNSS_qcom_cfg.ini
+vendor/bin/wcnss_service
+vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
+
+etc/firmware/ice40.bin
+etc/firmware/wlan/prima/WCNSS_cfg.dat
+
+vendor/etc/wifi/aoa_cldb_falcon.bin
+vendor/etc/wifi/aoa_cldb_swl14.bin
 
 # Wi-Fi Display - from daisy - PKQ1.180917.001
 bin/wfdservice|edeb291221024401cbae69c2fa4e58733b7efc4c

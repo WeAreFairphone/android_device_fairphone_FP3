@@ -29,18 +29,7 @@
 
 static inline const char* BtmGetDefaultName()
 {
-    char product_device[PROPERTY_VALUE_MAX];
-    property_get("ro.product.device", product_device, "");
-
-    if (strstr(product_device, "river"))
-        return "Moto G7";
-    if (strstr(product_device, "ocean"))
-        return "Moto G7 Power";
-    if (strstr(product_device, "channel"))
-        return "Moto G7 Play";
-
-    // Fallback to moto g7
-    return "Moto G7";
+    return "Fairphone 3";
 }
 
 #define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
