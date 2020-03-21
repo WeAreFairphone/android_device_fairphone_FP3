@@ -203,38 +203,6 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
 #TARGET_KERNEL_CONFIG := fp3_twrp_defconfig
 TARGET_KERNEL_CONFIG := fp3_stock_defconfig
 
-# Vendor kernel modules
-vendor_lkm_dir := $(PLATFORM_PATH)/lkm-4.x
-BOARD_VENDOR_KERNEL_MODULES := \
-  $(vendor_lkm_dir)/texfat.ko \
-  $(vendor_lkm_dir)/audio_wcd_cpe.ko \
-  $(vendor_lkm_dir)/audio_wsa881x_analog.ko \
-  $(vendor_lkm_dir)/audio_q6_notifier.ko \
-  $(vendor_lkm_dir)/mpq-dmx-hw-plugin.ko \
-  $(vendor_lkm_dir)/audio_pinctrl_wcd.ko \
-  $(vendor_lkm_dir)/audio_analog_cdc.ko \
-  $(vendor_lkm_dir)/audio_swr.ko \
-  $(vendor_lkm_dir)/audio_machine_sdm450.ko \
-  $(vendor_lkm_dir)/audio_machine_ext_sdm450.ko \
-  $(vendor_lkm_dir)/audio_native.ko \
-  $(vendor_lkm_dir)/audio_mbhc.ko \
-  $(vendor_lkm_dir)/audio_stub.ko \
-  $(vendor_lkm_dir)/audio_apr.ko \
-  $(vendor_lkm_dir)/audio_wcd9xxx.ko \
-  $(vendor_lkm_dir)/mpq-adapter.ko \
-  $(vendor_lkm_dir)/audio_q6.ko \
-  $(vendor_lkm_dir)/audio_usf.ko \
-  $(vendor_lkm_dir)/audio_swr_ctrl.ko \
-  $(vendor_lkm_dir)/audio_hdmi.ko \
-  $(vendor_lkm_dir)/audio_wsa881x.ko \
-  $(vendor_lkm_dir)/audio_wcd_core.ko \
-  $(vendor_lkm_dir)/audio_cpe_lsm.ko \
-  $(vendor_lkm_dir)/audio_digital_cdc.ko \
-  $(vendor_lkm_dir)/audio_wcd9335.ko \
-  $(vendor_lkm_dir)/audio_platform.ko \
-  $(vendor_lkm_dir)/pronto_wlan.ko \
-  $(vendor_lkm_dir)/audio_adsp_loader.ko
-
 # Declare boot header
 #BOARD_BOOT_HEADER_VERSION := 1
 #BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)

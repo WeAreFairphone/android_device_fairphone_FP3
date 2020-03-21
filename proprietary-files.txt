@@ -36,6 +36,14 @@ vendor/lib64/hw/audio.primary.msm8953.so
 vendor/lib64/hw/audio.usb.default.so
 vendor/lib/libaudio_log_utils.so
 vendor/lib64/libaudio_log_utils.so
+vendor/etc/audio/audio_policy_configuration.xml
+vendor/etc/audio_policy_configuration.xml
+vendor/etc/a2dp_audio_policy_configuration.xml
+vendor/etc/audio_output_policy.conf
+vendor/etc/audio_policy.conf
+vendor/etc/audio_policy_volumes.xml
+vendor/etc/r_submix_audio_policy_configuration.xml
+vendor/etc/usb_audio_policy_configuration.xml
 
 # Audio ACDB
 vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
@@ -1766,10 +1774,10 @@ vendor/lib/libStDrvInt.so
 vendor/lib64/libStDrvInt.so
 vendor/lib/libsecureui_svcsock.so
 vendor/lib64/libsecureui_svcsock.so
-#vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
-#vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-#vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
-#vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
+vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
 # DSP
 vendor/lib/libsdsprpc.so
@@ -2098,21 +2106,16 @@ vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libvpplibrary.so
-
-# Misc Firmware
-vendor/firmware/leia_pfp_470.fw
-vendor/firmware/leia_pm4_470.fw
-
-# Moto Permissions
-#etc/permissions/com.motorola.moto-uirefresh.xml:vendor/etc/permissions/com.motorola.moto-uirefresh.xml
-#etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
-#etc/permissions/com.motorola.camera2.denali.xml:vendor/etc/permissions/com.motorola.camera2.denali.xml
 vendor/lib/libstagefrighthw.so
 vendor/lib/vndk/libstagefright_omx.so
 vendor/lib/vndk/libstagefright_foundation.so
 vendor/lib/libstagefright_soft_qtiflacdec.so
 vendor/lib64/libstagefrighthw.so
 vendor/lib64/libstagefright_soft_qtiflacdec.so
+
+# Misc Firmware
+vendor/firmware/leia_pfp_470.fw
+vendor/firmware/leia_pm4_470.fw
 
 # Offmode charging
 vendor/bin/hvdcp_opti
