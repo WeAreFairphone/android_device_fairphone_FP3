@@ -1,0 +1,5 @@
+<permissions>
+     <privapp-permissions package="com.android.arima">
+         <permission name="android.permission.MANAGE_USERS"/>
+     </privapp-permissions>
+</permissions>

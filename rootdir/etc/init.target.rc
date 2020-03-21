@@ -32,7 +32,7 @@
 import init.arima.simtrigger.rc
 
 on early-init
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules adsp_loader_dlkm.ko  efivarfs.ko mpq-adapter.ko q6_notifier_dlkm.ko wcd9335_dlkm.ko wsa881x_dlkm.ko analog_cdc_dlkm.ko hdmi_dlkm.ko mpq-dmx-hw-plugin.ko rdbg.ko wcd9xxx_dlkm.ko apr_dlkm.ko lcd.ko native_dlkm.ko stub_dlkm.ko wcd_core_dlkm.ko br_netfilter.ko machine_dlkm.ko pinctrl_wcd_dlkm.ko swr_ctrl_dlkm.ko wcd_cpe_dlkm.ko cpe_lsm_dlkm.ko machine_ext_dlkm.ko platform_dlkm.ko swr_dlkm.ko wglink_dlkm.ko digital_cdc_dlkm.ko mbhc_dlkm.ko q6_dlkm.ko usf_dlkm.ko wsa881x_analog_dlkm.ko
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules apr_dlkm adsp_loader_dlkm q6_notifier_dlkm q6_dlkm usf_dlkm native_dlkm pinctrl_wcd_dlkm swr_dlkm platform_dlkm swr_ctrl_dlkm hdmi_dlkm wcd9xxx_dlkm wcd_core_dlkm wsa881x_analog_dlkm wsa881x_dlkm mbhc_dlkm stub_dlkm digital_cdc_dlkm analog_cdc_dlkm wcd_cpe_dlkm cpe_lsm_dlkm wcd9335_dlkm machine_dlkm machine_ext_dlkm
     write /proc/sys/kernel/sched_boost 1
     mkdir /firmware 0771 system system
     symlink /data/tombstones /tombstones

@@ -38,22 +38,31 @@ LOCAL_MODULE_SUFFIX := -timestamp
 
 include $(BUILD_SYSTEM)/base_rules.mk
 
+#$(LOCAL_BUILT_MODULE): ACTUAL_BIN_FILE := /vendor/etc/wifi/aoa_cldb_falcon.bin
+#$(LOCAL_BUILT_MODULE): WCNSS_BIN_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/aoa_cldb_falcon.bin
+
+#$(LOCAL_BUILT_MODULE): ACTUAL_BIN_SWL_FILE := /vendor/etc/wifi/aoa_cldb_swl14.bin
+#$(LOCAL_BUILT_MODULE): WCNSS_BIN_SWL_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/aoa_cldb_swl14.bin
+
 $(LOCAL_BUILT_MODULE): ACTUAL_BIN_FILE := /vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin
 $(LOCAL_BUILT_MODULE): WCNSS_BIN_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
-$(LOCAL_BUILT_MODULE): ACTUAL_BIN_ARG_FILE := /vendor/etc/wifi/WCNSS_qcom_wlan_nv_Argentina.bin
-$(LOCAL_BUILT_MODULE): WCNSS_BIN_ARG_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_Argentina.bin
+$(LOCAL_BUILT_MODULE): ACTUAL_CFG_FILE := /vendor/etc/wifi/WCNSS_qcom_cfg.ini
+$(LOCAL_BUILT_MODULE): WCNSS_CFG_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
-$(LOCAL_BUILT_MODULE): ACTUAL_BIN_BRZ_FILE := /vendor/etc/wifi/WCNSS_qcom_wlan_nv_Brazil.bin
-$(LOCAL_BUILT_MODULE): WCNSS_BIN_BRZ_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_Brazil.bin
+#$(LOCAL_BUILT_MODULE): ACTUAL_BIN_ARG_FILE := /vendor/etc/wifi/WCNSS_qcom_wlan_nv_Argentina.bin
+#$(LOCAL_BUILT_MODULE): WCNSS_BIN_ARG_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_Argentina.bin
+#
+#$(LOCAL_BUILT_MODULE): ACTUAL_BIN_BRZ_FILE := /vendor/etc/wifi/WCNSS_qcom_wlan_nv_Brazil.bin
+#$(LOCAL_BUILT_MODULE): WCNSS_BIN_BRZ_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_Brazil.bin
+#
+#$(LOCAL_BUILT_MODULE): ACTUAL_BIN_IND_FILE := /vendor/etc/wifi/WCNSS_qcom_wlan_nv_India.bin
+#$(LOCAL_BUILT_MODULE): WCNSS_BIN_IND_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_India.bin
+#
+#$(LOCAL_BUILT_MODULE): ACTUAL_BIN_EPA_FILE := /vendor/etc/wifi/WCNSS_qcom_wlan_nv_epa.bin
+#$(LOCAL_BUILT_MODULE): WCNSS_BIN_EPA_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_epa.bin
 
-$(LOCAL_BUILT_MODULE): ACTUAL_BIN_IND_FILE := /vendor/etc/wifi/WCNSS_qcom_wlan_nv_India.bin
-$(LOCAL_BUILT_MODULE): WCNSS_BIN_IND_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_India.bin
-
-$(LOCAL_BUILT_MODULE): ACTUAL_BIN_EPA_FILE := /vendor/etc/wifi/WCNSS_qcom_wlan_nv_epa.bin
-$(LOCAL_BUILT_MODULE): WCNSS_BIN_EPA_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv_epa.bin
-
-$(LOCAL_BUILT_MODULE): ACTUAL_DAT_FILE := /vendor/etc/wifi/WCNSS_wlan_dictionary.dat
+$(LOCAL_BUILT_MODULE): ACTUAL_DAT_FILE := /mnt/vendor/persist/WCNSS_wlan_dictionary.dat
 $(LOCAL_BUILT_MODULE): WCNSS_DAT_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/wlan/prima/WCNSS_wlan_dictionary.dat
 
 $(LOCAL_BUILT_MODULE): $(LOCAL_PATH)/Android.mk
@@ -62,23 +71,29 @@ $(LOCAL_BUILT_MODULE):
 	$(hide) mkdir -p $(dir $@)
 	$(hide) mkdir -p $(dir $(WCNSS_BIN_SYMLINK))
 	$(hide) rm -rf $@
-	$(hide) rm -rf $(WCNSS_BIN_SYMLINK)
-	$(hide) ln -sf $(ACTUAL_BIN_FILE) $(WCNSS_BIN_SYMLINK)
-	$(hide) rm -rf $(WCNSS_BIN_ARG_SYMLINK)
-	$(hide) ln -sf $(ACTUAL_BIN_ARG_FILE) $(WCNSS_BIN_ARG_SYMLINK)
-	$(hide) rm -rf $(WCNSS_BIN_BRZ_SYMLINK)
-	$(hide) ln -sf $(ACTUAL_BIN_BRZ_FILE) $(WCNSS_BIN_BRZ_SYMLINK)
-	$(hide) rm -rf $(WCNSS_BIN_IND_SYMLINK)
-	$(hide) ln -sf $(ACTUAL_BIN_IND_FILE) $(WCNSS_BIN_IND_SYMLINK)
-	$(hide) rm -rf $(WCNSS_BIN_EPA_SYMLINK)
-	$(hide) ln -sf $(ACTUAL_BIN_EPA_FILE) $(WCNSS_BIN_EPA_SYMLINK)
+#    $(hide) rm -rf $(WCNSS_BIN_SYMLINK)
+#    $(hide) ln -sf $(ACTUAL_BIN_FILE) $(WCNSS_BIN_SYMLINK)
+	$(hide) rm -rf $(WCNSS_CFG_SYMLINK)
+	$(hide) ln -sf $(ACTUAL_CFG_FILE) $(WCNSS_CFG_SYMLINK)
+#    $(hide) rm -rf $(WCNSS_BIN_SWL_SYMLINK)
+#    $(hide) ln -sf $(ACTUAL_BIN_SWL_FILE) $(WCNSS_BIN_SWL_SYMLINK)
+	#$(hide) rm -rf $(WCNSS_BIN_SYMLINK)
+	#$(hide) ln -sf $(ACTUAL_BIN_FILE) $(WCNSS_BIN_SYMLINK)
+	#$(hide) rm -rf $(WCNSS_BIN_ARG_SYMLINK)
+	#$(hide) ln -sf $(ACTUAL_BIN_ARG_FILE) $(WCNSS_BIN_ARG_SYMLINK)
+	#$(hide) rm -rf $(WCNSS_BIN_BRZ_SYMLINK)
+	#$(hide) ln -sf $(ACTUAL_BIN_BRZ_FILE) $(WCNSS_BIN_BRZ_SYMLINK)
+	#$(hide) rm -rf $(WCNSS_BIN_IND_SYMLINK)
+	#$(hide) ln -sf $(ACTUAL_BIN_IND_FILE) $(WCNSS_BIN_IND_SYMLINK)
+	#$(hide) rm -rf $(WCNSS_BIN_EPA_SYMLINK)
+	#$(hide) ln -sf $(ACTUAL_BIN_EPA_FILE) $(WCNSS_BIN_EPA_SYMLINK)
 	$(hide) rm -rf $(WCNSS_DAT_SYMLINK)
 	$(hide) ln -sf $(ACTUAL_DAT_FILE) $(WCNSS_DAT_SYMLINK)
 	$(hide) touch $@
 
-$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware; \
-    ln -sf /dev/block/bootdevice/by-name/msadp \
-        $(TARGET_OUT_VENDOR)/firmware/msadp)
+#$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware; \
+#    ln -sf /dev/block/bootdevice/by-name/msadp \
+#        $(TARGET_OUT_VENDOR)/firmware/msadp)
 
 #A/B builds require us to create the mount points at compile time.
 #Just creating it for all cases since it does not hurt.
