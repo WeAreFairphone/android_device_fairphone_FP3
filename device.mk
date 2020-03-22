@@ -392,7 +392,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
     $(LOCAL_PATH)/configs/privapp-permissions-FP3.xml:system/etc/permissions/privapp-permissions-FP3.xml \
     $(LOCAL_PATH)/configs/privapp-permissions-simtrigger.xml:system/etc/permissions/privapp-permissions-simtrigger.xml \
-    $(LOCAL_PATH)/configs/privapp-permissions-platform.xml:system/etc/permissions/privapp-permissions-platform.xml \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
 # OMX
