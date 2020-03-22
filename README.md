@@ -37,15 +37,18 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
 * Bootanimation is shown. :heavy_check_mark:
 * LineageOS is booting completely. :heavy_check_mark:
 * Display, Touch and Sound works. :heavy_check_mark:
+* Bluetooth works. :heavy_check_mark:
+* Camera works. :heavy_check_mark:
 * There are a lot of errors logged which seem to be related to NFC. :x:
 
 ### Known Issues
 These things are untested or known not to work:
-* Bluetooth
 * Wi-Fi
+* LTE
 * NFC
-* Camera
+* GPS
 * Device encryption
+* Updater
 
 ### Kernel Source
 Based on repository from k4y0z:
