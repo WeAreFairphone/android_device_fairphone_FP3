@@ -299,6 +299,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+<!--
     <hal format="hidl">
         <name>android.hardware.weaver</name>
         <transport>hwbinder</transport>
@@ -308,6 +309,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+-->
     <hal format="hidl">
         <name>android.hardware.wifi</name>
         <transport>hwbinder</transport>
@@ -408,6 +410,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>vendor.qti.hardware.alarm</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAlarm</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>vendor.qti.hardware.data.connection</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -435,6 +446,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+<!--
     <hal format="hidl">
         <name>vendor.qti.hardware.fm</name>
         <transport>hwbinder</transport>
@@ -444,6 +456,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+-->
     <hal format="hidl">
         <name>vendor.qti.hardware.iop</name>
         <transport arch="32+64">passthrough</transport>
@@ -588,6 +601,7 @@
             <instance>imsrtpservice</instance>
         </interface>
     </hal>
+<!--
     <hal format="hidl">
         <name>com.quicinc.cne.api</name>
         <transport>hwbinder</transport>
@@ -615,6 +629,7 @@
             <instance>cnd</instance>
         </interface>
     </hal>
+-->
     <hal format="hidl">
         <name>com.qualcomm.qti.wifidisplayhal</name>
         <transport>hwbinder</transport>
@@ -636,6 +651,7 @@
             <name>IPictureAdjustment</name>
             <instance>default</instance>
         </interface>
+<!--
         <interface>
             <name>ISunlightEnhancement</name>
             <instance>default</instance>
@@ -644,6 +660,7 @@
             <name>IAdaptiveBacklight</name>
             <instance>default</instance>
         </interface>
+-->
     </hal>
     <hal format="hidl">
         <name>vendor.lineage.power</name>
@@ -654,6 +671,7 @@
             <instance>default</instance>
         </interface>
     </hal>
+<!--
     <hal format="hidl">
         <name>motorola.hardware.health</name>
         <transport>hwbinder</transport>
@@ -672,4 +690,5 @@
             <instance>default</instance>
         </interface>
     </hal>
+-->
 </manifest>

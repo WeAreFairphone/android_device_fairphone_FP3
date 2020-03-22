@@ -293,7 +293,10 @@ PRODUCT_COPY_FILES += \
 
 # LED packages
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.msm8953
+    android.hardware.light@2.0-service \
+    lights.msm8953
+
+    #android.hardware.light@2.0-service.msm8953
 
 # LineageActions
 PRODUCT_PACKAGES += \
@@ -510,8 +513,8 @@ PRODUCT_PACKAGES += \
     vndk_package
 
 # Weaver
-PRODUCT_PACKAGES += \
-    android.hardware.weaver@1.0
+#PRODUCT_PACKAGES += \
+#    android.hardware.weaver@1.0
 
 # Wifi
 PRODUCT_COPY_FILES += \

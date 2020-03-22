@@ -35,11 +35,17 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
 * It builds successfully. :heavy_check_mark:
 * Device boots and adb can be accessed. :heavy_check_mark:
 * Bootanimation is shown. :heavy_check_mark:
-* Unfortunately it automatically reboots at "2nd Boot check". :x:
+* LineageOS is booting completely. :heavy_check_mark:
+* Display, Touch and Sound works. :heavy_check_mark:
+* There are a lot of errors logged which seem to be related to NFC. :x:
 
 ### Known Issues
-Device doesn't boot completely yet. This may be caused by sound config and
-service which doesn't init correctly.
+These things are untested or known not to work:
+* Bluetooth
+* Wi-Fi
+* NFC
+* Camera
+* Device encryption
 
 ### Kernel Source
 Based on repository from k4y0z:
