@@ -52,18 +52,21 @@ TARGET_HAS_NO_SELECT_BUTTON := true
 # Kernel
 BOARD_KERNEL_BASE        := 0x80000000
 BOARD_KERNEL_PAGESIZE    := 2048
-BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
-BOARD_RAMDISK_OFFSET     := 0x02000000
+BOARD_KERNEL_OFFSET      := 0x00008000
+BOARD_KERNEL_TAGS_OFFSET := 0x00000100
+BOARD_RAMDISK_OFFSET     := 0x01000000
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_USES_UNCOMPRESSED_KERNEL := false
-# TARGET_KERNEL_CONFIG := lineageos_FP3_defconfig #TODO
-TARGET_KERNEL_CONFIG := msm8953_defconfig
+TARGET_KERNEL_CONFIG := lineageos_FP3_defconfig
+# TARGET_KERNEL_CONFIG := msm8953_defconfig
 TARGET_KERNEL_SOURCE := kernel/fairphone/sdm632
+# TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_USES_UNCOMPRESSED_KERNEL := false
-BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1
-BOARD_KERNEL_CMDLINE += androidboot.bootdevice=7824900.sdhci earlycon=msm_serial_dm,0x78af000 firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7
+BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 androidboot.console=ttyMSM0 androidboot.hardware=qcom msm_rtb.filter=0x237
+BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_serial_dm,0x78af000
+BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image androidboot.usbconfigfs=true loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 #BOARD_KERNEL_SEPARATED_DT := true #TODO
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
@@ -73,7 +76,7 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
     MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
 
-# # Declare boot header
+# Declare boot header
 BOARD_BOOT_HEADER_VERSION := 1
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 
@@ -89,7 +92,7 @@ TARGET_USES_MKE2FS := true
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_DTBOIMG_PARTITION_SIZE := 0x0800000
+BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
 BOARD_OEMIMAGE_PARTITION_SIZE := 268435456
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000
@@ -101,6 +104,10 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 TARGET_NO_RECOVERY := true
 BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_COPY_OUT_VENDOR := vendor
+# BOARD_USES_PRODUCTIMAGE := true
+BOARD_PRODUCTIMAGE_PARTITION_SIZE := 134217728
+BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+TARGET_COPY_OUT_PRODUCT := product
 
 # Graphics
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
@@ -115,7 +122,7 @@ TARGET_USES_COLOR_METADATA := true  #TODO # already set by vendor/lineage/config
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab ##TODO
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
 
 # Vendor Security Patch Level
 VENDOR_SECURITY_PATCH := "2018-08-05"
@@ -123,14 +130,19 @@ VENDOR_SECURITY_PATCH := "2018-08-05"
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := false
 
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
 # Treble
+BOARD_SYSTEMSDK_VERSIONS :=28
 BOARD_VNDK_VERSION := current
 
+
 BOARD_AVB_ENABLE := true
-# Enable chain partition for system, to facilitate system-only OTA in Treble.
+# # Enable chain partition for system, to facilitate system-only OTA in Treble.
 BOARD_AVB_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_SYSTEM_ALGORITHM := SHA256_RSA2048
 BOARD_AVB_SYSTEM_ROLLBACK_INDEX := 0
@@ -142,11 +154,12 @@ ifeq ($(BOARD_AVB_ENABLE),false)
 # dm-verity definitions
 	PRODUCT_SUPPORTS_VERITY := true
 	PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
-	PRODUCT_VENDOR_VERITY_PARTITION=/dev/block/bootdevice/by-name/vendor
+	PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/bootdevice/by-name/vendor
+	$(call inherit-product, build/target/product/verity.mk)
 endif
 
 # INIT
-# TARGET_INIT_VENDOR_LIB := libinit_msm #Important
+# TARGET_INIT_VENDOR_LIB := libinit_msm
 
 # inherit from the proprietary version
 -include vendor/fairphone/FP3/BoardConfigVendor.mk

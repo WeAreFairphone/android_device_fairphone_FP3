@@ -32,12 +32,13 @@ AB_OTA_UPDATER := true
 # AB_OTA_PARTITIONS := aboot cmnlib64 cmnlib devcfg dsp dtbo keymaster lksecapp mdtp modem rpm sbl1 tz vbmeta boot system vendor product
 # Subset A/B partitions for Android-only image update
 # AB_OTA_PARTITIONS ?= boot system
-
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
     system \
-    vendor
+    vbmeta \
+    vendor \
+	product
 
 # Default A/B configuration.
 ENABLE_AB ?= true
