@@ -21,31 +21,12 @@
 
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
-
-#pragma push_macro("PROPERTY_VALUE_MAX")
-
-#include <cutils/properties.h>
-#include <string.h>
-
-static inline const char* BtmGetDefaultName()
-{
-    char product_device[PROPERTY_VALUE_MAX];
-    property_get("ro.product.device", product_device, "");
-
-    if (strstr(product_device, "FP3"))
-        return "Fairphone 3";
-
-    return "Unknown";
-}
-
-#define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
-
-#define BLE_VND_INCLUDED   TRUE
-#define BTIF_HF_WBS_PREFERRED TRUE
-#define BTM_WBS_INCLUDED TRUE
+#define BTM_DEF_LOCAL_NAME   "Fairphone 3"
 #define MAX_ACL_CONNECTIONS   16
 #define MAX_L2CAP_CHANNELS    16
+#define BLE_VND_INCLUDED   TRUE
+#define BT_CLEAN_TURN_ON_DISABLED 1
 
-#pragma pop_macro("PROPERTY_VALUE_MAX")
-
+/* Increasing SEPs to 12 from 6 to support SHO/MCast i.e. two streams per codec */
+#define AVDT_NUM_SEPS 12
 #endif
