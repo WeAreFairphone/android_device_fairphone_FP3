@@ -36,19 +36,21 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
 * Device boots and adb can be accessed. :heavy_check_mark:
 * Bootanimation is shown. :heavy_check_mark:
 * LineageOS is booting completely. :heavy_check_mark:
-* Display, Touch and Sound works. :heavy_check_mark:
-* Bluetooth works. :heavy_check_mark:
-* Camera works. :heavy_check_mark:
-* There are a lot of errors logged which seem to be related to NFC. :x:
+* Working things after quick test:
+  * Display / Touchscreen :heavy_check_mark:
+  * Sound :heavy_check_mark:
+  * Bluetooth :heavy_check_mark:
+  * Camera :heavy_check_mark:
+  * Wi-Fi :heavy_check_mark:
 
 ### Known Issues
 These things are untested or known not to work:
-* Wi-Fi
 * LTE
 * NFC
 * GPS
 * Device encryption
 * Updater
+* Playing videos in fullscreen causing some overlay issue
 
 ### Kernel Source
 Based on repository from k4y0z:
