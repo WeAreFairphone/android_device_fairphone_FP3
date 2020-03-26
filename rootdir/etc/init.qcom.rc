@@ -28,8 +28,8 @@
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.msm.usb.configfs.rc
 import /vendor/etc/init/hw/init.target.rc
-import /vendor/etc/init/hw/init.qcom.factory.rc
-import /vendor/etc/init/hw/init.qcom.test.rc
+#import /vendor/etc/init/hw/init.qcom.factory.rc
+#import /vendor/etc/init/hw/init.qcom.test.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -562,10 +562,10 @@ on property:vold.decrypt=trigger_restart_framework
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-service vendor.cnd /system/vendor/bin/cnd
-    class main
-    user system
-    group system wifi inet radio wakelock net_admin
+#service vendor.cnd /system/vendor/bin/cnd
+#    class main
+#    user system
+#    group system wifi inet radio wakelock net_admin
 
 service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
     class main
@@ -654,22 +654,22 @@ service vendor.qmuxd /system/vendor/bin/qmuxd
     group radio audio bluetooth gps nfc diag
     disabled
 
-service vendor.netmgrd /system/vendor/bin/netmgrd
-    class main
-    disabled
+# service vendor.netmgrd /system/vendor/bin/netmgrd
+#     class main
+#     disabled
 
-service vendor.ipacm-diag /system/vendor/bin/ipacm-diag
-    class main
-    user radio
-    socket ipacm_log_file dgram 660 radio radio
-    group radio diag oem_2901
-    disabled
+# service vendor.ipacm-diag /system/vendor/bin/ipacm-diag
+#     class main
+#     user radio
+#     socket ipacm_log_file dgram 660 radio radio
+#     group radio diag oem_2901
+#     disabled
 
-service vendor.ipacm /system/vendor/bin/ipacm
-    class main
-    user radio
-    group radio inet
-    disabled
+# service vendor.ipacm /system/vendor/bin/ipacm
+#     class main
+#     user radio
+#     group radio inet
+#     disabled
 
 service vendor.dataqti /system/vendor/bin/qti
     class main
@@ -683,17 +683,17 @@ service vendor.dataadpl /system/vendor/bin/adpl
     group radio oem_2901 diag usb net_admin
     disabled
 
-service vendor.sensors /vendor/bin/sscrpcd
-    class core
-    user system
-    group system
-    disabled
+# service vendor.sensors /vendor/bin/sscrpcd
+#     class core
+#     user system
+#     group system
+#     disabled
 
-service vendor.sensors.qti /vendor/bin/sensors.qti
-    class core
-    user system
-    group system
-    disabled
+# service vendor.sensors.qti /vendor/bin/sensors.qti
+#     class core
+#     user system
+#     group system
+#     disabled
 
 on property:ro.vendor.use_data_netmgrd=false
     # netmgr not supported on specific target
@@ -876,17 +876,17 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service ssgqmigd /vendor/bin/ssgqmigd
-    class late_start
-    user radio
-    group radio gps system
-    socket ssgqmig seqpacket 0660 radio inet
+#service ssgqmigd /vendor/bin/ssgqmigd
+#    class late_start
+#    user radio
+#    group radio gps system
+#    socket ssgqmig seqpacket 0660 radio inet
 
-service ssgtzd /vendor/bin/ssgtzd
-    class late_start
-    user system
-    group system
-    socket ssgtzd stream 0660 system inet
+#service ssgtzd /vendor/bin/ssgtzd
+#    class late_start
+#    user system
+#    group system
+#    socket ssgtzd stream 0660 system inet
 
 service mlid /vendor/bin/mlid
     class late_start
@@ -899,10 +899,10 @@ service vendor.qdmastatsd /system/vendor/bin/qdmastatsd
     user system
     group readproc system net_bw_stats radio vendor_rfs_shared
 
-service loc_launcher /system/vendor/bin/loc_launcher
-    class late_start
-    user gps
-    group gps
+#service loc_launcher /system/vendor/bin/loc_launcher
+#    class late_start
+#    user gps
+#    group gps
 
 on property:crypto.driver.load=1
      insmod /system/lib/modules/qce.ko
@@ -1034,10 +1034,10 @@ service profiler_daemon /system/bin/profiler_daemon
     group root
     disabled
 
-service charger /charger
-    class charger
-    group system graphics
-    seclabel u:r:healthd:s0
+#service charger /charger
+#    class charger
+#    group system graphics
+#    seclabel u:r:healthd:s0
 
 service vendor.ssr_diag /system/vendor/bin/ssr_diag
     class late_start
@@ -1045,45 +1045,45 @@ service vendor.ssr_diag /system/vendor/bin/ssr_diag
     group system
     disabled
 
-service hvdcp /system/bin/hvdcp
-    class core
-    user root
-    disabled
+#service hvdcp /system/bin/hvdcp
+#    class core
+#    user root
+#    disabled
 
-on property:persist.usb.hvdcp.detect=true
-    start hvdcp
+#on property:persist.usb.hvdcp.detect=true
+#    start hvdcp
 
-on property:persist.usb.hvdcp.detect=false
-    stop hvdcp
+#on property:persist.usb.hvdcp.detect=false
+#    stop hvdcp
 
-service charger_monitor /system/bin/charger_monitor
-    user root
-    group root
-    disabled
+#service charger_monitor /system/bin/charger_monitor
+#    user root
+#    group root
+#    disabled
 
-service qbcharger /charger -m 1
-    disabled
-    oneshot
+#service qbcharger /charger -m 1
+#    disabled
+#    oneshot
 
-on property:sys.qbcharger.enable=true
-    start qbcharger
+#on property:sys.qbcharger.enable=true
+#    start qbcharger
 
-on property:sys.qbcharger.enable=false
-    stop qbcharger
+#on property:sys.qbcharger.enable=false
+#    stop qbcharger
 
-service diag_mdlog_start /system/vendor/bin/diag_mdlog
-    class late_start
-    user shell
-    group system oem_2901 sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
+#service diag_mdlog_start /system/vendor/bin/diag_mdlog
+#    class late_start
+#    user shell
+#    group system oem_2901 sdcard_rw sdcard_r media_rw
+#    disabled
+#    oneshot
 
-service diag_mdlog_stop /system/vendor/bin/diag_mdlog -k
-    class late_start
-    user shell
-    group system oem_2901 sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
+#service diag_mdlog_stop /system/vendor/bin/diag_mdlog -k
+#    class late_start
+#    user shell
+#    group system oem_2901 sdcard_rw sdcard_r media_rw
+#    disabled
+#    oneshot
 
 service qlogd /system/xbin/qlogd
     socket qlogd stream 0662 system system
@@ -1143,10 +1143,10 @@ service esepmdaemon /system/vendor/bin/esepmdaemon
     user system
     group nfc
 
-on charger
-    setprop persist.sys.usb.config mass_storage
-    load_system_props
-    start qcom-post-boot
+#on charger
+#    setprop persist.sys.usb.config mass_storage
+#    load_system_props
+#    start qcom-post-boot
 
 #add poweroffhandler
 service poweroffhandler /system/vendor/bin/poweroffhandler
@@ -1190,12 +1190,12 @@ service vendor.move_time_data /system/bin/move_time_data.sh
     disabled
     oneshot
 
-service vendor.hbtp /vendor/bin/hbtp_daemon
-     class main
-     user system
-     group system
-     capabilities SYS_NICE
-     disabled
+#service vendor.hbtp /vendor/bin/hbtp_daemon
+#     class main
+#     user system
+#     group system
+#     capabilities SYS_NICE
+#     disabled
 
 service chre /vendor/bin/chre
     class late_start

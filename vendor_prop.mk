@@ -204,3 +204,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Reduce client buffer size for fast audio output tracks
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1
+
+# vendor library
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.extension_library=libqti-perfd-client.so

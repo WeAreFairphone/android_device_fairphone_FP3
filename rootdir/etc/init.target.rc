@@ -27,12 +27,11 @@
 #
 #
 
-import init.carrier.rc
+#import init.carrier.rc
 # for arima simtrigger
 import init.arima.simtrigger.rc
 
 on early-init
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_apr audio_adsp_loader audio_q6_notifier audio_q6 audio_usf audio_native audio_pinctrl_wcd audio_swr audio_platform audio_swr_ctrl audio_hdmi audio_wcd9xxx audio_wcd_core audio_wsa881x_analog audio_wsa881x audio_mbhc audio_stub audio_digital_cdc audio_analog_cdc audio_wcd_cpe audio_cpe_lsm audio_wcd9335 audio_machine_sdm450 audio_machine_ext_sdm450
     write /proc/sys/kernel/sched_boost 1
     mkdir /firmware 0771 system system
     symlink /data/tombstones /tombstones
@@ -41,7 +40,9 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
-    mount_all /vendor/etc/fstab.qcom
+    # Start HW service manager early
+    start hwservicemanager
+    mount_all /vendor/etc/fstab.qcom --early
     write /proc/sys/vm/swappiness 100
 
     chown root system /mnt/vendor/persist
@@ -52,11 +53,20 @@ on fs
 
     #write /sys/kernel/boot_adsp/boot 1
 
-    wait /dev/block/bootdevice/by-name/oem
-    mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
+    #wait /dev/block/bootdevice/by-name/oem
+    #mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
 
-    # [8901][SDCard][akenhsu] Support exfat and on SDCard via Tuxera 20190313
-    insmod /vendor/lib/texfat.ko
+on late-fs
+    # Start services for bootanim
+    start servicemanager
+    start surfaceflinger
+    start bootanim
+
+    start vendor.configstore-hal
+    start vendor.gralloc-2-0
+
+    # mount RW partitions which need run fsck
+    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs
     start vendor.qseecomd
@@ -73,8 +83,8 @@ on post-fs-data
     mkdir /tombstones/lpass 0771 system system
     mkdir /tombstones/wcnss 0771 system system
     mkdir /tombstones/dsps 0771 system system
-    mkdir /persist/data/sfs 0700 system system
-    mkdir /persist/data/tz 0700 system system
+    mkdir /mnt/vendor/persist/data/sfs 0700 system system
+    mkdir /mnt/vendor/persist/data/tz 0700 system system
     mkdir /data/misc/dts 0770 media audio
 # [Arima_8901][allen_yu] remove improve touch hbtp 20181109 begin
 #    mkdir /data/vendor/hbtp 0750 system system
@@ -149,19 +159,19 @@ service gamed /system/vendor/bin/gamed
    disabled
    socket gamed seqpacket 0640 system system
 
-service thermal-engine /system/vendor/bin/thermal-engine
-   class main
-   user root
-   socket thermal-send-client stream 0666 system system
-   socket thermal-recv-client stream 0660 system system
-   socket thermal-recv-passive-client stream 0666 system system
-   socket thermal-send-rule stream 0660 system system
-   group root
+# service thermal-engine /system/vendor/bin/thermal-engine
+#    class main
+#    user root
+#    socket thermal-send-client stream 0666 system system
+#    socket thermal-recv-client stream 0660 system system
+#    socket thermal-recv-passive-client stream 0666 system system
+#    socket thermal-send-rule stream 0660 system system
+#    group root
 
-service time_daemon /system/vendor/bin/time_daemon
-   class late_start
-   user root
-   group root
+# service time_daemon /system/vendor/bin/time_daemon
+#    class late_start
+#    user root
+#    group root
 
 service audiod /system/vendor/bin/audiod
    class late_start
@@ -223,39 +233,39 @@ on boot
     setprop vendor.usb.rmnet.inst.name "rmnet"
     setprop vendor.usb.dpl.inst.name "dpl"
 
-service wcnss-service /system/vendor/bin/wcnss_service
-    class main
-    user system
-    group system wifi radio
-    oneshot
+# service wcnss-service /system/vendor/bin/wcnss_service
+#     class main
+#     user system
+#     group system wifi radio
+#     oneshot
 
 ## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
-    class main
-    user system
-    socket ims_qmid stream 0660 system radio
-    group radio log diag
+# service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
+#     class main
+#     user system
+#     socket ims_qmid stream 0660 system radio
+#     group radio log diag
 
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
-    class main
-    user system
-    socket ims_datad stream 0660 system radio
-    group system wifi radio inet log diag
-    disabled
+# service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
+#     class main
+#     user system
+#     socket ims_datad stream 0660 system radio
+#     group system wifi radio inet log diag
+#     disabled
 
-on property:vendor.ims.QMI_DAEMON_STATUS=1
-    start vendor.imsdatadaemon
+# on property:vendor.ims.QMI_DAEMON_STATUS=1
+#     start vendor.imsdatadaemon
 
-service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
-   class main
-   user system
-   group radio diag inet log
+# service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+#    class main
+#    user system
+#    group radio diag inet log
 
-service vendor.imsrcsservice /system/vendor/bin/imsrcsd
-   class main
-   user system
-   group radio diag inet log wakelock
+# service vendor.imsrcsservice /system/vendor/bin/imsrcsd
+#    class main
+#    user system
+#    group radio diag inet log wakelock
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
     restart vendor.ims_rtp_daemon
@@ -336,16 +346,16 @@ service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
 on property:init.svc.dts_configurator=stopped
     start dtseagleservice
 
-service vendor.per_mgr /system/vendor/bin/pm-service
-    class core
-    user system
-    group system net_raw
+# service vendor.per_mgr /system/vendor/bin/pm-service
+#     class core
+#     user system
+#     group system net_raw
 
-service vendor.per_proxy /system/vendor/bin/pm-proxy
-    class core
-    user system
-    group system
-    disabled
+# service vendor.per_proxy /system/vendor/bin/pm-proxy
+#     class core
+#     user system
+#     group system
+#     disabled
 
 on property:init.svc.vendor.per_mgr=running
     start vendor.per_proxy
