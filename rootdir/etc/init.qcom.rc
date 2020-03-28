@@ -239,6 +239,9 @@ on boot
     # Set default wifi country code
     setprop ro.boot.wificountrycode US
 
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
@@ -562,10 +565,10 @@ on property:vold.decrypt=trigger_restart_framework
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-#service vendor.cnd /system/vendor/bin/cnd
-#    class main
-#    user system
-#    group system wifi inet radio wakelock net_admin
+service vendor.cnd /system/vendor/bin/cnd
+    class main
+    user system
+    group system wifi inet radio wakelock net_admin
 
 service dpmQmiMgr /system/vendor/bin/dpmQmiMgr
     class main
@@ -654,9 +657,9 @@ service vendor.qmuxd /system/vendor/bin/qmuxd
     group radio audio bluetooth gps nfc diag
     disabled
 
-# service vendor.netmgrd /system/vendor/bin/netmgrd
-#     class main
-#     disabled
+service vendor.netmgrd /system/vendor/bin/netmgrd
+    class main
+    disabled
 
 # service vendor.ipacm-diag /system/vendor/bin/ipacm-diag
 #     class main

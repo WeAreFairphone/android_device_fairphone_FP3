@@ -382,3 +382,33 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0 \
     libbt-vendor
+
+# Wifi
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(LOCAL_PATH)/wifi/WCNSS_wlan_dictionary.dat:/persist/WCNSS_wlan_dictionary.dat
+
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
+    dhcpcd.conf \
+    hostapd \
+    hostapd_cli \
+    libnl_2 \
+    libnl \
+    libqsap_sdk \
+    libQWiFiSoftApCfg \
+    libwifi-hal-qcom \
+    libwpa_client \
+    wcnss_service \
+    wificond \
+    wifilogd \
+    wpa_supplicant \
+    wpa_supplicant.conf \
+    wpa_supplicant_wcn.conf
+
+# Wi-Fi Display
+PRODUCT_BOOT_JARS += \
+    WfdCommon

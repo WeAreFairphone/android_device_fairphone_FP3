@@ -401,6 +401,7 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
 -vendor/lib/com.quicinc.cne.server@2.0.so
 -vendor/lib/com.quicinc.cne.server@2.1.so
 -vendor/lib/com.quicinc.cne.server@2.2.so
+-vendor/lib/com.quicinc.cne.server@2.3.so
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneoplookup.so
@@ -416,6 +417,7 @@ vendor/lib/libxml.so
 -vendor/lib64/com.quicinc.cne.server@2.0.so
 -vendor/lib64/com.quicinc.cne.server@2.1.so
 -vendor/lib64/com.quicinc.cne.server@2.2.so
+-vendor/lib64/com.quicinc.cne.server@2.3.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
@@ -426,18 +428,24 @@ vendor/lib64/libxml.so
 vendor/lib/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib/vendor.qti.hardware.data.dynamicdds@1.0.so
 vendor/lib/vendor.qti.hardware.data.qmi@1.0.so
-vendor/lib/vendor.qti.data.factory@1.1.so
+vendor/lib/vendor.qti.data.factory@1.0.so
 vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
-vendor/lib64/vendor.qti.data.factory@1.1.so
-framework/vendor.qti.data.factory-V1.1-java.jar
+vendor/lib64/vendor.qti.data.factory@1.0.so
+framework/vendor.qti.data.factory-V1.0-java.jar
 framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
 framework/vendor.qti.hardware.data.latency-V1.0-java.jar
 framework/vendor.qti.hardware.data.qmi-V1.0-java.jar
 framework/vendor.qti.latency-V2.0-java.jar
 vendor/lib64/vendor.qti.latency@2.0.so
 vendor/lib/vendor.qti.latency@2.0.so
+framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
+lib/vendor.qti.ims.rcsconfig@1.0.so
+lib64/vendor.qti.ims.rcsconfig@1.0.so
+vendor/lib/vendor.qti.ims.rcsconfig@1.0.so
+vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
+
 
 # DRM - HDCP
 vendor/lib/libmm-hdcpmgr.so
@@ -619,7 +627,7 @@ vendor/lib64/vendor.display.postproc@1.0.so
 vendor/lib/libhdr_tm.so
 vendor/lib64/libhdr_tm.so
 
-# Graphics (SDM) - from LA.UM.7.6.2.r1-08800-89xx.0
+# Graphics (SDM) - from 8901.2.A.0111-SS.20200304
 vendor/lib/libscalar.so|ec3eac6b3f7d028647d8ff8d5763641694b08a19
 vendor/lib/libsdm-color.so|2ab146cb732eff1a4ddf66b1041fc25be722994f
 vendor/lib/libsdm-diag.so|8bb92e3962a469ee0f1dd1ddcb097fa29a630eda
@@ -930,7 +938,6 @@ vendor/lib64/libmdmdetect.so
 # etc/permissions/com.qualcomm.qti.imscmservice.xml
 # framework/com.qualcomm.qti.imscmservice-V2.0-java.jar
 # framework/com.qualcomm.qti.imscmservice-V2.1-java.jar
-# framework/vendor.qti.ims.rcsconfig-V1.0-java.jar
 # lib/lib-imscamera.so
 # lib/lib-imsvideocodec.so
 # lib/lib-imsvt.so
@@ -940,7 +947,6 @@ vendor/lib64/libmdmdetect.so
 # lib/libimscamera_jni.so
 # lib/libimsmedia_jni.so
 # lib/librcc.so
-# lib/vendor.qti.ims.rcsconfig@1.0.so
 # lib/vendor.qti.imsrtpservice@1.0.so
 # lib64/lib-imscamera.so
 # lib64/lib-imsvideocodec.so
@@ -951,7 +957,6 @@ vendor/lib64/libmdmdetect.so
 # lib64/libimscamera_jni.so
 # lib64/libimsmedia_jni.so
 # lib64/librcc.so
-# lib64/vendor.qti.ims.rcsconfig@1.0.so
 # lib64/vendor.qti.imsrtpservice@1.0.so
 # vendor/bin/ims_rtp_daemon
 # vendor/bin/imsdatadaemon
@@ -975,7 +980,6 @@ vendor/lib64/libmdmdetect.so
 # vendor/lib/com.qualcomm.qti.imscmservice@2.0.so
 # vendor/lib/com.qualcomm.qti.imscmservice@2.1.so
 # vendor/lib/vendor.qti.ims.callinfo@1.0.so
-# vendor/lib/vendor.qti.ims.rcsconfig@1.0.so
 # vendor/lib/vendor.qti.imsrtpservice@1.0.so
 # vendor/lib/vendor.qti.imsrtpservice@1.0-service-Impl.so
 # vendor/lib64/lib-dplmedia.so
@@ -996,7 +1000,6 @@ vendor/lib64/libmdmdetect.so
 # vendor/lib64/com.qualcomm.qti.imscmservice@2.0.so
 # vendor/lib64/com.qualcomm.qti.imscmservice@2.1.so
 # vendor/lib64/vendor.qti.ims.callinfo@1.0.so
-# vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so
 # vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 # vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 
@@ -1041,67 +1044,62 @@ vendor/bin/time_daemon
 -vendor/lib64/libtime_genoff.so
 
 # Wi-Fi
-# vendor/bin/cnss-daemon
-# vendor/etc/wifi/WCNSS_qcom_wlan_nv.bin
-# vendor/etc/wifi/WCNSS_qcom_wlan_nv_Argentina.bin
-# vendor/etc/wifi/WCNSS_qcom_wlan_nv_Brazil.bin
-# vendor/etc/wifi/WCNSS_qcom_wlan_nv_epa.bin
-# vendor/etc/wifi/WCNSS_qcom_wlan_nv_India.bin
-# vendor/etc/wifi/WCNSS_wlan_dictionary.dat
+vendor/bin/cnss-daemon
+vendor/etc/wifi/aoa_cldb_falcon.bin
+vendor/etc/wifi/aoa_cldb_swl14.bin
+etc/firmware/wlan/prima/WCNSS_cfg.dat
 
-# Wi-Fi Display - from daisy - PKQ1.180917.001
-# bin/wfdservice|edeb291221024401cbae69c2fa4e58733b7efc4c
-# etc/init/wfdservice.rc|311bfdd1675e56499662f39455536b75b78477bb
-# etc/wfdconfigsink.xml|f180a45f69fa2ff01dbaf98c905cff1e9eba903e
-# etc/wfdconfig.xml|60a210d323f3f65dd1424cfd517295c522824b7b
-# -framework/WfdCommon.jar|bc07864172d8e373860776c5f7150c6df0a2e4e9
-# lib64/extractors/libmmparser.so|c83e3a856c15d46d477f31e957c2ef1f2eb6e797
-# lib64/libFileMux.so|c528ef66ce38e8474690b75d6ee1c9380c424be1
-# lib64/libmmosal.so|b836f3b339d3acd93c63ad144ce4ba4aadb16e38
-# lib64/libmmparser_lite.so|28a8dadd2ace30b90d18aa834db0094a2173c4cf
-# lib64/libwfdclient.so|c69712162493bdaa8833b5aae342ee4f9b0c2408
-# lib64/libwfdnative.so|3637fd260967b37bb64683a47870db3fa295e464
-# lib/com.qualcomm.qti.wifidisplayhal@1.0.so|93487a83a35f0fa3fe37445edd3ff22fcc52e4fc
-# lib/extractors/libmmparser.so|1bcd72daed0b00f50a2e599afa9e59682c115ca5
-# lib/libFileMux.so|5961dd16c9c6808e8321abf4b0266a9926ef327b
-# lib/libmmosal.so|ca8714ad8bd64ae9d23222df6098fbb949e75d96
-# lib/libmmparser_lite.so|dbbbb982ede970f372620bcdaea1fcfbf79813c2
-# lib/libmmrtpdecoder.so|adb55936e63ff087a9e3458070515e1ab7dbe178
-# lib/libmmrtpencoder.so|9a85d450a8633207f7a499962c5821d1a3fec2b8
-# lib/libOmxMux.so|8cef46f9daad54e31f0c4f11bc1ff56f128d052f
-# lib/libwfdavenhancements.so|5961cdc04d55e4e5b16e8e5004eb7526b03da51d
-# lib/libwfdclient.so|d5b207da4797e536e1666edb0f790500d1c20074
-# lib/libwfdcodecv4l2.so|37605ba29404ab99ed035822902bd6d8e539f755
-# lib/libwfdcommonutils.so|83e50b6081e34bf4db354ba0e02004356ef8b250
-# lib/libwfdconfigutils.so|6842f121700786674655395e9e7366ae80b20854
-# lib/libwfdmminterface.so|caf012b833585121fed196342c35d24f58940138
-# lib/libwfdmmsink.so|fe680131886a065c76813c7172e61c84ab052bfb
-# lib/libwfdmmsrc.so|deb7019df01072955b781206e6a00ac147b0ef62
-# lib/libwfdnative.so|66774d0946ab2694e5bc09a089869608cd9c43d1
-# lib/libwfdrtsp.so|35d56a25e9fe0ec7756c8b10183491c00cfb5879
-# lib/libwfdservice.so|55459dbfe15058871070f9c47a95f1c69c25c468
-# lib/libwfdsm.so|23382672f5b9be1e816dc0213a39bf9da7a111b4
-# lib/libwfdtalsa.so|2d574765e2f7756838168e3bf4ef650835da5624
-# lib/libwfduibcinterface.so|85faeea87b41e321de9a6fc0c4106978abf2ca92
-# lib/libwfduibcsinkinterface.so|cb623b0cc9e84adc6315a45d7c3315be62b617e7
-# lib/libwfduibcsink.so|2573a8b30d8c774d415ddfa788d4a5b8b12f4c1b
-# lib/libwfduibcsrcinterface.so|d5da17663c07ff1845f8f48feebf584545bb4b34
-# lib/libwfduibcsrc.so|78bc3258deb8f818c3392d5accdf8e7aac729fdc
-# -priv-app/WfdService/WfdService.apk|5c9839ed71b3bf9bab4b73585cc207df738dca41
-# vendor/bin/wifidisplayhalservice|bb6758bf316bc6037be0ad0b890207095813ae6e
-# vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|f3add191d48d9285eb1b69433c36bb3edbaf86fe
-# vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so|d06f24d7f59afd7a972336e3f89e49347f440d2a
-# vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so|93487a83a35f0fa3fe37445edd3ff22fcc52e4fc
-# vendor/lib/libmmosal_proprietary.so|7b4070890dbc94bf59821f88abe617f8f208bd94
-# vendor/lib/libOmxVideoDSMode.so|e553e97cd36c23549d74231758fa061ea3bbd74b
-# vendor/lib/libwfdcommonutils_proprietary.so|66d4c70ba23f7f2b7891fed6b4a5750d8bec3ba7
-# vendor/lib/libwfdhaldsmanager.so|39479c2aaac7353dd123f977e3ec9122303aa0a1
-# vendor/lib/libwfdhdcpcp.so|fdc871821a96c2768b880a7eb7f611632756f10c
-# vendor/lib/libwfdmmservice.so|910dbd346aabc786d77daddf65949eb3610ecf80
-# vendor/lib/libwfdmodulehdcpsession.so|ee1609c30970faca5cc081f3a7282f7334963db3
-# vendor/lib64/libmmosal_proprietary.so|4d8519a7f796dcc3e299596255f69e1d9681f4b5
-# vendor/lib64/libwfdhdcpcp.so|3cdb7bdfa137c1dd1e871e116145dd4ffafbaedc
-
+# Wi-Fi Display - 8901.2.A.0111-SS.20200304
+bin/wfdservice|edeb291221024401cbae69c2fa4e58733b7efc4c
+etc/init/wfdservice.rc|311bfdd1675e56499662f39455536b75b78477bb
+etc/wfdconfigsink.xml|134a86f74d9c374ce9081bff92c02515712a7f12
+etc/wfdconfig.xml|60a210d323f3f65dd1424cfd517295c522824b7b
+-framework/WfdCommon.jar|7b925c98d811b342e55549521af5c0a244e44025
+lib64/extractors/libmmparser.so|61cba3935000d9e04c7b73a20961bc8b15ed31b7
+lib64/libFileMux.so|c528ef66ce38e8474690b75d6ee1c9380c424be1
+lib64/libmmosal.so|b836f3b339d3acd93c63ad144ce4ba4aadb16e38
+lib64/libmmparser_lite.so|7e4d2f1022be67ccf9fe23034882c4e169b251d5
+lib64/libwfdclient.so|89d4d2d1a452246664a4dc4ae783173be3180835
+lib64/libwfdnative.so|e73791a9d0ee843547adf5d2cbf1973af505bd91
+lib/com.qualcomm.qti.wifidisplayhal@1.0.so|53ea5a509b6de0dbc3848275dd9eff18a4f0b519
+lib/extractors/libmmparser.so|8628c82f2cc2a269826ee86e3883c7cf1ed6949c
+lib/libFileMux.so|5961dd16c9c6808e8321abf4b0266a9926ef327b
+lib/libmmosal.so|ca8714ad8bd64ae9d23222df6098fbb949e75d96
+lib/libmmparser_lite.so|786498c462929cedbdd532a7c7a4aee99a63e616
+lib/libmmrtpdecoder.so|adb55936e63ff087a9e3458070515e1ab7dbe178
+lib/libmmrtpencoder.so|9a85d450a8633207f7a499962c5821d1a3fec2b8
+lib/libOmxMux.so|6aff8e6e81331f3d5d3a8d46d342e5b5efc237f3
+lib/libwfdavenhancements.so|e699cad5e5f6bd5ff6b07495795e1f5865a91166
+lib/libwfdclient.so|dfef4e644097d82eef472cbc7b9079062b1c838c
+lib/libwfdcodecv4l2.so|c4d8f54143431e8a8648766f989ff64adbae3557
+lib/libwfdcommonutils.so|f76e75661c41c5c494f60dbb01f22f7114b51fc6
+lib/libwfdconfigutils.so|1f7a9f752648de1fc04655133e9ddbfafa640839
+lib/libwfdmminterface.so|3ed15fd4bbb865722399bba446302bd61ab023fd
+lib/libwfdmmsink.so|9bc89fddbd83522b81e43b818fcf8f2ec39d4191
+lib/libwfdmmsrc.so|0ea81dcf5cc913cb48dc61b400513ad0f0478ec8
+lib/libwfdnative.so|3c7450ba0b62d5b8f40f3a3036f8a46542a2d241
+lib/libwfdrtsp.so|5ee03a541fc3c2d5437b6caf48702ea99e704db4
+lib/libwfdservice.so|a6470df0d60f880396643a3038c49a07b23ff116
+lib/libwfdsm.so|363c2a674520d7bb76883ed5957d5a66b7da440b
+lib/libwfduibcinterface.so|85faeea87b41e321de9a6fc0c4106978abf2ca92
+lib/libwfduibcsinkinterface.so|25235e58eb13e84f0e9bbc06592fdf85369d7529
+lib/libwfduibcsink.so|2573a8b30d8c774d415ddfa788d4a5b8b12f4c1b
+lib/libwfduibcsrcinterface.so|cb1ce08a89654236a29d940b6988309b670bf98d
+lib/libwfduibcsrc.so|78bc3258deb8f818c3392d5accdf8e7aac729fdc
+-priv-app/WfdService/WfdService.apk|30befc443051135dff5d00d8185e575c3aaff9c0
+vendor/bin/wifidisplayhalservice|4822ef60a8f95a120af13833071c06af8618ae0b
+vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|04e463342cbba4c0e9c311a18238f95dec9359fd
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so|f4b6f4e2e40552601aa42ededf856841ce376fe1
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so|1f617a4c89ce9cd1e62a6960d5f09bc1b8402ea3
+vendor/lib/libmmosal_proprietary.so|df50cf90bdf0e29bcd741af46b5ace8c89c0b8c0
+vendor/lib/libOmxVideoDSMode.so|49afb32feb65de020ef3b4f2f67e13edaa14816c
+vendor/lib/libwfdcommonutils_proprietary.so|e82897ed8d7d797336df291a1afb6e22227b2f60
+vendor/lib/libwfdhaldsmanager.so|e19f116dae16c0397ae910795ca6680e6a8a6dc6
+vendor/lib/libwfdhdcpcp.so|e0969d65a5809fc2f0d5f84bde616554cebe8b5e
+vendor/lib/libwfdmmservice.so|edfef7c2a265539ab8256291bf5a537ee72ae534
+vendor/lib/libwfdmodulehdcpsession.so|c7893d8cb4dfa574c2835bd08d539177e912144e
+vendor/lib64/libmmosal_proprietary.so|1a6fd0d32407879020428c2c403e0a9bfe554750
+vendor/lib64/libwfdhdcpcp.so|d9bfd72076d5c657c54ac5ff9e2b6ac1e0a194f2
 
 # Add Arima ftm daemon and adb enable command start 
 vendor/bin/ArimaFtmDaemon

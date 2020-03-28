@@ -159,19 +159,19 @@ service gamed /system/vendor/bin/gamed
    disabled
    socket gamed seqpacket 0640 system system
 
-# service thermal-engine /system/vendor/bin/thermal-engine
-#    class main
-#    user root
-#    socket thermal-send-client stream 0666 system system
-#    socket thermal-recv-client stream 0660 system system
-#    socket thermal-recv-passive-client stream 0666 system system
-#    socket thermal-send-rule stream 0660 system system
-#    group root
+service thermal-engine /system/vendor/bin/thermal-engine
+   class main
+   user root
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
+   socket thermal-send-rule stream 0660 system system
+   group root
 
-# service time_daemon /system/vendor/bin/time_daemon
-#    class late_start
-#    user root
-#    group root
+service time_daemon /system/vendor/bin/time_daemon
+   class late_start
+   user root
+   group root
 
 service audiod /system/vendor/bin/audiod
    class late_start
@@ -233,11 +233,11 @@ on boot
     setprop vendor.usb.rmnet.inst.name "rmnet"
     setprop vendor.usb.dpl.inst.name "dpl"
 
-# service wcnss-service /system/vendor/bin/wcnss_service
-#     class main
-#     user system
-#     group system wifi radio
-#     oneshot
+service wcnss-service /system/vendor/bin/wcnss_service
+    class main
+    user system
+    group system wifi radio
+    oneshot
 
 ## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
 # service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
