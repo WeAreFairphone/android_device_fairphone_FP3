@@ -106,6 +106,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service \
+    lights.msm8953
 
 #INIT
 PRODUCT_PACKAGES += \
@@ -143,6 +144,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	init.qcom.test.rc \
 	init.qcom.debug.sh
+
+# Camera
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service \
+    camera.device@3.2-impl \
+    libbson.vendor \
+    libxml2
 
 # Permissions
 PRODUCT_COPY_FILES += \

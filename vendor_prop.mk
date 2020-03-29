@@ -208,3 +208,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # vendor library
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.camera.camera2=true \
+    persist.vendor.camera.lib2d.rotation=on \
+    persist.vendor.camera.isp.clock.optmz=0 \
+    vendor.camera.hal1.packagelist=com.skype.raider,com.google.android.talk \
+    vendor.camera.lowpower.record.enable=1 \
+    persist.vendor.camera.display.umax=1920x1080 \
+    persist.vendor.camera.display.lmax=1280x720
+
+#expose aux camera for below packages
+# vendor.camera.aux.packagelist=org.codeaurora.snapcam

@@ -44,7 +44,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-<!--     <hal format="hidl">
+    <hal format="hidl">
         <name>android.hardware.camera.provider</name>
         <transport>hwbinder</transport>
         <version>2.4</version>
@@ -53,7 +53,7 @@
             <instance>default</instance>
             <instance>legacy/0</instance>
         </interface>
-    </hal> -->
+    </hal>
     <hal format="hidl">
         <name>android.hardware.cas</name>
         <transport>hwbinder</transport>
