@@ -234,7 +234,7 @@ vendor/lib/libmmcamera_ofilm_imx363_bl24s64_eeprom.so
 ### vendor/lib/libmmcamera_tsp_imx486_fm24c64_eeprom.so
 vendor/lib/libmmcamera_samsung_s5k4h7yx_eeprom.so
 
-# 
+#
 # Camera - mmcamera
 vendor/lib/libmpbase.so
 vendor/lib/libmmcamera2_c2d_module.so
@@ -519,12 +519,18 @@ vendor/bin/loc_launcher
 vendor/bin/lowi-server
 vendor/bin/xtra-daemon
 vendor/etc/init/vendor.qti.gnss@1.0-service.rc
+-vendor/etc/lowi.conf
+-vendor/etc/xtwifi.conf
+vendor/lib/libgnsspps.so
+vendor/lib/libloc_api_v02.so
 vendor/lib/hw/vendor.qti.gnss@1.0-impl.so
 vendor/lib/vendor.qti.gnss@1.0.so
 vendor/lib/vendor.qti.gnss@1.1.so
 vendor/lib/vendor.qti.gnss@1.2.so
 vendor/lib/vendor.qti.gnss@2.0.so
 vendor/lib/vendor.qti.gnss@2.1.so
+vendor/lib64/libgnsspps.so
+vendor/lib64/libloc_api_v02.so
 vendor/lib64/hw/vendor.qti.gnss@1.0-impl.so
 vendor/lib64/lib_drplugin_server.so
 -vendor/lib64/libloc_api_v02.so
@@ -913,7 +919,7 @@ vendor/lib64/libmdmdetect.so
 # vendor/lib64/qcrild_librilutils.so
 # # vendor/lib64/libadropbox.so not found
 # # vendor/lib/libicuuc_vendor.so not found
-# # vendor/lib64/libicuuc_vendor.so# 
+# # vendor/lib64/libicuuc_vendor.so#
 
 # # Radio - IMS
 # -priv-app/ims/ims.apk|b664bb413e88dbe88f49f400260f288306fc9e23
@@ -1083,7 +1089,7 @@ vendor/lib/libwfdmodulehdcpsession.so|c7893d8cb4dfa574c2835bd08d539177e912144e
 vendor/lib64/libmmosal_proprietary.so|1a6fd0d32407879020428c2c403e0a9bfe554750
 vendor/lib64/libwfdhdcpcp.so|d9bfd72076d5c657c54ac5ff9e2b6ac1e0a194f2
 
-# Add Arima ftm daemon and adb enable command start 
+# Add Arima ftm daemon and adb enable command start
 vendor/bin/ArimaFtmDaemon
 
 # This is in charge of setting the subsystem restart values at:
