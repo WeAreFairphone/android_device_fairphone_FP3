@@ -240,32 +240,32 @@ service wcnss-service /system/vendor/bin/wcnss_service
     oneshot
 
 ## imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-# service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
-#     class main
-#     user system
-#     socket ims_qmid stream 0660 system radio
-#     group radio log diag
+service vendor.imsqmidaemon /system/vendor/bin/imsqmidaemon
+    class main
+    user system
+    socket ims_qmid stream 0660 system radio
+    group radio log diag
 
 # imsdatadaemon starts with root and UID will be downgraded to SYSTEM.
-# service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
-#     class main
-#     user system
-#     socket ims_datad stream 0660 system radio
-#     group system wifi radio inet log diag
-#     disabled
+service vendor.imsdatadaemon /system/vendor/bin/imsdatadaemon
+    class main
+    user system
+    socket ims_datad stream 0660 system radio
+    group system wifi radio inet log diag
+    disabled
 
-# on property:vendor.ims.QMI_DAEMON_STATUS=1
-#     start vendor.imsdatadaemon
+on property:vendor.ims.QMI_DAEMON_STATUS=1
+    start vendor.imsdatadaemon
 
-# service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
-#    class main
-#    user system
-#    group radio diag inet log
+service vendor.ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+   class main
+   user system
+   group radio diag inet log
 
-# service vendor.imsrcsservice /system/vendor/bin/imsrcsd
-#    class main
-#    user system
-#    group radio diag inet log wakelock
+service vendor.imsrcsservice /system/vendor/bin/imsrcsd
+   class main
+   user system
+   group radio diag inet log wakelock
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
     restart vendor.ims_rtp_daemon
@@ -346,16 +346,16 @@ service vendor.hvdcp_opti /system/vendor/bin/hvdcp_opti
 on property:init.svc.dts_configurator=stopped
     start dtseagleservice
 
-# service vendor.per_mgr /system/vendor/bin/pm-service
-#     class core
-#     user system
-#     group system net_raw
+service vendor.per_mgr /system/vendor/bin/pm-service
+    class core
+    user system
+    group system net_raw
 
-# service vendor.per_proxy /system/vendor/bin/pm-proxy
-#     class core
-#     user system
-#     group system
-#     disabled
+service vendor.per_proxy /system/vendor/bin/pm-proxy
+    class core
+    user system
+    group system
+    disabled
 
 on property:init.svc.vendor.per_mgr=running
     start vendor.per_proxy
