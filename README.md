@@ -42,11 +42,11 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
   * Bluetooth :heavy_check_mark:
   * Camera :heavy_check_mark:
   * Wi-Fi :heavy_check_mark:
+  * NFC :heavy_check_mark:
 
 ### Known Issues
 These things are untested or known not to work:
 * LTE
-* NFC
 * GPS
 * Device encryption
 * Updater

@@ -1886,6 +1886,8 @@ vendor/firmware/fingerprint.b05
 vendor/firmware/fingerprint.b06
 vendor/firmware/fingerprint.mdt
 
+vendor/lib64/hw/fingerprint.default.so
+
 # FM
 lib/fm_helium.so
 lib/libfm-hci.so
@@ -2166,6 +2168,19 @@ vendor/firmware/leia_pm4_470.fw
 #etc/permissions/com.motorola.moto-uirefresh.xml:vendor/etc/permissions/com.motorola.moto-uirefresh.xml
 #etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
 #etc/permissions/com.motorola.camera2.denali.xml:vendor/etc/permissions/com.motorola.camera2.denali.xml
+
+# NFC
+vendor/lib/libpn548ad_fw.so
+vendor/lib/libpn547_fw.so
+vendor/lib/libpn548ad_fw.so
+vendor/lib/libpn551_fw.so
+vendor/lib/libpn553_fw.so
+vendor/lib/libpn557_fw.so
+vendor/lib64/nfc_nci.sn100.default.hw.so
+vendor/lib64/nfc_nci.nqx.default.hw.so
+vendor/lib64/hw/nfc_nci.sn100.default.so
+vendor/lib64/hw/nfc_nci.nqx.default.so
+vendor/bin/nqnfcinfo
 
 # Offmode charging
 #vendor/bin/charge_only_mode
@@ -2540,8 +2555,8 @@ vendor/bin/cnss-daemon
 #vendor/etc/wifi/WCNSS_qcom_wlan_nv_India.bin
 #vendor/etc/wifi/WCNSS_wlan_dictionary.dat
 
-vendor/etc/wifi/WCNSS_qcom_cfg.ini
-vendor/bin/wcnss_service
+#vendor/etc/wifi/WCNSS_qcom_cfg.ini
+#vendor/bin/wcnss_service
 vendor/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 etc/firmware/ice40.bin
