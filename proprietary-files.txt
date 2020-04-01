@@ -1117,3 +1117,14 @@ vendor/lib64/libStDrvInt.so
 vendor/lib/libStDrvInt.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib/libsecureui_svcsock.so
+
+# Elan Fingerprint
+vendor/lib64/hw/fingerprint.default.so
+vendor/firmware/fingerprint.mdt
+vendor/firmware/fingerprint.b00
+vendor/firmware/fingerprint.b01
+vendor/firmware/fingerprint.b02
+vendor/firmware/fingerprint.b03
+vendor/firmware/fingerprint.b04
+vendor/firmware/fingerprint.b05
+vendor/firmware/fingerprint.b06

@@ -1,0 +1,4 @@
+on boot
+        #[SM42][[fingerprint]elan 
+    chown system system /dev/elan_fp
+    chmod 0666 /dev/elan_fp

@@ -110,33 +110,34 @@ PRODUCT_PACKAGES += \
 
 #INIT
 PRODUCT_PACKAGES += \
-	init.target.rc \
-	init.qcom.rc \
-	init.recovery.qcom.rc \
-	init.qcom.factory.rc \
-	init.qcom.usb.rc \
-	init.msm.usb.configfs.rc \
-	ueventd.qcom.rc \
-	init.carrier.rc \
-	vold.fstab \
-	fstab.qcom \
-	init.qti.ims.sh \
-	init.qcom.coex.sh \
-	init.qcom.early_boot.sh \
-	init.qcom.post_boot.sh \
-	init.qcom.sdio.sh \
-	init.qcom.sh \
-	init.qcom.class_core.sh \
-	init.class_main.sh \
-	init.class_late.sh \
-	init.qcom.usb.sh \
-	init.qcom.efs.sync.sh \
-	qca6234-service.sh \
-	init.mdm.sh \
-	init.qcom.sensors.sh \
-	init.qcom.crashdata.sh \
-	init.qti.can.sh \
-	init.qti.charger.sh
+    init.target.rc \
+    init.qcom.rc \
+    init.recovery.qcom.rc \
+    init.qcom.factory.rc \
+    init.qcom.usb.rc \
+    init.msm.usb.configfs.rc \
+    ueventd.qcom.rc \
+    init.carrier.rc \
+    vold.fstab \
+    fstab.qcom \
+    init.qti.ims.sh \
+    init.qcom.coex.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.sdio.sh \
+    init.qcom.sh \
+    init.qcom.class_core.sh \
+    init.class_main.sh \
+    init.class_late.sh \
+    init.qcom.usb.sh \
+    init.qcom.efs.sync.sh \
+    qca6234-service.sh \
+    init.mdm.sh \
+    init.qcom.sensors.sh \
+    init.qcom.crashdata.sh \
+    init.qti.can.sh \
+    init.qti.charger.sh \
+    elan_device.rc
 
 # CRDA += init.crda.sh #TODO fix CRDA packages later
 
@@ -322,6 +323,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
+
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service
+    # android.hardware.biometrics.fingerprint@2.1
 
 # FBE support
 PRODUCT_COPY_FILES += \

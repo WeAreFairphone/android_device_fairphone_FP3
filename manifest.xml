@@ -17,7 +17,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-<!--     <hal format="hidl">
+    <hal format="hidl">
         <name>android.hardware.biometrics.fingerprint</name>
         <transport>hwbinder</transport>
         <version>2.1</version>
@@ -25,7 +25,7 @@
             <name>IBiometricsFingerprint</name>
             <instance>default</instance>
         </interface>
-    </hal> -->
+    </hal>
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>
         <transport>hwbinder</transport>
