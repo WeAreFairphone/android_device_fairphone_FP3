@@ -300,6 +300,15 @@
         </interface>
     </hal>
     <hal format="hidl">
+        <name>com.qualcomm.qti.dpm.api</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IdpmQmi</name>
+            <instance>dpmQmiService</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
         <name>android.hardware.weaver</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -380,15 +389,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-<!--     <hal format="hidl">
-        <name>vendor.egistec.hardware.fingerprint</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>IBiometricsFingerprintEts</name>
-            <instance>default</instance>
-        </interface>
-    </hal> -->
     <hal format="hidl">
         <name>vendor.qti.data.factory</name>
         <transport>hwbinder</transport>

@@ -450,18 +450,26 @@ vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc
 vendor/lib/mediadrm/libwvdrmengine.so
-# vendor/lib/liboemcrypto.so
 vendor/lib64/libwvhidl.so
 vendor/lib64/mediadrm/libwvdrmengine.so
-# vendor/lib64/liboemcrypto.so not found
 vendor/lib64/libhdcpsrm.so
 vendor/lib64/libcpion.so
 
 # DRM
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so
+vendor/lib/com.qualcomm.qti.dpm.api@1.0.so
 vendor/bin/qseecomd
 vendor/lib/libcppf.so
-# vendor/lib/liboemcrypto.so
 vendor/lib/libQSEEComAPI.so
+vendor/lib/libdrmfs.so
+vendor/lib/libdrmtime.so
+vendor/lib/libGPreqcancel_svc.so
+vendor/lib/libGPreqcancel.so
+vendor/lib/libqisl.so
+vendor/lib/libQSEEComAPI.so
+vendor/lib/librpmb.so
+vendor/lib/libSecureUILib.so
+vendor/lib/libssd.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libGPreqcancel_svc.so
@@ -515,6 +523,7 @@ vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/gatekeeper.msm8953.so
 
 # GPS
+vendor/bin/slim_daemon
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/DR_AP_Service
 vendor/bin/garden_app
@@ -665,8 +674,11 @@ vendor/firmware/leia_pm4_470.fw
 vendor/bin/ipacm-diag
 
 # Keymaster
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
 vendor/etc/init/android.hardware.keymaster@4.0-service-qti.rc
+vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
 vendor/lib/hw/keystore.msm8953.so
 vendor/lib/libkeymasterdeviceutils.so
 vendor/lib/libkeymasterprovision.so
@@ -995,21 +1007,17 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 
 # Sensors
-# vendor/bin/capsense_reset
 vendor/bin/sensors.qti
+vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/lib/hw/activity_recognition.msm8953.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor1.so
 vendor/lib/sensor_calibrate.so
-# vendor/lib/sensors.hal.tof.so
-# vendor/lib/sensors.rp.so
 vendor/lib/sensors.ssc.so
 vendor/lib64/hw/activity_recognition.msm8953.so
 vendor/lib64/libsensor_reg.so
 vendor/lib64/libsensor1.so
 vendor/lib64/sensor_calibrate.so
-# vendor/lib64/sensors.hal.tof.so
-# vendor/lib64/sensors.rp.so
 vendor/lib64/sensors.ssc.so
 
 # Thermal
@@ -1090,9 +1098,19 @@ vendor/bin/ssr_setup
 
 # SECUREMSM
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
+vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
+vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
+vendor/lib/libGPQTEEC_vendor.so
+vendor/lib/libQTEEConnector_vendor.so
+vendor/lib/libFidoCrypto_vendor.so
+vendor/lib64/libGPQTEEC_vendor.so
+vendor/lib64/libQTEEConnector_vendor.so
+vendor/lib64/libFidoCrypto_vendor.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib/libsecureui.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libStDrvInt.so

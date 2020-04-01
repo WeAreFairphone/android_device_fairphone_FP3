@@ -7,7 +7,7 @@
 
 #<src>                                      <mnt_point>  <type>  <mnt_flags and options>                     <fs_mgr_flags>
 /dev/block/bootdevice/by-name/system        /            ext4    ro,barrier=1,discard                        wait,slotselect,avb
-/dev/block/bootdevice/by-name/userdata      /data        ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard  wait,quota,reservedsize=128M,fileencryption=aes-256-xts:aes-256-cts
+/dev/block/bootdevice/by-name/userdata      /data        ext4    noatime,nosuid,nodev,barrier=1,noauto_da_alloc,discard  latemount,wait,check,quota,reservedsize=128M,fileencryption=ice
 #/devices/platform/soc/7864900.sdhci/mmc_host*        /storage/sdcard1 vfat  nosuid,nodev         wait,voldmanaged=sdcard1:auto,noemulatedsd,encryptable=footer
 /devices/platform/soc/7864900.sdhci/mmc_host*        /storage/sdcard1 vfat  nosuid,nodev         wait,voldmanaged=sdcard1:auto,noemulatedsd
 /devices/platform/soc/7000000.ssusb/7000000.dwc3/xhci-hcd.0.auto*  /storage/usbotg  vfat  nosuid,nodev  wait,voldmanaged=usbotg:auto
