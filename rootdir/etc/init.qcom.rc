@@ -686,17 +686,17 @@ service vendor.dataadpl /system/vendor/bin/adpl
     group radio oem_2901 diag usb net_admin
     disabled
 
-# service vendor.sensors /vendor/bin/sscrpcd
-#     class core
-#     user system
-#     group system
-#     disabled
+service vendor.sensors /vendor/bin/sscrpcd
+    class core
+    user system
+    group system
+    disabled
 
-# service vendor.sensors.qti /vendor/bin/sensors.qti
-#     class core
-#     user system
-#     group system
-#     disabled
+service vendor.sensors.qti /vendor/bin/sensors.qti
+    class core
+    user system
+    group system
+    disabled
 
 on property:ro.vendor.use_data_netmgrd=false
     # netmgr not supported on specific target
