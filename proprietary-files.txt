@@ -1136,3 +1136,16 @@ vendor/etc/libnfc-mtp-NQ3XX.conf
 vendor/etc/libnfc-qrd-NQ3XX.conf
 vendor/etc/libnfc-nci_NCI2_0.conf
 vendor/etc/libnfc-nci.conf
+
+#POWER_OFF_ALARM
+vendor/bin/power_off_alarm
+-vendor/app/PowerOffAlarm/PowerOffAlarm.apk
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
+vendor/lib/hw/vendor.qti.hardware.alarm@1.0-impl.so
+vendor/lib/vendor.qti.hardware.alarm@1.0.so
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
+
+# USB
+etc/firmware/ice40.bin

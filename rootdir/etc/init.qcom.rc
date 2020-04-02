@@ -1037,10 +1037,10 @@ service profiler_daemon /system/bin/profiler_daemon
     group root
     disabled
 
-#service charger /charger
-#    class charger
-#    group system graphics
-#    seclabel u:r:healthd:s0
+service charger /charger
+    class charger
+    group system graphics
+    seclabel u:r:healthd:s0
 
 service vendor.ssr_diag /system/vendor/bin/ssr_diag
     class late_start
@@ -1059,34 +1059,34 @@ service vendor.ssr_diag /system/vendor/bin/ssr_diag
 #on property:persist.usb.hvdcp.detect=false
 #    stop hvdcp
 
-#service charger_monitor /system/bin/charger_monitor
-#    user root
-#    group root
-#    disabled
+service charger_monitor /system/bin/charger_monitor
+    user root
+    group root
+    disabled
 
-#service qbcharger /charger -m 1
-#    disabled
-#    oneshot
+service qbcharger /charger -m 1
+    disabled
+    oneshot
 
-#on property:sys.qbcharger.enable=true
-#    start qbcharger
+on property:sys.qbcharger.enable=true
+    start qbcharger
 
-#on property:sys.qbcharger.enable=false
-#    stop qbcharger
+on property:sys.qbcharger.enable=false
+    stop qbcharger
 
-#service diag_mdlog_start /system/vendor/bin/diag_mdlog
-#    class late_start
-#    user shell
-#    group system oem_2901 sdcard_rw sdcard_r media_rw
-#    disabled
-#    oneshot
+service diag_mdlog_start /system/vendor/bin/diag_mdlog
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
 
-#service diag_mdlog_stop /system/vendor/bin/diag_mdlog -k
-#    class late_start
-#    user shell
-#    group system oem_2901 sdcard_rw sdcard_r media_rw
-#    disabled
-#    oneshot
+service diag_mdlog_stop /system/vendor/bin/diag_mdlog -k
+    class late_start
+    user shell
+    group system oem_2901 sdcard_rw sdcard_r media_rw
+    disabled
+    oneshot
 
 service qlogd /system/xbin/qlogd
     socket qlogd stream 0662 system system
