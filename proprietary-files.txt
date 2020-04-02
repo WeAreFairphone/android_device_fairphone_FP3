@@ -1128,3 +1128,11 @@ vendor/firmware/fingerprint.b03
 vendor/firmware/fingerprint.b04
 vendor/firmware/fingerprint.b05
 vendor/firmware/fingerprint.b06
+
+# NFC - PN553
+vendor/bin/nqnfcinfo
+vendor/lib/libpn553_fw.so
+vendor/etc/libnfc-mtp-NQ3XX.conf
+vendor/etc/libnfc-qrd-NQ3XX.conf
+vendor/etc/libnfc-nci_NCI2_0.conf
+vendor/etc/libnfc-nci.conf

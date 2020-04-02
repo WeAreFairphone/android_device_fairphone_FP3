@@ -192,6 +192,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 # QCOM
@@ -474,6 +475,26 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# Secure Element
+PRODUCT_PACKAGES += \
+    SecureElement \
+    android.hardware.secure_element@1.0
+
+# NFC
+PRODUCT_PACKAGES += \
+    NfcNci \
+    Tag \
+    libnqnfc-nci \
+    libnqnfc_nci_jni \
+    libp61-jcop-kit \
+    com.nxp.nfc.nq \
+    com.android.nfc_extras \
+    vendor.nxp.hardware.nfc@1.0 \
+    vendor.nxp.hardware.nfc@1.1-service
+
+PRODUCT_BOOT_JARS += com.nxp.nfc.nq
+
+# Wifi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     dhcpcd.conf \

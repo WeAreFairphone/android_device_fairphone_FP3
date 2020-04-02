@@ -185,7 +185,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-<!--     <hal format="hidl">
+    <hal format="hidl">
         <name>android.hardware.nfc</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
@@ -193,7 +193,16 @@
             <name>INfc</name>
             <instance>default</instance>
         </interface>
-    </hal> -->
+    </hal>
+    <hal format="hidl">
+        <name>vendor.nxp.hardware.nfc</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>INqNfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl">
         <name>android.hardware.power</name>
         <transport>hwbinder</transport>
@@ -217,6 +226,16 @@
             <instance>slot1</instance>
             <instance>slot2</instance>
         </interface>
+    </hal>
+   <hal format="hidl">
+       <name>android.hardware.secure_element</name>
+       <transport>hwbinder</transport>
+       <version>1.0</version>
+       <interface>
+           <name>ISecureElement</name>
+           <instance>SIM1</instance>
+           <instance>SIM2</instance>
+       </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.radio.config</name>
