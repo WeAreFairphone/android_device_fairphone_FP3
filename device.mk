@@ -22,7 +22,8 @@ $(call inherit-product-if-exists, vendor/fairphone/FP3/FP3-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-	$(LOCAL_PATH)/overlay
+	$(LOCAL_PATH)/overlay \
+    $(LOCAL_PATH)/overlay-lineage
 
 # A/B related defines
 AB_OTA_UPDATER := true

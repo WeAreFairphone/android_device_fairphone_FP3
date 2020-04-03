@@ -204,6 +204,9 @@ VENDOR_SECURITY_PATCH := "2018-08-05"
 # NFC
 TARGET_USES_NQ_NFC := true
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
