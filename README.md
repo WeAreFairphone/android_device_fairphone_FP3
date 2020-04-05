@@ -96,8 +96,8 @@ vendor/lineage/build/tools/sdat2img.py product.transfer.list product.new.dat pro
 ```
   * Mount system and vendor image and run the script on the folder:
 ```sh
-sudo mount -o loop system.img tmp
-sudo mount -o loop vendor.img tmp/vendor
+sudo mount -o ro,loop system.img tmp
+sudo mount -o ro,loop vendor.img tmp/vendor
 cd .../lineageos/device/fairphone/fp3
 ./extract-files.sh .../tmp
 ```
