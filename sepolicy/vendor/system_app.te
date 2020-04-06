@@ -1,0 +1,5 @@
+
+#elan finger print system_server
+allow system_app elanfp_device:chr_file rw_file_perms;
+
+get_prop(system_app, fps_vendor_prop)

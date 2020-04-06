@@ -1,0 +1,3 @@
+
+# elan finger print system_server 
+allow platform_app elanfp_device:chr_file rw_file_perms;

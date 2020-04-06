@@ -1,0 +1,4 @@
+
+# elan finger print selinux 
+/dev/elan_fp u:object_r:elanfp_device:s0
+#/data/elan(/.*)?          u:object_r:elanfp_data:s0

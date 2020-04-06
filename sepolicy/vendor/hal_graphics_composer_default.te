@@ -1,0 +1,3 @@
+#add permission to fingerprintd
+allow hal_graphics_composer_default hal_fingerprint_default:process  { signal };
+
