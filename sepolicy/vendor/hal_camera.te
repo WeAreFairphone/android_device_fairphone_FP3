@@ -1,0 +1,4 @@
+
+#vendor-info.camera
+set_prop(hal_camera, vendor_info_camera_prop)
+allow hal_camera vendor_info_camera_prop:property_service set;

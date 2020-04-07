@@ -6,3 +6,4 @@ get_prop(system_app, fps_vendor_prop)
 
 allow system_app sysfs_battery_supply:dir { search read };
 allow system_app sysfs_battery_supply:file { read open getattr };
+allow system_app vendor_info_camera_prop:file { read open getattr };

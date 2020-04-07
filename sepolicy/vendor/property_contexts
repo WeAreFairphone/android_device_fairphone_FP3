@@ -1,10 +1,11 @@
-
-#[SM42][fingerprint][kent][17110101][begin]add writing property  permission 
 ro.fps.module     u:object_r:fps_vendor_prop:s0
 ro.fps.sw.version     u:object_r:fps_vendor_prop:s0
 ro.fps.vendor     u:object_r:fps_vendor_prop:s0
 ro.fps.pt.errorbin	u:object_r:fps_vendor_prop:s0
 ro.fps.pt.version		u:object_r:fps_vendor_prop:s0
 ro.fps.pt.features	u:object_r:fps_vendor_prop:s0
-#[SM42][fingerprint][kent][17110101][begin]add writing property  permission 
 ro.fingerprint.module   u:object_r:fps_vendor_prop:s0
+
+#vendor-info.camera
+persist.vendor.camera.            u:object_r:vendor_info_camera_prop:s0
+persist.camera.                   u:object_r:vendor_info_camera_prop:s0

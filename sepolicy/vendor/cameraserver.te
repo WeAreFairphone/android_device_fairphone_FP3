@@ -1,0 +1,2 @@
+#vendor-info.camera
+get_prop(cameraserver, vendor_info_camera_prop) 
