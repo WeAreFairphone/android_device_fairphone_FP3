@@ -1,0 +1,3 @@
+ 
+allow kernel sysfs_battery_supply:dir search;
+allow kernel sysfs_battery_supply:file {read open};

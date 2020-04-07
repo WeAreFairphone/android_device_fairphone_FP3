@@ -3,3 +3,6 @@
 allow system_app elanfp_device:chr_file rw_file_perms;
 
 get_prop(system_app, fps_vendor_prop)
+
+allow system_app sysfs_battery_supply:dir { search read };
+allow system_app sysfs_battery_supply:file { read open getattr };
