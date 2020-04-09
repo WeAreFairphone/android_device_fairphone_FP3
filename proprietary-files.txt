@@ -1897,6 +1897,7 @@ vendor/lib64/libscvePanorama.so
 vendor/lib64/libscvePanorama_lite.so
 
 # Fingerprint
+vendor/etc/init/elan_device.rc 
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
 vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service.rc
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so

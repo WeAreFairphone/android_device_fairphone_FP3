@@ -528,8 +528,8 @@ PRODUCT_PACKAGES += \
     vndk_package
 
 # Weaver
-#PRODUCT_PACKAGES += \
-#    android.hardware.weaver@1.0
+PRODUCT_PACKAGES += \
+    android.hardware.weaver@1.0
 
 # Wifi
 PRODUCT_COPY_FILES += \
