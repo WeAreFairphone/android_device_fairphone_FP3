@@ -45,13 +45,14 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
   * NFC :heavy_check_mark:
   * Device encryption :heavy_check_mark:
   * Fingerprint sensor :heavy_check_mark:
+  * LTE :heavy_check_mark:
+  * GPS :heavy_check_mark:
 
 ### Known Issues
 These things are untested or known not to work:
-* LTE
-* GPS
 * Updater
 * Playing videos in fullscreen causing some overlay issue
+* Ear speaker, e.g. during phone calls
 
 ### Kernel Source
 Based on repository from k4y0z:
