@@ -269,7 +269,8 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.target.rc \
     fstab.qcom \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    elan_device.rc
 
 # IPACM
 PRODUCT_PACKAGES += \

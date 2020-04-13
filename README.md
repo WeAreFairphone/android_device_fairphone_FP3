@@ -43,12 +43,13 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
   * Camera :heavy_check_mark:
   * Wi-Fi :heavy_check_mark:
   * NFC :heavy_check_mark:
+  * Device encryption :heavy_check_mark:
+  * Fingerprint sensor :heavy_check_mark:
 
 ### Known Issues
 These things are untested or known not to work:
 * LTE
 * GPS
-* Device encryption
 * Updater
 * Playing videos in fullscreen causing some overlay issue
 
@@ -100,6 +101,12 @@ sudo mount -o loop system.img tmp
 sudo mount -o loop vendor.img tmp/vendor
 cd .../lineageos/device/fairphone/fp3
 ./extract-files.sh .../tmp
+```
+  * If file access permissions are missing change it before calling
+	extract_files.sh, e.g. with chown (don't flash image files anymore after that):
+```sh
+# Replace user with your user name.
+sudo chown -R user:user tmp
 ```
 * Then do
 ```sh

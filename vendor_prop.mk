@@ -129,7 +129,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Factory reset partition
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst=/dev/block/platform/soc/7824900.sdhci/by-name/frp
+    ro.frp.pst=/dev/block/bootdevice/by-name/config
+
+    #ro.frp.pst=/dev/block/platform/soc/7824900.sdhci/by-name/frp
 
 # FM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -158,6 +160,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # set cutoff voltage to 3400mV
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.cutoff_voltage_mv=3400
+
+# Keystore
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore_desede=true \
+    keyguard.no_require_sim=true
 
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -247,7 +254,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.ims.disableADBLogs=0 \
     persist.vendor.ims.vt.enableadb=3 \
     persist.vendor.ims.disableQXDMLogs=1 \
-    ro.vendor.build.vendorprefix=/vendor
+    ro.vendor.build.vendorprefix=/vendor \
+    persist.radio.multisim.config=dsds \
+    vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    persist.ims.enableADBLogs=1 \
+    persist.ims.enableDebugLogs=1 \
+    persist.radio.vrte_logic=1 \
+    persist.rcs.supported=0 \
+    persist.dbg.ims_volte_enable=1
 
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
