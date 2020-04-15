@@ -220,10 +220,6 @@
        <item>"wlan0"</item>
    </string-array>
 
-   <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
-        autodetected from the Configuration. -->
-   <bool name="config_showNavigationBar">true</bool>
-
    <!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
    <bool translatable="false" name="config_wifi_softap_acs_supported">false</bool>
 
