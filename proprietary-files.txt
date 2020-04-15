@@ -1033,6 +1033,7 @@ vendor/bin/time_daemon
 
 # Wi-Fi
 vendor/bin/cnss-daemon
+vendor/bin/wcnss_service
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin
 etc/firmware/wlan/prima/WCNSS_cfg.dat

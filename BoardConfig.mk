@@ -251,8 +251,8 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP  := "ap"
 WIFI_DRIVER_FW_PATH_P2P := "p2p"
-TARGET_DISABLE_WCNSS_CONFIG_COPY := true
 PRODUCT_VENDOR_MOVE_ENABLED := true
+TARGET_USES_QCOM_WCNSS_QMI := true
 
 # inherit from the proprietary version
 -include vendor/fairphone/FP3/BoardConfigVendor.mk
