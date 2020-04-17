@@ -321,3 +321,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Factory reset partition
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/bootdevice/by-name/config
+
+
+# Play store
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.com.google.clientidbase=android-uniscope \
+    ro.com.google.clientidbase.am=android-uniscope \
+    ro.com.google.clientidbase.gmm=android-uniscope \
+    ro.com.google.clientidbase.ms=android-uniscope \
+    ro.com.google.clientidbase.yt=android-uniscope

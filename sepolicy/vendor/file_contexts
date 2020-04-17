@@ -4,3 +4,6 @@
 #/data/elan(/.*)?          u:object_r:elanfp_data:s0
 
 /(vendor|system/vendor)/bin/hw/android\.hardware\.light@2\.0-service\.msm8953    u:object_r:hal_light_default_exec:s0
+
+/dev/block/bootdevice/by-name/product_[ab]                          u:object_r:system_block_device:s0
+/dev/block/platform/soc/7824900.sdhci/by-name/product_[ab]           u:object_r:system_block_device:s0
