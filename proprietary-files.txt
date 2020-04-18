@@ -2143,6 +2143,9 @@ vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib64/libkeymasterprovision.so
 vendor/lib64/libkeymasterutils.so
 vendor/lib64/libqtikeymaster4.so
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
+vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
 
 # Light
 vendor/lib/hw/android.hardware.light@2.0-impl.so
