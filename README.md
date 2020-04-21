@@ -51,8 +51,7 @@ Also I took some settings and the kernel from k4y0z's amazing work for porting T
 ### Known Issues
 These things are untested or known not to work:
 * Updater
-* Playing videos in fullscreen causing some overlay issue
-* Ear speaker, e.g. during phone calls
+* Playing videos in fullscreen causing some overlay issue in Chrome
 
 ### Kernel Source
 Based on repository from k4y0z:
