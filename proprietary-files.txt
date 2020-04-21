@@ -29,12 +29,18 @@ vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
 
-#vendor/lib/hw/audio.primary.msm8953.so
-#vendor/lib64/hw/audio.primary.msm8953.so
-#vendor/lib/libaudioparsers.so
-#vendor/lib64/libaudioparsers.so
-#vendor/lib/libaudio_log_utils.so
-#vendor/lib64/libaudio_log_utils.so
+vendor/lib/hw/audio.r_submix.default.so
+vendor/lib/hw/audio.primary.default.so
+vendor/lib/hw/audio.primary.msm8953.so
+vendor/lib/hw/audio.usb.default.so
+vendor/lib64/hw/audio.r_submix.default.so
+vendor/lib64/hw/audio.primary.default.so
+vendor/lib64/hw/audio.primary.msm8953.so
+vendor/lib64/hw/audio.usb.default.so
+vendor/lib/libaudio_log_utils.so
+vendor/lib64/libaudio_log_utils.so
+vendor/lib/libaudioparsers.so
+vendor/lib64/libaudioparsers.so
 #vendor/lib/libtinycompress_vendor.so
 #vendor/lib64/libtinycompress_vendor.so
 
@@ -1684,6 +1690,16 @@ vendor/lib/libmmcamera_truly_cmb433_eeprom.so
 vendor/lib/libmmcamera_tsp_imx486_fm24c64_eeprom.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_tuning_lookup.so
+vendor/lib64/libmmcamera2_frame_algorithm.so
+vendor/lib64/libmmcamera2_is.so
+vendor/lib64/libmmcamera2_q3a_core.so
+vendor/lib64/libmmcamera2_stats_algorithm.so
+vendor/lib64/libmmcamera2_stats_lib.so
+vendor/lib64/libmmcamera_dbg.so
+vendor/lib64/libmmcamera_faceproc.so
+vendor/lib64/libmmcamera_faceproc2.so
+vendor/lib64/libmmcamera_tintless_algo.so
+vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
 
 # Camera - Firmware
 vendor/firmware/cpp_firmware_v1_10_0.fw
@@ -1843,13 +1859,15 @@ vendor/etc/gpfspath_oem_config.xml
 # DSP
 vendor/lib/libsdsprpc.so
 vendor/lib64/libsdsprpc.so
-vendor/lib/rfsa/adsp/libadsp_fd_skel.so
-vendor/lib/rfsa/adsp/libapps_mem_heap.so
 vendor/lib/rfsa/adsp/libdspCV_skel.so
+vendor/lib/rfsa/adsp/libadsp_fd_skel.so
+vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
-vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
-vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveObjectSegmentation_skel.so
+vendor/lib/rfsa/adsp/libfastcvadsp_skel.so
+vendor/lib/rfsa/adsp/libapps_mem_heap.so
+vendor/lib/rfsa/adsp/libFastRPC_UTF_Forward_Qtc2_skel.so
+vendor/lib/rfsa/adsp/libscveBlobDescriptor_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 
 # DSP - SCVE
@@ -2111,6 +2129,7 @@ vendor/etc/init/android.hardware.light@2.0-service.rc
 vendor/bin/hw/android.hardware.light@2.0-service
 vendor/lib/hw/lights.msm8953.so
 vendor/lib64/hw/lights.msm8953.so
+vendor/etc/permissions/android.hardware.light.xml
 
 # Listen
 vendor/lib/libgcs-calwrapper.so
@@ -2131,18 +2150,29 @@ vendor/lib/libFlacSwDec.so
 -vendor/lib/libgpustats.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAacEnc.so
 vendor/lib/libOmxAlacDec.so
 vendor/lib/libOmxAlacDecSw.so
 vendor/lib/libOmxAmrDec.so
+vendor/lib/libOmxAmrEnc.so
 vendor/lib/libOmxAmrwbplusDec.so
 vendor/lib/libOmxApeDec.so
 vendor/lib/libOmxApeDecSw.so
+vendor/lib/libOmxCore.so
 vendor/lib/libOmxDsdDec.so
 vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxEvrcEnc.so
+vendor/lib/libOmxG711Dec.so
+vendor/lib/libOmxG711Enc.so
 vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxQcelp13Enc.so
+vendor/lib/libOmxVdec.so
+vendor/lib/libOmxVenc.so
+vendor/lib/libOmxVideoDSMode.so
 vendor/lib/libOmxVpp.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libmm-color-convertor.so
+vendor/lib/libmm-omxcore.so
 vendor/lib/libvpplibrary.so
 vendor/lib/libvqzip.so
 vendor/lib64/libAlacSwDec.so
@@ -2151,18 +2181,35 @@ vendor/lib64/libFlacSwDec.so
 -vendor/lib64/libgpustats.so
 vendor/lib64/libI420colorconvert.so
 vendor/lib64/libOmxAacDec.so
+vendor/lib64/libOmxAacEnc.so
 vendor/lib64/libOmxAlacDec.so
 vendor/lib64/libOmxAlacDecSw.so
 vendor/lib64/libOmxAmrDec.so
+vendor/lib64/libOmxAmrEnc.so
 vendor/lib64/libOmxAmrwbplusDec.so
 vendor/lib64/libOmxApeDec.so
 vendor/lib64/libOmxApeDecSw.so
+vendor/lib64/libOmxCore.so
 vendor/lib64/libOmxEvrcDec.so
+vendor/lib64/libOmxEvrcEnc.so
+vendor/lib64/libOmxG711Dec.so
+vendor/lib64/libOmxG711Enc.so
 vendor/lib64/libOmxQcelp13Dec.so
+vendor/lib64/libOmxQcelp13Enc.so
+vendor/lib64/libOmxVdec.so
+vendor/lib64/libOmxVenc.so
 vendor/lib64/libOmxVpp.so
 vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libmm-color-convertor.so
+vendor/lib64/libmm-omxcore.so
 vendor/lib64/libvpplibrary.so
+
+vendor/lib/libstagefrighthw.so
+vendor/lib/vndk/libstagefright_omx.so
+vendor/lib/vndk/libstagefright_foundation.so
+vendor/lib/libstagefright_soft_qtiflacdec.so
+vendor/lib64/libstagefrighthw.so
+vendor/lib64/libstagefright_soft_qtiflacdec.so
 
 # Misc Firmware
 vendor/firmware/leia_pfp_470.fw
@@ -2524,8 +2571,8 @@ vendor/lib64/sensors.ssc.so
 #vendor/lib64/hw/sensors.msm8953_64.so
 
 # Sound Trigger
-#vendor/lib/hw/sound_trigger.primary.msm8953.so
-#vendor/lib64/hw/sound_trigger.primary.msm8953.so
+vendor/lib/hw/sound_trigger.primary.msm8953.so
+vendor/lib64/hw/sound_trigger.primary.msm8953.so
 vendor/lib/libsmwrapper.so
 vendor/lib/libcapiv2vop.so
 vendor/lib/libcapiv2svacnn.so
