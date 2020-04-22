@@ -121,37 +121,37 @@ vendor/lib/libarcsoft_high_dynamic_range.so
 # We have 3 back sensor support
 ### vendor/lib/libactuator_lc898219.so
 vendor/lib/libactuator_lc898217xc.so
-### vendor/lib/libactuator_ak7374.so
+vendor/lib/libactuator_ak7374.so
 # There is no Af for front module
 
 # Chromatics
 vendor/etc/camera/imx363_chromatix.xml
-### vendor/etc/camera/imx363_2nd_chromatix.xml
+vendor/etc/camera/imx363_2nd_chromatix.xml
 ### vendor/etc/camera/imx486_chromatix.xml
 vendor/etc/camera/s5k4h7yx_chromatix.xml
-### vendor/lib/libchromatix_imx363_2nd_common.so
-### vendor/lib/libchromatix_imx363_2nd_cpp_hfr_120.so
-### vendor/lib/libchromatix_imx363_2nd_cpp_hfr_60.so
-### vendor/lib/libchromatix_imx363_2nd_cpp_hfr_90.so
-### vendor/lib/libchromatix_imx363_2nd_cpp_liveshot.so
-### vendor/lib/libchromatix_imx363_2nd_cpp_preview.so
-### vendor/lib/libchromatix_imx363_2nd_cpp_snapshot.so
-### vendor/lib/libchromatix_imx363_2nd_cpp_snapshot_upscale.so
-### vendor/lib/libchromatix_imx363_2nd_cpp_video.so
-### vendor/lib/libchromatix_imx363_2nd_default_preview_3a.so
-### vendor/lib/libchromatix_imx363_2nd_default_video_3a.so
-### vendor/lib/libchromatix_imx363_2nd_hfr_120.so
-### vendor/lib/libchromatix_imx363_2nd_hfr_120_3a.so
-### vendor/lib/libchromatix_imx363_2nd_hfr_60.so
-### vendor/lib/libchromatix_imx363_2nd_hfr_60_3a.so
-### vendor/lib/libchromatix_imx363_2nd_hfr_90.so
-### vendor/lib/libchromatix_imx363_2nd_hfr_90_3a.so
-### vendor/lib/libchromatix_imx363_2nd_postproc.so
-### vendor/lib/libchromatix_imx363_2nd_preview.so
-### vendor/lib/libchromatix_imx363_2nd_snapshot.so
-### vendor/lib/libchromatix_imx363_2nd_video.so
-### vendor/lib/libchromatix_imx363_2nd_zsl_preview_3a.so
-### vendor/lib/libchromatix_imx363_2nd_zsl_video_3a.so
+vendor/lib/libchromatix_imx363_2nd_common.so
+vendor/lib/libchromatix_imx363_2nd_cpp_hfr_120.so
+vendor/lib/libchromatix_imx363_2nd_cpp_hfr_60.so
+vendor/lib/libchromatix_imx363_2nd_cpp_hfr_90.so
+vendor/lib/libchromatix_imx363_2nd_cpp_liveshot.so
+vendor/lib/libchromatix_imx363_2nd_cpp_preview.so
+vendor/lib/libchromatix_imx363_2nd_cpp_snapshot.so
+vendor/lib/libchromatix_imx363_2nd_cpp_snapshot_upscale.so
+vendor/lib/libchromatix_imx363_2nd_cpp_video.so
+vendor/lib/libchromatix_imx363_2nd_default_preview_3a.so
+vendor/lib/libchromatix_imx363_2nd_default_video_3a.so
+vendor/lib/libchromatix_imx363_2nd_hfr_120.so
+vendor/lib/libchromatix_imx363_2nd_hfr_120_3a.so
+vendor/lib/libchromatix_imx363_2nd_hfr_60.so
+vendor/lib/libchromatix_imx363_2nd_hfr_60_3a.so
+vendor/lib/libchromatix_imx363_2nd_hfr_90.so
+vendor/lib/libchromatix_imx363_2nd_hfr_90_3a.so
+vendor/lib/libchromatix_imx363_2nd_postproc.so
+vendor/lib/libchromatix_imx363_2nd_preview.so
+vendor/lib/libchromatix_imx363_2nd_snapshot.so
+vendor/lib/libchromatix_imx363_2nd_video.so
+vendor/lib/libchromatix_imx363_2nd_zsl_preview_3a.so
+vendor/lib/libchromatix_imx363_2nd_zsl_video_3a.so
 vendor/lib/libchromatix_imx363_common.so
 vendor/lib/libchromatix_imx363_cpp_hfr_120.so
 vendor/lib/libchromatix_imx363_cpp_hfr_60.so
@@ -225,7 +225,7 @@ vendor/lib/libchromatix_s5k4h7yx_zsl_video_3a.so
 
 # Camera Sensor
 vendor/lib/libmmcamera_imx363.so
-### vendor/lib/libmmcamera_imx363_2nd.so
+vendor/lib/libmmcamera_imx363_2nd.so
 ### vendor/lib/libmmcamera_imx486.so
 vendor/lib/libmmcamera_s5k4h7yx.so
 
