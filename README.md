@@ -18,15 +18,13 @@ Rear Camera  | 12 MP (f/1.8, 1/2.55", PDAF)
 Front Camera | 8 MP (f/2.0, 1/4", HDR)
 
 ### Introduction
-This is my first draft to build LineageOS 16 for the Fairphone 3.
-It's also my first time building LineageOS and it's been a while I last worked on
-Android platform development. So please forgive me any major mistakes :blush:
+This is the device tree to build LineageOS 16 for the Fairphone 3.
 
-I started with the [base configuration of Motorola's SDM632 platform](https://github.com/LineageOS/android_device_motorola_sdm632-common)
-and used the [river configuration](https://github.com/LineageOS/android_device_motorola_river) as an example.
-Not sure if that makes sense but at least it's the same chipset.
+It was started with the [base configuration of Motorola's SDM632 platform](https://github.com/LineageOS/android_device_motorola_sdm632-common)
+and the [river configuration](https://github.com/LineageOS/android_device_motorola_river) was used as an example.
+At least it's the same chipset.
 
-Also I took some settings and the kernel from k4y0z's amazing work for porting TWRP to Fairphone 3:
+Some settings and the kernel originate from k4y0z's amazing work for porting TWRP to Fairphone 3:
 * <https://github.com/chaosmaster/android_device_fairphone_fp3>
 * <https://github.com/chaosmaster/android_kernel_fairphone_sdm632>
 
@@ -57,12 +55,13 @@ These things are untested or known not to work:
 Based on repository from k4y0z:
 <https://github.com/chaosmaster/android_kernel_fairphone_sdm632>
 
-Added the qcom specific audio-kernel stuff in techpack/audio.
+Added the qcom specific audio-kernel stuff in techpack/audio and the prima WLAN
+drivers.
 
-Also I read the kernel config from the stock firmware as base.
+The kernel config is based on the one from stock firmware.
 
-Find my fork here: 
-<https://github.com/mstaz/android_kernel_fairphone_sdm632>
+Kernel sources are here in the lineage-16.0 branch: 
+<https://github.com/WeAreFairphone/android_kernel_fairphone_sdm632/tree/lineage-16.0>
 
 
 ### How to compile
@@ -74,8 +73,8 @@ mkdir -p .../lineageos/.repo/local_manifests
 cat <<EOF > .../lineageos/.repo/local_manifests/roomservice.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="mstaz/android_device_fairphone_fp3" path="device/fairphone/fp3" remote="github" />
-  <project name="mstaz/android_kernel_fairphone_sdm632" path="kernel/fairphone/sdm632" remote="github" />
+  <project name="WeAreFairphone/android_device_fairphone_FP3" path="device/fairphone/fp3" revision="lineage-16.0" remote="github" />
+  <project name="WeAreFairphone/android_kernel_fairphone_sdm632" path="kernel/fairphone/sdm632" revision="lineage-16.0" remote="github" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
   <project name="LineageOS/android_external_bson" path="external/bson" remote="github" />
   <project name="LineageOS/android_system_qcom" path="system/qcom" remote="github" />
