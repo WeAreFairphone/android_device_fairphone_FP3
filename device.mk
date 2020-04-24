@@ -362,6 +362,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.weaver@1.0
 
+# Doze
+PRODUCT_PACKAGES += \
+    Doze
+
 # # LiveDisplay
 # PRODUCT_PACKAGES += \
 #     vendor.lineage.livedisplay@2.0-service-sdm \
