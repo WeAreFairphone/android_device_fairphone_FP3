@@ -145,6 +145,7 @@ BOARD_SUPPORTS_QAHW := false
 AUDIO_FEATURE_ENABLED_DYNAMIC_LOG := true
 AUDIO_FEATURE_ENABLED_SND_MONITOR := true
 AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
+AUDIO_ENABLE_AW8898_AMPLIFIER := true
 
 #Audio Specific device overlays
 DEVICE_PACKAGE_OVERLAYS += hardware/qcom/audio-caf/msm8996/configs/common/overlay
