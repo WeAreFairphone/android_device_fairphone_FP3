@@ -67,8 +67,8 @@ Kernel sources are here in the lineage-16.0 branch:
 * Before downloading the source code using repo sync, create a local manifest file in the
 top of the source tree using
 ```sh
-mkdir -p .../lineageos/.repo/local_manifests
-cat <<EOF > .../lineageos/.repo/local_manifests/roomservice.xml
+mkdir -p .repo/local_manifests
+cat <<EOF > .repo/local_manifests/roomservice.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project name="WeAreFairphone/android_device_fairphone_FP3" path="device/fairphone/FP3" revision="lineage-16.0" remote="github" />
@@ -94,16 +94,16 @@ vendor/lineage/build/tools/sdat2img.py product.transfer.list product.new.dat pro
 ```
   * Mount system and vendor image and run the script on the folder:
 ```sh
+mkdir tmp
 sudo mount -o ro,loop system.img tmp
 sudo mount -o ro,loop vendor.img tmp/vendor
-cd .../lineageos/device/fairphone/FP3
-./extract-files.sh .../tmp
+cd device/fairphone/FP3
+./extract-files.sh ../../../tmp
 ```
   * If file access permissions are missing change it before calling
 	extract_files.sh, e.g. with chown (don't flash image files anymore after that):
 ```sh
-# Replace user with your user name.
-sudo chown -R user:user tmp
+sudo chown -R $(id -un):$(id -gn) tmp
 ```
 * Then do
 ```sh
