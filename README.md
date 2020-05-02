@@ -69,8 +69,8 @@ Kernel sources are here in the lineage-16.0 branch:
 * Before downloading the source code using repo sync, create a local manifest file in the
 top of the source tree using
 ```sh
-mkdir -p .../lineageos/.repo/local_manifests
-cat <<EOF > .../lineageos/.repo/local_manifests/roomservice.xml
+mkdir -p .repo/local_manifests
+cat <<EOF > .repo/local_manifests/roomservice.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project name="WeAreFairphone/android_device_fairphone_FP3" path="device/fairphone/fp3" revision="lineage-16.0" remote="github" />
@@ -102,7 +102,7 @@ Flashing the package with TWRP seems to cause some problems yet.
 So far I flash the images with fastboot. system.img is not copied to output root
 folder so I take it from the packaging subfolder.
 ```sh
-fastboot flash system out/target/product/fp3/obj/PACKAGING/target_files_intermediates/lineage_fp3-target_files-eng.ms/IMAGES/system.img
+fastboot flash system out/target/product/fp3/obj/PACKAGING/target_files_intermediates/lineage_fp3-target_files-eng.$(id -un)/IMAGES/system.img
 fastboot flash vendor out/target/product/fp3/vendor.img
 fastboot flash product out/target/product/fp3/product.img
 fastboot flash boot out/target/product/fp3/boot.img
@@ -149,11 +149,10 @@ vendor/lineage/build/tools/sdat2img.py product.transfer.list product.new.dat pro
 sudo mount -o ro,loop system.img tmp
 sudo mount -o ro,loop vendor.img tmp/vendor
 cd .../lineageos/device/fairphone/fp3
-./extract-files.sh .../tmp
+./extract-files.sh ../../../tmp
 ```
-* If file access permissions are missing change it before calling
+  * If file access permissions are missing change it before calling
 	extract_files.sh, e.g. with chown (don't flash image files anymore after that):
 ```sh
-# Replace user with your user name.
-sudo chown -R user:user tmp
+sudo chown -R $(id -un):$(id -gn) tmp
 ```
