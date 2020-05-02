@@ -44,23 +44,8 @@ vendor/etc/audio_policy.conf
 vendor/etc/audio_policy_volumes.xml
 vendor/etc/r_submix_audio_policy_configuration.xml
 vendor/etc/usb_audio_policy_configuration.xml
-
-vendor/lib/hw/audio.r_submix.default.so
-vendor/lib/hw/audio.primary.default.so
-vendor/lib/hw/audio.primary.msm8953.so
-vendor/lib/hw/audio.usb.default.so
-vendor/lib64/hw/audio.r_submix.default.so
-vendor/lib64/hw/audio.primary.default.so
-vendor/lib64/hw/audio.primary.msm8953.so
-vendor/lib64/hw/audio.usb.default.so
-vendor/lib/libaudio_log_utils.so
-vendor/lib64/libaudio_log_utils.so
 vendor/lib/libaudioparsers.so
 vendor/lib64/libaudioparsers.so
-#vendor/lib/libtinycompress_vendor.so
-#vendor/lib64/libtinycompress_vendor.so
-
-
 vendor/lib/soundfx/libqcomvisualizer.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcompostprocbundle.so
@@ -88,6 +73,7 @@ vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Global_cal.acdb
 vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Speaker_cal.acdb
 vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Hdmi_cal.acdb
 vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Handset_cal.acdb
+vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_workspaceFile.qwsp
 vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
 vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
@@ -101,44 +87,14 @@ vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Handset_cal.acdb
 vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Global_cal.acdb
 vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Headset_cal.acdb
 vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_General_cal.acdb
+vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_workspaceFile.qwsp
 vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
+vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
+vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
 
 # Audio Firmware
 vendor/firmware/aw8898_cfg.bin
 
-# Audio ACDB
-vendor/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_General_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Global_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Handset_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Headset_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
-vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
-vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Bluetooth_cal.acdb
-vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_General_cal.acdb
-vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Global_cal.acdb
-vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Handset_cal.acdb
-vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Hdmi_cal.acdb
-vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Headset_cal.acdb
-vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_Speaker_cal.acdb
-vendor/etc/acdbdata/MTP/msm8953-tasha-snd-card/MTP_WCD9335_workspaceFile.qwsp
-vendor/etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_General_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Global_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Handset_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Headset_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_Speaker_cal.acdb
-vendor/etc/acdbdata/QRD/QRD_workspaceFile.qwsp
-vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Bluetooth_cal.acdb
-vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_General_cal.acdb
-vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Global_cal.acdb
-vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Handset_cal.acdb
-vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Hdmi_cal.acdb
-vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Headset_cal.acdb
-vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_Speaker_cal.acdb
-vendor/etc/acdbdata/QRD/msm8953-sku4-snd-card/QRD_SKU4_workspaceFile.qwsp
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -1985,7 +1941,6 @@ vendor/lib64/liblocationservice_glue.so
 vendor/lib64/liblocationservice.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
-vendor/lib64/libquipc_os_api.so
 vendor/lib64/libslimclient.so
 vendor/lib64/libulp2.so
 vendor/lib64/libxtadapter.so
@@ -2061,38 +2016,6 @@ vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/libsdedrm.so
-vendor/lib64/vendor.display.color@1.0.so
-vendor/lib64/vendor.display.color@1.1.so
-vendor/lib64/vendor.display.postproc@1.0.so
-#vendor/lib/vendor.display.config@1.0.so
-#vendor/lib/vendor.display.color@1.2.so
-#vendor/lib/vendor.display.color@1.3.so
-#vendor/lib/vendor.display.config@1.1.so
-#vendor/lib64/vendor.display.config@1.5.so
-#vendor/lib64/vendor.display.config@1.0.so
-#vendor/lib64/vendor.display.config@1.2.so
-#vendor/lib64/vendor.display.color@1.2.so
-#vendor/lib64/vendor.display.config@1.4.so
-#vendor/lib64/vendor.display.config@1.6.so
-#vendor/lib64/vendor.display.config@1.7.so
-#vendor/lib64/vendor.display.color@1.3.so
-#vendor/lib64/vendor.display.config@1.1.so
-#vendor/lib64/vendor.display.postproc@1.0.so
-#vendor/lib64/vendor.display.config@1.3.so
-
-#vendor/lib/hw/android.hardware.graphics.composer@2.1-impl.so
-#vendor/lib/hw/hwcomposer.msm8953.so
-#vendor/etc/init/android.hardware.graphics.composer@2.1-service.rc
-#vendor/bin/hw/android.hardware.graphics.composer@2.1-service
-#vendor/lib64/hw/android.hardware.graphics.composer@2.1-impl.so
-#vendor/lib64/hw/hwcomposer.msm8953.so
-
-#vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
-#vendor/lib/libqdutils.so
-#vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
-#vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
-#vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-#vendor/lib64/libqdutils.so
 
 # Graphics - HDR
 vendor/lib/libhdr_tm.so
@@ -2142,9 +2065,6 @@ vendor/firmware/a530v2_seq.fw2
 vendor/firmware/a530v3_gpmu.fw2
 vendor/firmware/a530v3_seq.fw2
 vendor/firmware/a540_gpmu.fw2
-
-# IPA
-vendor/bin/ipacm-diag
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.0-service-qti
@@ -2251,26 +2171,13 @@ vendor/lib/libstagefright_soft_qtiflacdec.so
 vendor/lib64/libstagefrighthw.so
 vendor/lib64/libstagefright_soft_qtiflacdec.so
 
-vendor/lib/libstagefrighthw.so
-vendor/lib/vndk/libstagefright_omx.so
-vendor/lib/vndk/libstagefright_foundation.so
-vendor/lib/libstagefright_soft_qtiflacdec.so
-vendor/lib64/libstagefrighthw.so
-vendor/lib64/libstagefright_soft_qtiflacdec.so
-
 # Misc Firmware
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
 
-# Moto Permissions
-#etc/permissions/com.motorola.moto-uirefresh.xml:vendor/etc/permissions/com.motorola.moto-uirefresh.xml
-#etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
-#etc/permissions/com.motorola.camera2.denali.xml:vendor/etc/permissions/com.motorola.camera2.denali.xml
-
 # NFC
 vendor/lib/libpn548ad_fw.so
 vendor/lib/libpn547_fw.so
-vendor/lib/libpn548ad_fw.so
 vendor/lib/libpn551_fw.so
 vendor/lib/libpn553_fw.so
 vendor/lib/libpn557_fw.so
