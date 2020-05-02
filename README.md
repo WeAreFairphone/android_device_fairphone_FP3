@@ -75,38 +75,18 @@ cat <<EOF > .repo/local_manifests/roomservice.xml
 <manifest>
   <project name="WeAreFairphone/android_device_fairphone_FP3" path="device/fairphone/fp3" revision="lineage-16.0" remote="github" />
   <project name="WeAreFairphone/android_kernel_fairphone_sdm632" path="kernel/fairphone/sdm632" revision="lineage-16.0" remote="github" />
+  <project name="FairBlobs/proprietary_vendor_fairphone" path="vendor/fairphone/fp3" revision="lineage-16.0" remote="github" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
   <project name="LineageOS/android_external_bson" path="external/bson" remote="github" />
   <project name="LineageOS/android_system_qcom" path="system/qcom" remote="github" />
 </manifest>
 EOF
 ```
-This is a temporary hack while we are working outside of the LineageOS repositories.
+This is a temporary hack while we are working outside of the LineageOS repositories. Note that we are pulling in
+proprietary blobs from a repository, see the section below for how these can be extracted from a firmware image or
+running device.
+
 * Do `repo sync -c` to download all needed project repositories.
-* Extract proprietary files.
-  * I used stock 110 release [firmware dump](https://androidfilehost.com/?fid=4349826312261714249) from k4y0z.
-  * The files are compressed with brotli.
-    * Install it if necessary, e.g. with `sudo apt-get install brotli`
-    * Extract *.br files with: `brotli -d *.br`
-    * The *.dat files then need to be converted to *.img files with sdat2img tool which comes with LOS.
-```sh
-vendor/lineage/build/tools/sdat2img.py system.transfer.list system.new.dat system.img
-vendor/lineage/build/tools/sdat2img.py vendor.transfer.list vendor.new.dat vendor.img
-vendor/lineage/build/tools/sdat2img.py product.transfer.list product.new.dat product.img
-```
-  * Mount system and vendor image and run the script on the folder:
-```sh
-mkdir tmp
-sudo mount -o ro,loop system.img tmp
-sudo mount -o ro,loop vendor.img tmp/vendor
-cd device/fairphone/fp3
-./extract-files.sh ../../../tmp
-```
-  * If file access permissions are missing change it before calling
-	extract_files.sh, e.g. with chown (don't flash image files anymore after that):
-```sh
-sudo chown -R $(id -un):$(id -gn) tmp
-```
 * Then do
 ```sh
 . build/envsetup.sh
@@ -149,3 +129,30 @@ However I'm not sure yet how this can be solved. Sometimes re-flashing vbmeta
 images worked. Sometimes I needed to completely flash stock back to both slots
 and get them successfully booted first. Sometimes even that doesn't work
 immediately.
+
+### How to extract proprietary blobs
+
+At the moment we are using the stock 0111 release [firmware dump](https://androidhost.org/aJQNqX2).
+
+If you wish to use a different set of blobs, then we can offer you the following hints.
+
+* Partition images from firmware dumps may be compressed with `brotli`. Under Ubuntu you may install the `Brotli` tool with `sudo apt-get install brotli`
+* Extract *.br files with: `brotli -d *.br`
+* The *.dat files then need to be converted to *.img files with sdat2img tool which comes with LOS.
+```sh
+vendor/lineage/build/tools/sdat2img.py system.transfer.list system.new.dat system.img
+vendor/lineage/build/tools/sdat2img.py vendor.transfer.list vendor.new.dat vendor.img
+vendor/lineage/build/tools/sdat2img.py product.transfer.list product.new.dat product.img
+```
+* Mount system and vendor image and run the script on the folder:
+```sh
+sudo mount -o ro,loop system.img tmp
+sudo mount -o ro,loop vendor.img tmp/vendor
+cd .../lineageos/device/fairphone/fp3
+./extract-files.sh ../../../tmp
+```
+  * If file access permissions are missing change it before calling
+	extract_files.sh, e.g. with chown (don't flash image files anymore after that):
+```sh
+sudo chown -R $(id -un):$(id -gn) tmp
+```
