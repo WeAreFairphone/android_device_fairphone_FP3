@@ -1091,7 +1091,7 @@ vendor/lib64/libmmosal_proprietary.so|1a6fd0d32407879020428c2c403e0a9bfe554750
 vendor/lib64/libwfdhdcpcp.so|d9bfd72076d5c657c54ac5ff9e2b6ac1e0a194f2
 
 # Add Arima ftm daemon and adb enable command start
-vendor/bin/ArimaFtmDaemon
+#vendor/bin/ArimaFtmDaemon
 
 # This is in charge of setting the subsystem restart values at:
 # /sys/bus/msm_subsys/devices/subsys*/restart_level
