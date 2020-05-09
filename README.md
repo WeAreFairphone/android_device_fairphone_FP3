@@ -111,16 +111,45 @@ sudo chown -R $(id -un):$(id -gn) tmp
 brunch FP3 eng
 ```
 
-### How to flash
+### How to install
 With generated vbmeta.img it shouldn't be required to have both slots in successful state anymore
 ([details here](https://forum.fairphone.com/t/how-to-flash-a-custom-rom-on-fp3-with-gsi/57074)).
 However it makes sense to have a working fallback to ensure nothing gets
 bricked.
-As always backup is highly recommended anyway
+As always backup is highly recommended anyway.
 
+#### With TWRP
 The generated update package can be flashed with TWRP. TWRP flashes it to the
 currently inactive slots and activates it afterwards.
-The package can be found in `out/target/product/FP3` with the name like `lineage-16.0-20200505-UNOFFICIAL-FP3.zip`.
+The built package can be found in `out/target/product/FP3` with the name like `lineage-16.0-20200505-UNOFFICIAL-FP3.zip`.
+Alternatively the package can also be taken from an UNOFFICIAL release.
+
+Boot TWRP from bootloader:
+```sh
+fastboot boot twrp_image.img
+```
+
+In TWRP you can sideload the package then. Go to Advanced -> ADB Sideload ->
+Swipe
+Run
+```sh
+adb sideload lineage-16.0-20200509-UNOFFICIAL-FP3.zip
+```
+Adapt the file name of course. This should flash it to the inactive slot and
+activate it on success.
+
+Alternatively you can push the package to sd-card and install it from TWRP:
+```sh
+adb push lineage-16.0-20200509-UNOFFICIAL-FP3.zip /sdcard
+```
+
+Optional when coming from stock firmware: Format data from TWRP.
+
+If this is not done LineageOS will reboot and ask you for it.
+
+Reboot and LineageOS should boot up.
+
+#### With fastboot
 
 The image files can also be flashed directly with fastboot.
 ```sh
@@ -132,9 +161,25 @@ fastboot flash dtbo out/target/product/FP3/dtbo.img
 fastboot flash vbmeta out/target/product/FP3/vbmeta.img
 ```
 
+If coming from stock firmware formating data is recommended to prevent LinageOS
+from asking for it:
+```sh
+fastboot -w
+```
+
 Disabling verity should not be required anymore as long as the images are not
 modified afterwards, e.g. something is intalled to system or boot partition.
 In that case boot into TWRP and disable verity with adb:
 ```sh
 adb disable-verity
 ```
+
+### How to update
+So far OTA update are not available and are untested as well.
+That means updates need to be done manually. For that boot to recovery mode
+and simply sideload the new package.
+
+Alternatively TWRP can be booted and the new package can be installed from
+there.
+
+Of course flashing images directly with fastboot is possible too.
