@@ -73,6 +73,7 @@ cat <<EOF > .repo/local_manifests/roomservice.xml
 <manifest>
   <project name="WeAreFairphone/android_device_fairphone_FP3" path="device/fairphone/FP3" revision="lineage-16.0" remote="github" />
   <project name="WeAreFairphone/android_kernel_fairphone_sdm632" path="kernel/fairphone/sdm632" revision="lineage-16.0" remote="github" />
+  <project name="FairBlobs/proprietary_vendor_fairphone" path="vendor/fairphone/FP3" revision="lineage-16.0" remote="github" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
   <project name="LineageOS/android_external_bson" path="external/bson" remote="github" />
   <project name="LineageOS/android_system_qcom" path="system/qcom" remote="github" />
