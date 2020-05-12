@@ -62,10 +62,10 @@ Kernel sources are here in the lineage-16.0 branch:
 <https://github.com/WeAreFairphone/android_kernel_fairphone_sdm632/tree/lineage-16.0>
 
 
-### How to compile
+### How to build
 * Follow the first steps for setting up the LineageOS build system as described e.g. [here](https://wiki.lineageos.org/devices/river/build).
-* Before downloading the source code using repo sync, create a local manifest file in the
-top of the source tree using
+* Before downloading the source code using repo sync, create a local manifest file in `.repo/local_manifests`. From the
+top of the source tree this command can be used:
 ```sh
 mkdir -p .repo/local_manifests
 cat <<EOF > .repo/local_manifests/roomservice.xml
@@ -80,6 +80,8 @@ cat <<EOF > .repo/local_manifests/roomservice.xml
 </manifest>
 EOF
 ```
+The file name doesn't matter, e.g. also `FP3.xml` works.
+
 This is a temporary hack while we are working outside of the LineageOS repositories.
 * Do `repo sync -c` to download all needed project repositories.
 * Extract proprietary files.
@@ -111,6 +113,61 @@ sudo chown -R $(id -un):$(id -gn) tmp
 . build/envsetup.sh
 brunch FP3 eng
 ```
+
+### Use docker to build
+Alternatively the [docker image](https://github.com/lineageos4microg/docker-lineage-cicd) from the microG project can be used for building more easily.
+It supports building with and without the microG patches.
+
+Go to a preferred work directory and create the required folders if not already done:
+```sh
+mkdir cache keys lineage logs manifests zips
+```
+
+Create the local manifest file in manifest directory:
+```sh
+cat <<EOF > manifests/FP3.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="WeAreFairphone/android_device_fairphone_FP3" path="device/fairphone/FP3" revision="lineage-16.0" remote="github" />
+  <project name="WeAreFairphone/android_kernel_fairphone_sdm632" path="kernel/fairphone/sdm632" revision="lineage-16.0" remote="github" />
+  <project name="FairBlobs/proprietary_vendor_fairphone" path="vendor/fairphone/FP3" revision="lineage-16.0" remote="github" />
+  <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
+  <project name="LineageOS/android_external_bson" path="external/bson" remote="github" />
+  <project name="LineageOS/android_system_qcom" path="system/qcom" remote="github" />
+  <project name="lineageos4microg/android_prebuilts_prebuiltapks" path="prebuilts/prebuiltapks" remote="github" revision="master" />
+</manifest>
+EOF
+```
+
+Then only the docker command with correspondig parameters needs to be executed:
+```sh
+docker run \
+    -e "BRANCH_NAME=lineage-16.0" \
+    -e "DEVICE_LIST=FP3" \
+    -e "SIGN_BUILDS=false" \
+    -e "INCLUDE_PROPRIETARY=false" \
+    -e "CLEAN_AFTER_BUILD=false" \
+    -v "lineage:/srv/src" \
+    -v "$(pwd)/zips:/srv/zips" \
+    -v "$(pwd)/logs:/srv/logs" \
+    -v "$(pwd)/cache:/srv/ccache" \
+    -v "$(pwd)/keys:/srv/keys" \
+    -v "$(pwd)/manifests:/srv/local_manifests" \
+    lineageos4microg/docker-lineage-cicd
+```
+This automatically downloads the docker image the first time. Afterwards the docker image is started and the build process begins.
+This may take some time, especially on first build. Detailed logs are written to the `logs` folder. This can be followed, e.g. with `tail -f logs/...`
+
+If used more regularly it makes sense to put the command into a shell script.
+This also allows easier modification of the parameters.
+
+To build with microG patches and pre-installed F-Droid etc., add these parameter lines to the command:
+```sh
+    -e "SIGNATURE_SPOOFING=restricted" \
+    -e "CUSTOM_PACKAGES=GmsCore GsfProxy FakeStore MozillaNlpBackend NominatimNlpBackend com.google.android.maps.jar FDroid FDroidPrivilegedExtension " \
+```
+
+More settings and descriptions can be found in the [README](https://github.com/lineageos4microg/docker-lineage-cicd/blob/master/README.md) of the docker image.
 
 ### How to install
 With generated vbmeta.img it shouldn't be required to have both slots in successful state anymore
