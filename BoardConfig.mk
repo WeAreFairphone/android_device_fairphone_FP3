@@ -231,10 +231,10 @@ BOARD_AVB_SYSTEM_ROLLBACK_INDEX_LOCATION := 2
 # below definitions are only required for AVB 1.0
 ifeq ($(BOARD_AVB_ENABLE),false)
 # dm-verity definitions
-	PRODUCT_SUPPORTS_VERITY := true
-	PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
-	PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/bootdevice/by-name/vendor
-	$(call inherit-product, build/target/product/verity.mk)
+    PRODUCT_SUPPORTS_VERITY := true
+    PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/bootdevice/by-name/system
+    PRODUCT_VENDOR_VERITY_PARTITION := /dev/block/bootdevice/by-name/vendor
+    $(call inherit-product, build/target/product/verity.mk)
 endif
 
 # INIT
