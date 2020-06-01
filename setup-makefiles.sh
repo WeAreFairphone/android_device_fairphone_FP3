@@ -40,7 +40,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" true
 
 # Copyright headers and guards
-write_headers "FP3 ocean channel"
+write_headers "FP3"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
