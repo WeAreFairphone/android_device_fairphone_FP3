@@ -80,34 +80,9 @@ cat <<EOF > .repo/local_manifests/roomservice.xml
 </manifest>
 EOF
 ```
-The file name doesn't matter, e.g. also `FP3.xml` works.
+The file name doesn't matter, e.g. also `FP3.xml` works. This is a temporary hack while we are working outside of the LineageOS repositories. Note that we are pulling in proprietary blobs from a repository, see the section below for how these can be extracted from a firmware image or running device.
 
-This is a temporary hack while we are working outside of the LineageOS repositories.
 * Do `repo sync -c` to download all needed project repositories.
-* Extract proprietary files.
-  * E.g. stock 110 release [firmware dump](https://androidfilehost.com/?fid=4349826312261714249) from k4y0z can be used.
-  * The files are compressed with brotli.
-    * Install it if necessary, e.g. with `sudo apt-get install brotli`
-    * Extract *.br files with: `brotli -d *.br`
-    * The *.dat files then need to be converted to *.img files with sdat2img tool which comes with LOS.
-```sh
-vendor/lineage/build/tools/sdat2img.py system.transfer.list system.new.dat system.img
-vendor/lineage/build/tools/sdat2img.py vendor.transfer.list vendor.new.dat vendor.img
-vendor/lineage/build/tools/sdat2img.py product.transfer.list product.new.dat product.img
-```
-  * Mount system and vendor image and run the script on the folder:
-```sh
-mkdir tmp
-sudo mount -o ro,loop system.img tmp
-sudo mount -o ro,loop vendor.img tmp/vendor
-cd device/fairphone/FP3
-./extract-files.sh ../../../tmp
-```
-  * If file access permissions are missing change it before calling
-	extract_files.sh, e.g. with chown (don't flash image files anymore after that):
-```sh
-sudo chown -R $(id -un):$(id -gn) tmp
-```
 * Then do
 ```sh
 . build/envsetup.sh
@@ -170,7 +145,7 @@ To build with microG patches and pre-installed F-Droid etc., add these parameter
 More settings and descriptions can be found in the [README](https://github.com/lineageos4microg/docker-lineage-cicd/blob/master/README.md) of the docker image.
 
 ### How to install
-With generated vbmeta.img it shouldn't be required to have both slots in successful state anymore
+With generated `vbmeta.img` it shouldn't be required to have both slots in successful state anymore
 ([details here](https://forum.fairphone.com/t/how-to-flash-a-custom-rom-on-fp3-with-gsi/57074)).
 However it makes sense to have a working fallback to ensure nothing gets
 bricked.
@@ -179,7 +154,7 @@ As always backup is highly recommended anyway.
 #### With TWRP
 The generated update package can be flashed with TWRP. TWRP flashes it to the
 currently inactive slots and activates it afterwards.
-The built package can be found in `out/target/product/FP3` with the name like `lineage-16.0-20200505-UNOFFICIAL-FP3.zip`.
+The built package can be found in `out/target/product/FP3` with a name similar to `lineage-16.0-20200505-UNOFFICIAL-FP3.zip`.
 Alternatively the package can also be taken from an UNOFFICIAL release.
 
 Boot TWRP from bootloader:
@@ -219,7 +194,7 @@ fastboot flash dtbo out/target/product/FP3/dtbo.img
 fastboot flash vbmeta out/target/product/FP3/vbmeta.img
 ```
 
-If coming from stock firmware formating data is recommended to prevent LinageOS
+If coming from stock firmware formating data is recommended to prevent LineageOS
 from asking for it:
 ```sh
 fastboot -w
@@ -238,6 +213,33 @@ That means updates need to be done manually. For that boot to recovery mode
 and simply sideload the new package.
 
 Alternatively TWRP can be booted and the new package can be installed from
-there.
+there. Of course flashing images directly with fastboot is also possible.
 
-Of course flashing images directly with fastboot is possible too.
+### How to extract proprietary blobs
+At the moment we manage blobs in a dedicated repository. If you wish to use a different set of
+blobs, then we can offer you the following hints.
+
+As an example stock 110 release [firmware dump](https://androidfilehost.com/?fid=4349826312261714249) from k4y0z can be used.
+
+* The files may be compressed with brotli.
+  * Install a brotli tool if necessary, e.g. with `sudo apt-get install brotli` under Ubuntu.
+  * Extract `*.br` files with: `brotli -d *.br`
+  * The `*.dat` files then need to be converted to `*.img` files with `sdat2img` tool which comes with LOS.
+```sh
+vendor/lineage/build/tools/sdat2img.py system.transfer.list system.new.dat system.img
+vendor/lineage/build/tools/sdat2img.py vendor.transfer.list vendor.new.dat vendor.img
+vendor/lineage/build/tools/sdat2img.py product.transfer.list product.new.dat product.img
+```
+* Mount system and vendor image and run the script on the folder:
+```sh
+mkdir tmp
+sudo mount -o ro,loop system.img tmp
+sudo mount -o ro,loop vendor.img tmp/vendor
+cd device/fairphone/FP3
+./extract-files.sh ../../../tmp
+```
+* If file access permissions are missing correct these with `chown` before calling
+`extract_files.sh` and don't flash image files anymore after that:
+```sh
+sudo chown -R $(id -un):$(id -gn) tmp
+```
