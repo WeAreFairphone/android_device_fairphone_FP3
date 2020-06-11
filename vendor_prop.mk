@@ -10,9 +10,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dev.pm.dyn_samplingrate=1 \
     debug.sf.recomputecrop=0 \
     persist.hwc.mdpcomp.enable=true \
-    debug.mdpcomp.logs=0 \
-    dalvik.vm.heapsize=36m
-
+    debug.mdpcomp.logs=0 
 
 #Disable SF Latch Buffer Signaled property
 PRODUCT_PROPERTY_OVERRIDES += \
