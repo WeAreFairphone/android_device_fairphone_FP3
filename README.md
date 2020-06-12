@@ -77,6 +77,8 @@ cat <<EOF > .repo/local_manifests/roomservice.xml
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
   <project name="LineageOS/android_external_bson" path="external/bson" remote="github" />
   <project name="LineageOS/android_system_qcom" path="system/qcom" remote="github" />
+  <remove-project name="LineageOS/android_external_chromium-webview"/>
+  <project path="external/chromium-webview" name="LineageOS/android_external_chromium-webview" groups="pdk" revision="lineage-16.0" />
 </manifest>
 EOF
 ```
@@ -110,6 +112,8 @@ cat <<EOF > manifests/FP3.xml
   <project name="LineageOS/android_external_bson" path="external/bson" remote="github" />
   <project name="LineageOS/android_system_qcom" path="system/qcom" remote="github" />
   <project name="lineageos4microg/android_prebuilts_prebuiltapks" path="prebuilts/prebuiltapks" remote="github" revision="master" />
+  <remove-project name="LineageOS/android_external_chromium-webview"/>
+  <project path="external/chromium-webview" name="LineageOS/android_external_chromium-webview" groups="pdk" revision="lineage-16.0" />
 </manifest>
 EOF
 ```
