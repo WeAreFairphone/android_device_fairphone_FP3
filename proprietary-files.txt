@@ -14,8 +14,6 @@ vendor/lib64/libfastcvopt.so
 # lib64/libaptXHD_encoder.so
 
 # Audio
-vendor/lib/libtinycompress_vendor.so
-vendor/lib64/libtinycompress_vendor.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -30,27 +28,11 @@ vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
-vendor/lib/hw/audio.r_submix.default.so
-vendor/lib/hw/audio.primary.default.so
-vendor/lib/hw/audio.primary.msm8953.so
-vendor/lib/hw/audio.usb.default.so
-vendor/lib64/hw/audio.r_submix.default.so
-vendor/lib64/hw/audio.primary.default.so
-vendor/lib64/hw/audio.primary.msm8953.so
-vendor/lib64/hw/audio.usb.default.so
-vendor/lib/libaudio_log_utils.so
-vendor/lib64/libaudio_log_utils.so
-vendor/etc/audio/audio_policy_configuration.xml
-vendor/etc/audio_policy_configuration.xml
-vendor/etc/a2dp_audio_policy_configuration.xml
-vendor/etc/audio_output_policy.conf
-vendor/etc/audio_policy.conf
-vendor/etc/audio_policy_volumes.xml
-vendor/etc/r_submix_audio_policy_configuration.xml
-vendor/etc/usb_audio_policy_configuration.xml
 
-vendor/lib/libaudioparsers.so
-vendor/lib64/libaudioparsers.so
+-vendor/lib/libaudioparsers.so
+-vendor/lib/libaudio_log_utils.so
+-vendor/lib64/libaudioparsers.so
+-vendor/lib64/libaudio_log_utils.so
 
 
 vendor/lib/soundfx/libqcomvisualizer.so
@@ -599,18 +581,6 @@ vendor/lib64/libscveObjectTracker_stub.so
 vendor/lib64/libscvePanorama.so
 vendor/lib64/libscvePanorama_lite.so
 
-# Elan Fingerprint
-vendor/firmware/fingerprint.b00
-vendor/firmware/fingerprint.b01
-vendor/firmware/fingerprint.b02
-vendor/firmware/fingerprint.b03
-vendor/firmware/fingerprint.b04
-vendor/firmware/fingerprint.b05
-vendor/firmware/fingerprint.b06
-vendor/firmware/fingerprint.mdt
-
-vendor/lib64/hw/fingerprint.default.so
-
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
@@ -766,6 +736,15 @@ vendor/lib64/libtinyxml2_1.so
 vendor/bin/mm-pp-dpps
 
 # Graphics - Firmwares
+vendor/firmware/a530_gpmu.fw2
+vendor/firmware/a530_pfp.fw
+vendor/firmware/a530_pm4.fw
+vendor/firmware/a530v1_pfp.fw
+vendor/firmware/a530v1_pm4.fw
+vendor/firmware/a530v2_seq.fw2
+vendor/firmware/a530v3_gpmu.fw2
+vendor/firmware/a530v3_seq.fw2
+vendor/firmware/a540_gpmu.fw2
 vendor/firmware/a225_pfp.fw
 vendor/firmware/a225_pm4.fw
 vendor/firmware/a225p5_pm4.fw
@@ -782,15 +761,6 @@ vendor/firmware/a506_zap.elf
 vendor/firmware/a506_zap.mdt
 vendor/firmware/leia_pfp_470.fw
 vendor/firmware/leia_pm4_470.fw
-vendor/firmware/a530_gpmu.fw2
-vendor/firmware/a530_pfp.fw
-vendor/firmware/a530_pm4.fw
-vendor/firmware/a530v1_pfp.fw
-vendor/firmware/a530v1_pm4.fw
-vendor/firmware/a530v2_seq.fw2
-vendor/firmware/a530v3_gpmu.fw2
-vendor/firmware/a530v3_seq.fw2
-vendor/firmware/a540_gpmu.fw2
 
 # IPA
 vendor/bin/ipacm-diag
@@ -953,7 +923,7 @@ vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
 
 # QMI
-etc/permissions/qti_permissions.xml|e6ff4572352b1a4f91b6b9d7cbb1cad9924410a0
+etc/permissions/qti_permissions.xml
 etc/permissions/qti_libpermissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
@@ -995,14 +965,14 @@ vendor/lib64/libmdmdetect.so
 
 # Radio
 vendor/bin/hw/rild
--app/datastatusnotification/datastatusnotification.apk|b893ed156ad7b23cd9e67f7fafbca4f8a4d8d5a4
+-app/datastatusnotification/datastatusnotification.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk:vendor/app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
 framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
-framework/qti-telephony-common.jar|8f86d77d2cf13d6222ba7b4eef659e3f997f0cf2
+framework/qti-telephony-common.jar
 framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|0d533923f840e3ce2ab43c956ea0ae4f29c7dc53
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 framework/com.qualcomm.qti.uceservice-V2.0-java.jar
 vendor/bin/ATFWD-daemon
 vendor/bin/ipacm-diag
@@ -1102,7 +1072,7 @@ vendor/lib/qcrild_librilutils.so
 vendor/lib64/qcrild_librilutils.so
 
 # Radio - IMS
--priv-app/ims/ims.apk|3405e8189797954054130362011df237a1da7860
+-priv-app/ims/ims.apk
 etc/permissions/com.qualcomm.qti.imscmservice-V2.0-java.xml
 etc/permissions/com.qualcomm.qti.imscmservice-V2.1-java.xml
 etc/permissions/com.qualcomm.qti.imscmservice.xml
@@ -1179,9 +1149,9 @@ vendor/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 
 # Sensors
-vendor/etc/sensors/hals.conf
-vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/bin/sensors.qti
+vendor/etc/sensors/sensor_def_qcomdev.conf
+vendor/etc/sensors/hals.conf
 vendor/lib/hw/activity_recognition.msm8953.so
 vendor/lib/libsensor_reg.so
 vendor/lib/libsensor1.so
@@ -1222,59 +1192,56 @@ vendor/etc/wifi/aoa_cldb_swl14.bin
 etc/firmware/wlan/prima/WCNSS_cfg.dat
 
 # Wi-Fi Display - 8901.2.A.0111-SS.20200304
-bin/wfdservice|edeb291221024401cbae69c2fa4e58733b7efc4c
-etc/init/wfdservice.rc|311bfdd1675e56499662f39455536b75b78477bb
-etc/wfdconfigsink.xml|134a86f74d9c374ce9081bff92c02515712a7f12
-etc/wfdconfig.xml|60a210d323f3f65dd1424cfd517295c522824b7b
--framework/WfdCommon.jar|7b925c98d811b342e55549521af5c0a244e44025
-lib64/extractors/libmmparser.so|61cba3935000d9e04c7b73a20961bc8b15ed31b7
-lib64/libFileMux.so|c528ef66ce38e8474690b75d6ee1c9380c424be1
-lib64/libmmosal.so|b836f3b339d3acd93c63ad144ce4ba4aadb16e38
-lib64/libmmparser_lite.so|7e4d2f1022be67ccf9fe23034882c4e169b251d5
-lib64/libwfdclient.so|89d4d2d1a452246664a4dc4ae783173be3180835
-lib64/libwfdnative.so|e73791a9d0ee843547adf5d2cbf1973af505bd91
-lib/com.qualcomm.qti.wifidisplayhal@1.0.so|53ea5a509b6de0dbc3848275dd9eff18a4f0b519
-lib/extractors/libmmparser.so|8628c82f2cc2a269826ee86e3883c7cf1ed6949c
-lib/libFileMux.so|5961dd16c9c6808e8321abf4b0266a9926ef327b
-lib/libmmosal.so|ca8714ad8bd64ae9d23222df6098fbb949e75d96
-lib/libmmparser_lite.so|786498c462929cedbdd532a7c7a4aee99a63e616
-lib/libmmrtpdecoder.so|adb55936e63ff087a9e3458070515e1ab7dbe178
-lib/libmmrtpencoder.so|9a85d450a8633207f7a499962c5821d1a3fec2b8
-lib/libOmxMux.so|6aff8e6e81331f3d5d3a8d46d342e5b5efc237f3
-lib/libwfdavenhancements.so|e699cad5e5f6bd5ff6b07495795e1f5865a91166
-lib/libwfdclient.so|dfef4e644097d82eef472cbc7b9079062b1c838c
-lib/libwfdcodecv4l2.so|c4d8f54143431e8a8648766f989ff64adbae3557
-lib/libwfdcommonutils.so|f76e75661c41c5c494f60dbb01f22f7114b51fc6
-lib/libwfdconfigutils.so|1f7a9f752648de1fc04655133e9ddbfafa640839
-lib/libwfdmminterface.so|3ed15fd4bbb865722399bba446302bd61ab023fd
-lib/libwfdmmsink.so|9bc89fddbd83522b81e43b818fcf8f2ec39d4191
-lib/libwfdmmsrc.so|0ea81dcf5cc913cb48dc61b400513ad0f0478ec8
-lib/libwfdnative.so|3c7450ba0b62d5b8f40f3a3036f8a46542a2d241
-lib/libwfdrtsp.so|5ee03a541fc3c2d5437b6caf48702ea99e704db4
-lib/libwfdservice.so|a6470df0d60f880396643a3038c49a07b23ff116
-lib/libwfdsm.so|363c2a674520d7bb76883ed5957d5a66b7da440b
-lib/libwfduibcinterface.so|85faeea87b41e321de9a6fc0c4106978abf2ca92
-lib/libwfduibcsinkinterface.so|25235e58eb13e84f0e9bbc06592fdf85369d7529
-lib/libwfduibcsink.so|2573a8b30d8c774d415ddfa788d4a5b8b12f4c1b
-lib/libwfduibcsrcinterface.so|cb1ce08a89654236a29d940b6988309b670bf98d
-lib/libwfduibcsrc.so|78bc3258deb8f818c3392d5accdf8e7aac729fdc
--priv-app/WfdService/WfdService.apk|30befc443051135dff5d00d8185e575c3aaff9c0
-vendor/bin/wifidisplayhalservice|4822ef60a8f95a120af13833071c06af8618ae0b
-vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|04e463342cbba4c0e9c311a18238f95dec9359fd
-vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so|f4b6f4e2e40552601aa42ededf856841ce376fe1
-vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so|1f617a4c89ce9cd1e62a6960d5f09bc1b8402ea3
-vendor/lib/libmmosal_proprietary.so|df50cf90bdf0e29bcd741af46b5ace8c89c0b8c0
-vendor/lib/libOmxVideoDSMode.so|49afb32feb65de020ef3b4f2f67e13edaa14816c
-vendor/lib/libwfdcommonutils_proprietary.so|e82897ed8d7d797336df291a1afb6e22227b2f60
-vendor/lib/libwfdhaldsmanager.so|e19f116dae16c0397ae910795ca6680e6a8a6dc6
-vendor/lib/libwfdhdcpcp.so|e0969d65a5809fc2f0d5f84bde616554cebe8b5e
-vendor/lib/libwfdmmservice.so|edfef7c2a265539ab8256291bf5a537ee72ae534
-vendor/lib/libwfdmodulehdcpsession.so|c7893d8cb4dfa574c2835bd08d539177e912144e
-vendor/lib64/libmmosal_proprietary.so|1a6fd0d32407879020428c2c403e0a9bfe554750
-vendor/lib64/libwfdhdcpcp.so|d9bfd72076d5c657c54ac5ff9e2b6ac1e0a194f2
-
-# Add Arima ftm daemon and adb enable command start
-#vendor/bin/ArimaFtmDaemon
+bin/wfdservice
+etc/init/wfdservice.rc
+etc/wfdconfigsink.xml
+etc/wfdconfig.xml
+-framework/WfdCommon.jar
+lib64/extractors/libmmparser.so
+lib64/libFileMux.so
+lib64/libmmosal.so
+lib64/libmmparser_lite.so
+lib64/libwfdclient.so
+lib64/libwfdnative.so
+lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+lib/extractors/libmmparser.so
+lib/libFileMux.so
+lib/libmmosal.so
+lib/libmmparser_lite.so
+lib/libmmrtpdecoder.so
+lib/libmmrtpencoder.so
+lib/libOmxMux.so
+lib/libwfdavenhancements.so
+lib/libwfdclient.so
+lib/libwfdcodecv4l2.so
+lib/libwfdcommonutils.so
+lib/libwfdconfigutils.so
+lib/libwfdmminterface.so
+lib/libwfdmmsink.so
+lib/libwfdmmsrc.so
+lib/libwfdnative.so
+lib/libwfdrtsp.so
+lib/libwfdservice.so
+lib/libwfdsm.so
+lib/libwfduibcinterface.so
+lib/libwfduibcsinkinterface.so
+lib/libwfduibcsink.so
+lib/libwfduibcsrcinterface.so
+lib/libwfduibcsrc.so
+-priv-app/WfdService/WfdService.apk
+vendor/bin/wifidisplayhalservice
+vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-halimpl.so
+vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0.so
+vendor/lib/libmmosal_proprietary.so
+vendor/lib/libOmxVideoDSMode.so
+vendor/lib/libwfdcommonutils_proprietary.so
+vendor/lib/libwfdhaldsmanager.so
+vendor/lib/libwfdhdcpcp.so
+vendor/lib/libwfdmmservice.so
+vendor/lib/libwfdmodulehdcpsession.so
+vendor/lib64/libmmosal_proprietary.so
+vendor/lib64/libwfdhdcpcp.so
 
 # This is in charge of setting the subsystem restart values at:
 # /sys/bus/msm_subsys/devices/subsys*/restart_level
@@ -1301,6 +1268,17 @@ vendor/lib64/libStDrvInt.so
 vendor/lib/libStDrvInt.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib/libsecureui_svcsock.so
+
+# Elan Fingerprint
+vendor/lib64/hw/fingerprint.default.so
+vendor/firmware/fingerprint.mdt
+vendor/firmware/fingerprint.b00
+vendor/firmware/fingerprint.b01
+vendor/firmware/fingerprint.b02
+vendor/firmware/fingerprint.b03
+vendor/firmware/fingerprint.b04
+vendor/firmware/fingerprint.b05
+vendor/firmware/fingerprint.b06
 
 # NFC - PN553
 vendor/bin/nqnfcinfo
