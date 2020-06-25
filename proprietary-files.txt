@@ -29,12 +29,6 @@ vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
 
--vendor/lib/libaudioparsers.so
--vendor/lib/libaudio_log_utils.so
--vendor/lib64/libaudioparsers.so
--vendor/lib64/libaudio_log_utils.so
-
-
 vendor/lib/soundfx/libqcomvisualizer.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcompostprocbundle.so

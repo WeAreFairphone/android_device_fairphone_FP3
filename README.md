@@ -73,10 +73,14 @@ cat <<EOF > .repo/local_manifests/roomservice.xml
 <manifest>
   <project name="WeAreFairphone/android_device_fairphone_FP3" path="device/fairphone/FP3" revision="lineage-16.0" remote="github" />
   <project name="WeAreFairphone/android_kernel_fairphone_sdm632" path="kernel/fairphone/sdm632" revision="lineage-16.0" remote="github" />
+  <remove-project name="LineageOS/android_hardware_qcom_audio" />
+  <project name="WeAreFairphone/android_hardware_qcom_audio" path="hardware/qcom/audio-caf/msm8996" revision="v1-pie-caf-8996" remote="github" />
   <project name="FairBlobs/proprietary_vendor_fairphone" path="vendor/fairphone/FP3" revision="lineage-16.0" remote="github" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
   <project name="LineageOS/android_external_bson" path="external/bson" remote="github" />
   <project name="LineageOS/android_system_qcom" path="system/qcom" remote="github" />
+  <remove-project name="LineageOS/android_external_chromium-webview"/>
+  <project path="external/chromium-webview" name="LineageOS/android_external_chromium-webview" groups="pdk" revision="lineage-16.0" />
 </manifest>
 EOF
 ```
@@ -105,11 +109,15 @@ cat <<EOF > manifests/FP3.xml
 <manifest>
   <project name="WeAreFairphone/android_device_fairphone_FP3" path="device/fairphone/FP3" revision="lineage-16.0" remote="github" />
   <project name="WeAreFairphone/android_kernel_fairphone_sdm632" path="kernel/fairphone/sdm632" revision="lineage-16.0" remote="github" />
+  <remove-project name="LineageOS/android_hardware_qcom_audio" />
+  <project name="WeAreFairphone/android_hardware_qcom_audio" path="hardware/qcom/audio-caf/msm8996" revision="v1-pie-caf-8996" remote="github" />
   <project name="FairBlobs/proprietary_vendor_fairphone" path="vendor/fairphone/FP3" revision="lineage-16.0" remote="github" />
   <project name="LineageOS/android_packages_resources_devicesettings" path="packages/resources/devicesettings" remote="github" />
   <project name="LineageOS/android_external_bson" path="external/bson" remote="github" />
   <project name="LineageOS/android_system_qcom" path="system/qcom" remote="github" />
   <project name="lineageos4microg/android_prebuilts_prebuiltapks" path="prebuilts/prebuiltapks" remote="github" revision="master" />
+  <remove-project name="LineageOS/android_external_chromium-webview"/>
+  <project path="external/chromium-webview" name="LineageOS/android_external_chromium-webview" groups="pdk" revision="lineage-16.0" />
 </manifest>
 EOF
 ```

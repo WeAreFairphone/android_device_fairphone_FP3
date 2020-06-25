@@ -242,6 +242,9 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
+    # Hack to prevent permanently disabled NFC setting
+    setprop ro.nfc.fw_dl_on_boot 0
+
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
