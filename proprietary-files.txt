@@ -14,8 +14,6 @@ vendor/lib64/libfastcvopt.so
 # lib64/libaptXHD_encoder.so
 
 # Audio
-vendor/lib/libtinycompress_vendor.so
-vendor/lib64/libtinycompress_vendor.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
@@ -30,27 +28,11 @@ vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libqtigef.so
-vendor/lib/hw/audio.r_submix.default.so
-vendor/lib/hw/audio.primary.default.so
-vendor/lib/hw/audio.primary.msm8953.so
-vendor/lib/hw/audio.usb.default.so
-vendor/lib64/hw/audio.r_submix.default.so
-vendor/lib64/hw/audio.primary.default.so
-vendor/lib64/hw/audio.primary.msm8953.so
-vendor/lib64/hw/audio.usb.default.so
-vendor/lib/libaudio_log_utils.so
-vendor/lib64/libaudio_log_utils.so
-vendor/etc/audio/audio_policy_configuration.xml
-vendor/etc/audio_policy_configuration.xml
-vendor/etc/a2dp_audio_policy_configuration.xml
-vendor/etc/audio_output_policy.conf
-vendor/etc/audio_policy.conf
-vendor/etc/audio_policy_volumes.xml
-vendor/etc/r_submix_audio_policy_configuration.xml
-vendor/etc/usb_audio_policy_configuration.xml
 
 vendor/lib/libaudioparsers.so
 vendor/lib64/libaudioparsers.so
+vendor/lib/libaudio_log_utils.so
+vendor/lib64/libaudio_log_utils.so
 
 
 vendor/lib/soundfx/libqcomvisualizer.so
