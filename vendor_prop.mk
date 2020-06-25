@@ -5,9 +5,12 @@
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1 \
-    debug.sf.hw=1 \
+    debug.sf.hw=0 \
     debug.egl.hw=0 \
-    dev.pm.dyn_samplingrate=1
+    dev.pm.dyn_samplingrate=1 \
+    debug.sf.recomputecrop=0 \
+    persist.hwc.mdpcomp.enable=true \
+    debug.mdpcomp.logs=0 
 
 #Disable SF Latch Buffer Signaled property
 PRODUCT_PROPERTY_OVERRIDES += \

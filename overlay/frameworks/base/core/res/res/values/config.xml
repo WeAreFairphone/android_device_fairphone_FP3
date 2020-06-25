@@ -284,10 +284,10 @@
    </string-array>
 
    <!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
-   <bool translatable="false" name="config_wifi_softap_acs_supported">false</bool>
+   <bool translatable="false" name="config_wifi_softap_acs_supported">true</bool>
 
    <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
-   <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">false</bool>
+   <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
 
     <!-- Boolean indicating whether single radio chain scan results are to be used for network selection -->
     <bool translatable="false" name="config_wifi_framework_use_single_radio_chain_scan_results_network_selection">false</bool>
@@ -453,5 +453,18 @@
 
         <!-- Remote server that can provide NTP responses. -->
     <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
+
+    <!-- Whether WiFi display is supported by this device.
+     There are many prerequisites for this feature to work correctly.
+     Here are a few of them:
+     * The WiFi radio must support WiFi P2P.
+     * The WiFi radio must support concurrent connections to the WiFi display and
+       to an access point.
+     * The Audio Flinger audio_policy.conf file must specify a rule for the "r_submix"
+       remote submix module.  This module is used to record and stream system
+       audio output to the WiFi display encoder in the media server.
+     * The remote submix module "audio.r_submix.default" must be installed on the device.
+     * The device must be provisioned with HDCP keys (for protected content). -->
+    <bool name="config_enableWifiDisplay">true</bool>
 
 </resources>

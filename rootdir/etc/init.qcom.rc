@@ -1218,15 +1218,7 @@ service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.andro
     class main
     disabled
     oneshot
-    keycodes 114 115 116
-    
-# [20181113][TracyChui]Add arima ftm daemon and adb enable command start
-service arima_ftm_daemon /vendor/bin/ArimaFtmDaemon
-    user root
-    group root
-    disabled
-# [20181113][TracyChui]Add arima ftm daemon and adb enable command end
-   
+    keycodes 114 115 116   
 
 #Set GPU Opengles version
 on property:vendor.opengles.version=*
