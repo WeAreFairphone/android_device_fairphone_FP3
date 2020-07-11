@@ -63,7 +63,7 @@ Kernel sources are here in the lineage-16.0 branch:
 
 
 ### How to build
-* Follow the first steps for setting up the LineageOS build system as described e.g. [here](https://wiki.lineageos.org/devices/river/build).
+* Follow the first steps for setting up the LineageOS build system as described e.g. [here](https://wiki.lineageos.org/devices/river/build). Be aware that a complete build can occupy up to 200G of disk space!
 * Before downloading the source code using repo sync, create a local manifest file in `.repo/local_manifests`. From the
 top of the source tree this command can be used:
 ```sh
@@ -80,7 +80,7 @@ cat <<EOF > .repo/local_manifests/roomservice.xml
 </manifest>
 EOF
 ```
-The file name doesn't matter, e.g. also `FP3.xml` works. This is a temporary hack while we are working outside of the LineageOS repositories. Note that we are pulling in proprietary blobs from a repository, see the section below for how these can be extracted from a firmware image or running device.
+This is a temporary hack while we are working outside of the LineageOS repositories. Note that we are pulling in proprietary blobs from a repository, see the section below for how these can be extracted from a firmware image or running device.
 
 * Do `repo sync -c` to download all needed project repositories.
 * Then do
@@ -100,7 +100,7 @@ mkdir cache keys lineage logs manifests zips
 
 Create the local manifest file in manifest directory:
 ```sh
-cat <<EOF > manifests/FP3.xml
+cat <<EOF > manifests/roomservice.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project name="WeAreFairphone/android_device_fairphone_FP3" path="device/fairphone/FP3" revision="lineage-16.0" remote="github" />
