@@ -22,6 +22,11 @@
 
 #include <fstream>
 
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 #define LEDS            "/sys/class/leds/"
 
 #define LCD_LED         LEDS "lcd-backlight/"
@@ -33,6 +38,51 @@
 #define BREATH          "breath"
 #define DELAY_OFF       "delay_off"
 #define DELAY_ON        "delay_on"
+
+
+static void set_breath(int redBrightness,int greenBrightness, int blueBrightness) {
+	int red = open(RED_LED BREATH,O_WRONLY);
+	int green = open(GREEN_LED BREATH,O_WRONLY);
+	int blue = open(BLUE_LED BREATH,O_WRONLY);
+	
+    if(red == -1) {
+		ALOGE("failed to open " RED_LED BREATH);
+	}
+	
+    if(green == -1) {
+		ALOGE("failed to open " GREEN_LED BREATH);
+	}
+	
+    if(blue == -1) {
+		ALOGE("failed to open " BLUE_LED BREATH);
+	}
+	
+	int re,ge,be;
+	if (redBrightness > 0) 
+            re = write(red,"1",1);
+    else
+            re = write(red,"0",1);
+    
+    if (greenBrightness > 0)
+           ge = write(green,"1",1);
+    else
+           ge = write(green,"0",1);
+    
+    if (blueBrightness > 0)
+           be = write(blue,"1",1);
+    else
+           be = write(blue,"0",1);
+        
+    if(re != 1)
+        	ALOGE("failed to write to " RED_LED BREATH " errorcode: %i",re);
+    if(ge != 1)
+        	ALOGE("failed to write to " GREEN_LED BREATH " errorcode: %i",ge);    
+    if(be != 1)
+        	ALOGE("failed to write to " BLUE_LED BREATH " errorcode: %i",be);    
+    close(red);
+    close(green);
+    close(blue);
+}
 
 /*
  * Write value to path and close file.
@@ -79,27 +129,11 @@ static void handleNotification(const LightState& state) {
     }
 
     /* Disable blinking. */
-    set(RED_LED BREATH, 0);
-    set(GREEN_LED BREATH, 0);
-    set(BLUE_LED BREATH, 0);
+    set_breath(0,0,0);
 
     if (state.flashMode == Flash::TIMED) {
-        /* Set LED */
-        // set(RED_LED DELAY_OFF, state.flashOffMs);
-        // set(RED_LED DELAY_ON, state.flashOnMs);
-        // set(GREEN_LED DELAY_OFF, state.flashOffMs);
-        // set(GREEN_LED DELAY_ON, state.flashOnMs);
-        set(BLUE_LED DELAY_OFF, state.flashOffMs);
-        set(BLUE_LED DELAY_ON, state.flashOnMs);
-
-
-        // /* Enable blinking. */
-        // if (redBrightness > 0)
-        //     set(RED_LED BREATH, 1);
-        // if (greenBrightness > 0)
-        //     set(GREEN_LED BREATH, 1);
-        if (blueBrightness > 0)
-            set(BLUE_LED BREATH, 1);
+        /* Enable blinking. */
+        set_breath(redBrightness, greenBrightness, blueBrightness);
     } else {
         set(RED_LED BRIGHTNESS, redBrightness);
         set(GREEN_LED BRIGHTNESS, greenBrightness);
