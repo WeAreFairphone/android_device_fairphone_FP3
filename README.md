@@ -61,6 +61,76 @@ drivers.
 Kernel sources are here in the lineage-16.0 branch: 
 <https://github.com/WeAreFairphone/android_kernel_fairphone_sdm632/tree/lineage-16.0>
 
+### Installation
+
+Unlock bootloader
+ - https://www.fairphone.com/en/bootloader-unlocking-code-for-fairphone-3/
+
+Download TWRP, LineageOS (without MicroG!), Magisk and OpenGApps
+ - https://eu.dl.twrp.me/FP3/twrp-3.4.0-0-FP3.img.html
+ - https://github.com/WeAreFairphone/android_device_fairphone_FP3/releases
+ - https://opengapps.org/
+ - https://github.com/topjohnwu/Magisk/releases
+ 
+Boot TWRP from fastboot
+
+```
+fastboot boot bootloader
+fastboot boot twrp-3.4.0-0-FP3.img
+```
+
+Backup existing firmware
+ - First wipe data: Wipe -> Format Data
+ - Set backup job: Backup -> Check all
+ - Copy files to PC
+ - adb pull /data/media/0/TWRP/BACKUPS
+
+Install LineageOS image
+Advanced -> ADB Sideload
+```
+adb sideload lineage-16.0-20200819-UNOFFICIAL-FP3.zip
+```
+Reboot and check if the recovery is working, you will not see TWRP, but Lineage Recovery
+ ```
+ adb reboot recovery
+ ```
+Reboot again to TWRP
+```
+adb reboot bootloader
+fastboot boot twrp-3.4.0-0-FP3.img
+```
+
+Flash OpenGApps and Magisk
+Advanced -> ADB Sideload
+```
+adb sideload open_gapps-arm64-9.0-pico-20200820.zip
+adb sideload Magisk-v20.4.zip
+```
+
+Reboot the phone, enjoy!
+
+#### Issues
+
+Device is corrupted notification: you can try resetting the bootloader with
+```
+adb reboot "dm-verity enforcing"
+```
+
+I had to disable and enable dm-verity to make the Play Store 'stick' (it was disappearing after I flashed it)
+
+```
+adb reboot bootloader
+fastboot boot twrp-3.4.0-0-FP3.img
+adb disable-verity
+adb reboot
+```
+
+Wait for the device to reboot, check Play Store and repeat to enable verity again.
+
+#### Fallback
+
+If all else fails, this article tells you how to completely factory restore it: https://support.fairphone.com/hc/en-us/articles/360043337512
+
 
 ### How to build
 * Follow the first steps for setting up the LineageOS build system as described e.g. [here](https://wiki.lineageos.org/devices/river/build). Be aware that a complete build can occupy up to 200G of disk space!
